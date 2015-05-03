@@ -1,0 +1,39 @@
+# Site settings
+title: Feng Ting Zhang
+email: info@fengtingzhang.com
+url: https://example.github.io
+description: "Main Page for Feng Ting Zhang's Hobby Website"
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary-dark: '#000000'
+  links: '#219ab3'
+
+# Footer settings
+footer: Feng Ting Zhang
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: https://twitter.com/fengtingzhang
+  - title: github
+    url: https://github.com/fengtingzhang
+  - title: instagram 
+    url: https://instagram.com/moreofsusan
+  - title: linkedin
+    url: https://www.linkedin.com/in/fengtingsusanzhang
+
+# Prototypes I've experimented with
+prototypes:
+  - title: My GitBook
+    url: http://fengtingzhang.gitbooks.io/blog/content
+  - title: Funny Faces
+    url: http://radiant-lowlands-2074.herokuapp.com/
+  - title: Errands
+    url: http://fengtingzhang.meteor.com/
+  - title: Markdown Editor
+    url: http://development.fengtingzhang-markie.divshot.io/
+
+# Build settings
+markdown: kramdown
+permalink: pretty
