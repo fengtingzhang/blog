@@ -27,7 +27,7 @@ social:
 # Prototypes I've experimented with
 prototypes:
   - title: My GitBook
-    url: http://fengtingzhang.gitbooks.io/blog/content
+    url: http://fengtingzhang.gitbooks.io/blog/content/
   - title: Funny Faces
     url: http://radiant-lowlands-2074.herokuapp.com/
   - title: Errands
