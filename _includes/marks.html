@@ -1,0 +1,19 @@
+    <!-- Bookmarks Section -->
+    <section id="marks" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Prototypes and Favorites</h2>
+                <p>Hobby prototypes and recent favorites</p>
+                <ul class="list-inline banner-social-buttons">
+                    {% for network in site.prototypes %}
+                    <li>
+                        <a href="{{ network.url }}" class="btn btn-default btn-lg"> <span class="network-name">{{ network.title }}</span></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <a href="#page-top" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-up animated"></i>
+                </a>
+            </div>
+        </div>
+    </section>
