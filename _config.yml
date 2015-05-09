@@ -1,9 +1,10 @@
 # Site settings
+# bundle exec jekyll serve
 title: Feng Ting Zhang
 email: info@fengtingzhang.com
 url: https://fengtingzhang.github.io/blog
 description: "Main Page for Feng Ting Zhang's Hobby Website"
-baseurl: /blog
+#baseurl: /blog
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
