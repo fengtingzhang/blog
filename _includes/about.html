@@ -2,14 +2,13 @@
     <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>About</h2>
-                <p>I'm a fullstack web developer and I enjoy experimenting with areas in responsive web design, serverside javascript, and big data.</p>
+                <p>Fullstack web developer with interests in Lucene based search.</p>
                 <p><a href="mailto:{{ site.email }}">{{ site.email }}</a>
                 </p>
                 <ul class="list-inline banner-social-buttons">
                     {% for network in site.social %}
                     <li>
-                        <a href="{{ network.url }}" class="btn btn-default btn-lg"><i class="fa fa-{{ network.title }} fa-fw"></i> <span class="network-name">{{ network.title }}</span></a>
+                        <a href="{{ network.url }}" class="btn btn-default btn-md"><i class="fa fa-{{ network.title }} fa-fw"></i> <span class="network-name">{{ network.title }}</span></a>
                     </li>
                     {% endfor %}
                 </ul>
