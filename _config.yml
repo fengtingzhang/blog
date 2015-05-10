@@ -31,15 +31,17 @@ prototypes:
     url: http://fengtingzhang.gitbooks.io/blog/content/
   - title: Funny Faces
     url: http://radiant-lowlands-2074.herokuapp.com/
-  - title: Errands
-    url: http://fengtingzhang.meteor.com/
-  - title: Markdown Editor
-    url: http://development.fengtingzhang-markie.divshot.io/
+  - title: Simplied Chinese
+    url: http://phyllispei.github.io/marketing/
 
 # Cool things
 favorites:
   - title: NER
     url: http://nlp.stanford.edu:8080/ner/
+  - title: Meteor
+    url: http://fengtingzhang.meteor.com/
+  - title: Local Storage
+    url: http://development.fengtingzhang-markie.divshot.io/
 
 # Build settings
 markdown: kramdown
