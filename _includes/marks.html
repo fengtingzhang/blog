@@ -12,4 +12,16 @@
                 </ul>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <p>Favorites</p>
+                <ul class="list-inline banner-social-buttons">
+                    {% for favorite in site.favorites %}
+                    <li>
+                        <a href="{{ favorite.url }}" class="btn btn-default btn-sm"> <span class="network-name">{{ favorite.title }}</span></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </section>

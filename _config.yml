@@ -36,6 +36,11 @@ prototypes:
   - title: Markdown Editor
     url: http://development.fengtingzhang-markie.divshot.io/
 
+# Cool things
+favorites:
+  - title: NER
+    url: http://nlp.stanford.edu:8080/ner/
+
 # Build settings
 markdown: kramdown
 permalink: pretty
