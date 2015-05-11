@@ -1,48 +1,65 @@
-# Site settings
-# bundle exec jekyll serve
-title: Feng Ting Zhang
-email: info@fengtingzhang.com
-url: https://fengtingzhang.github.io/blog
-description: "Main Page for Feng Ting Zhang's Hobby Website"
-#baseurl: /blog
+# SITE CONFIGURATION
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://fengtingzhang.com" # the base hostname & protocol for your site
 
-# Color settings (hex-codes without the leading hash-tag)
-color:
-  primary-dark: '#000000'
-  links: '#219ab3'
+# THEME-SPECIFIC CONFIGURATION
+theme:
+  # Meta
+  title: Feng Ting's Blog
+  avatar: avatar.png
+  gravatar: # Email MD5 hash
+  description: "A website with blog posts and pages" # used by search engines
 
-# Footer settings
-footer: Feng Ting Zhang
+  # Header and footer text
 
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
-social:
-  - title: twitter
-    url: https://twitter.com/fengtingzhang
-  - title: github
-    url: https://github.com/fengtingzhang
-  - title: instagram 
-    url: https://instagram.com/moreofsusan
-  - title: linkedin
-    url: https://www.linkedin.com/in/fengtingsusanzhang
+  header_text_feature_image:
+  footer_text: >
 
-# Prototypes I've experimented with
-prototypes:
-  - title: My GitBook
-    url: http://fengtingzhang.gitbooks.io/blog/content/
-  - title: Funny Faces
-    url: http://radiant-lowlands-2074.herokuapp.com/
-  - title: Chinese
-    url: http://phyllispei.github.io/marketing/
+  # Icons
+  rss: false
+  email_address: "info@fengtingzhang.com"
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  github: "fengtingzhang"
+  google_plus:
+  instagram: "https://instagram.com/moreofsusan"
+  linkedin:  "https://www.linkedin.com/in/fengtingsusanzhang"
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:  # Full URL
+  steam:
+  tumblr:
+  twitter: "https://twitter.com/fengtingzhang"
+  wordpress:
+  youtube:
 
-# Cool things
-favorites:
-  - title: NER
-    url: http://nlp.stanford.edu:8080/ner/
-  - title: Meteor
-    url: http://fengtingzhang.meteor.com/
-  - title: Local Storage
-    url: http://development.fengtingzhang-markie.divshot.io/
+  # Scripts
+  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname:
+  katex: true # Enable if using math markup
 
-# Build settings
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_email: "Email"
+  str_next: "Next"
+  str_prev: "Prev"
+  str_continue_reading: "Continue reading"
+
+  # Colours, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+
+# PAGINATION
+paginate: 5
+paginate_path: "blog/page:num"
+
+# BUILD SETTINGS
 markdown: kramdown
-permalink: pretty
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: :compressed
