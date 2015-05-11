@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>Node Day 2015 | Feng Ting's Blog</title>
+	<meta name="description" content="Experiences at Conde Nast">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/blog/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/blog/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://fengtingzhang.com/blog/2015/04/28/node-day.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Feng Ting's Blog" href="http://fengtingzhang.com/blog/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/blog/">
+			<img class="avatar" src="/blog/img/avatar.jpeg" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/blog/">Feng Ting's Blog</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+		    <li><a href="http://fengtingzhang.com/">Home</a></li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+<li>
+	<a href="mailto:info@fengtingzhang.com" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/fengtingzhang" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+<li>
+	<a href="http://instagram.com/https://instagram.com/moreofsusan" title="Follow on Instagram">
+		<i class="fa fa-fw fa-instagram"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/fengtingsusanzhang" title="Follow on LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/https://twitter.com/fengtingzhang" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/blog/')">
+    <h1 class="title">Node Day 2015</h1>
+    <p class="meta">
+    April 28, 2015
+     - Feng Ting Zhang
+    </p>
+  </header>
+  <section class="post-content"><h2 id="experiences-at-conde-nast">Experiences at Conde Nast</h2>
+
+<hr />
+
+<ol>
+  <li>
+    <p>Architecture based on each teams - Epicurious, etc</p>
+  </li>
+  <li>
+    <p>Greenfield rebuild</p>
+  </li>
+  <li>
+    <p>Jenkens for CI</p>
+  </li>
+  <li>
+    <p>Monitoring uses New Relic (alternative data dog)</p>
+  </li>
+  <li>
+    <p>Deploy (AWS CodeDeploy for zero down time deploy) – capistrano (rails) and fab are alternatives</p>
+  </li>
+  <li>
+    <p>Microservices mappings entitlements versus authentication in nginx</p>
+  </li>
+  <li>
+    <p>Logging – bunyan for node and logs in json, use logstash and elastic search to combine logs from microservices</p>
+  </li>
+  <li>
+    <p>Systemd (systemd is native to centOS similar to redhat)</p>
+  </li>
+  <li>
+    <p>Puppet for configurations</p>
+  </li>
+  <li>
+    <p>Private npm registry through nodejitsu (FTW, early adoption before npm private registry+enterprise is available)</p>
+  </li>
+</ol>
+
+<h2 id="panel-stories-from-conde-nast-bloomberg-web-dow-jones-parent-of-wallstreet-journal-which-is-running-on-node">Panel, stories from conde nast, Bloomberg Web, Dow Jones (parent of Wallstreet Journal which is running on node)</h2>
+
+<hr />
+
+<ol>
+  <li>
+    <p>Schism between node.js and io.js</p>
+  </li>
+  <li>
+    <p>Date warehouse, data science and sentiment analysis in a lucene search engine?</p>
+  </li>
+  <li>
+    <p>Serverside vs clientside javascript – memory usage and debugging through new relics</p>
+  </li>
+  <li>
+    <p>EC6 is coming in June! Not yet adopted in Production, dev experiments in babeljs and typescript</p>
+  </li>
+  <li>
+    <p>Bloomberg’s deployment is also private and on private infrastructure, WSJ is on AWS</p>
+  </li>
+</ol>
+
+<h2 id="iot-and-node-sparkio-and-microsoft">IOT and node (spark.io and Microsoft)</h2>
+
+<hr />
+
+<ul>
+  <li>
+    <p>8-bit+ chips are capable of running node</p>
+  </li>
+  <li>
+    <p>Democratization of chips as they come down in cost</p>
+  </li>
+  <li>
+    <p>Private cloud or bring your own cloud to improve security, private data</p>
+  </li>
+</ul>
+
+<h2 id="nearform-experiences-with-node-since-2011">NearForm experiences with Node since 2011</h2>
+
+<hr />
+
+<ul>
+  <li>
+    <p>Since Jan 2011 the number of node modules has grown exponetially to ~140000 modules</p>
+  </li>
+  <li>
+    <p>Isomorphic javascript</p>
+  </li>
+  <li>
+    <p>Private repositories where developers can publish modules</p>
+  </li>
+  <li>
+    <p>Greenfield outside of startups are rare and enterprises involve legacy migration which is brittle over time</p>
+  </li>
+  <li>
+    <p>Keep processes small, week worth of bad code, microservices of node services versus a single monolithic process</p>
+  </li>
+  <li>
+    <p>Rapid, Less code – value sooner, 2x faster to deliver to java and .net</p>
+  </li>
+  <li>
+    <p>2 year +, once the problem space has been mapped out we can move to scala or go so it can scale better</p>
+  </li>
+</ul>
+
+<h2 id="enterprise-adoption-panel-ancestry-fidelity-and-paypal">Enterprise Adoption Panel (ancestry, fidelity, and paypal)</h2>
+
+<hr />
+
+<ul>
+  <li>
+    <p>At paypal – large private npm reigsry (early adopter), krakenjs can handle large number of hits framework over express, expressive more lines of README than code</p>
+  </li>
+  <li>
+    <p>Ancestry is a java and .net shop that has been converting over from monolithic microsoft model</p>
+  </li>
+  <li>
+    <p>Adoption was over time, tested in the UI space first then organically spread but not without resistance. 2x rapid delivery convinced some.</p>
+  </li>
+  <li>
+    <p>Start out small and scale out at ancestry, 5 people week/up to about 50 people out of 120</p>
+  </li>
+  <li>
+    <p>Support experience at fidelity - first team on node sometimes can get stretched out thin responding to 5 other teams regarding node questions even for well documented libraries like express or yeoman</p>
+  </li>
+  <li>
+    <p>Internal open source model at ancestry and fidelity – default public, writing code with the mindset to open souce, external open source model at paypal</p>
+  </li>
+  <li>
+    <p>Git adaoption - atlassian stash at ancestry and fidelity, github enterprise at paypal (all three companies use git).</p>
+  </li>
+  <li>
+    <p>Standardardization for documentation</p>
+  </li>
+  <li>
+    <p>Default public model in repositories (compared to default private model previously which were siloed)</p>
+  </li>
+  <li>
+    <p>Start up small and test out the problem space, go slow to figure it out and then iterate on that</p>
+  </li>
+  <li>
+    <p>Crack specific types of problems, restify library for converting SOAP</p>
+  </li>
+  <li>
+    <p>Know your domain</p>
+  </li>
+  <li>
+    <p>Engage the community</p>
+  </li>
+  <li>
+    <p>Don’t use node for everything, don’t use it for cryto</p>
+  </li>
+</ul>
+</section>
+</article>
+
+<!-- Disqus -->
+
+
+    </div>
+    <script src="/blog/js/main.js"></script>
+
+
+<footer class="site-footer">
+	<p class="text"></p>
+</footer>
+
+
+  </body>
+</html>

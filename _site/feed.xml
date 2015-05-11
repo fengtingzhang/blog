@@ -5,7 +5,284 @@
     <atom:link href="http://fengtingzhang.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://fengtingzhang.com/blog/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sun, 10 May 2015 23:20:14 -0400</pubDate>
+    <pubDate>Mon, 11 May 2015 00:09:31 -0400</pubDate>
+    
+      <item>
+        <title>Node Day 2015</title>
+        <link>http://fengtingzhang.com/blog/2015/04/28/node-day.html</link>
+        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/28/node-day.html</guid>
+        <description>&lt;h2 id=&quot;experiences-at-conde-nast&quot;&gt;Experiences at Conde Nast&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Architecture based on each teams - Epicurious, etc&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Greenfield rebuild&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jenkens for CI&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Monitoring uses New Relic (alternative data dog)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deploy (AWS CodeDeploy for zero down time deploy) – capistrano (rails) and fab are alternatives&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Microservices mappings entitlements versus authentication in nginx&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Logging – bunyan for node and logs in json, use logstash and elastic search to combine logs from microservices&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Systemd (systemd is native to centOS similar to redhat)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Puppet for configurations&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Private npm registry through nodejitsu (FTW, early adoption before npm private registry+enterprise is available)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;panel-stories-from-conde-nast-bloomberg-web-dow-jones-parent-of-wallstreet-journal-which-is-running-on-node&quot;&gt;Panel, stories from conde nast, Bloomberg Web, Dow Jones (parent of Wallstreet Journal which is running on node)&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Schism between node.js and io.js&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Date warehouse, data science and sentiment analysis in a lucene search engine?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Serverside vs clientside javascript – memory usage and debugging through new relics&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;EC6 is coming in June! Not yet adopted in Production, dev experiments in babeljs and typescript&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Bloomberg’s deployment is also private and on private infrastructure, WSJ is on AWS&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;iot-and-node-sparkio-and-microsoft&quot;&gt;IOT and node (spark.io and Microsoft)&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;8-bit+ chips are capable of running node&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Democratization of chips as they come down in cost&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Private cloud or bring your own cloud to improve security, private data&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;nearform-experiences-with-node-since-2011&quot;&gt;NearForm experiences with Node since 2011&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Since Jan 2011 the number of node modules has grown exponetially to ~140000 modules&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Isomorphic javascript&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Private repositories where developers can publish modules&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Greenfield outside of startups are rare and enterprises involve legacy migration which is brittle over time&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Keep processes small, week worth of bad code, microservices of node services versus a single monolithic process&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Rapid, Less code – value sooner, 2x faster to deliver to java and .net&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2 year +, once the problem space has been mapped out we can move to scala or go so it can scale better&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;enterprise-adoption-panel-ancestry-fidelity-and-paypal&quot;&gt;Enterprise Adoption Panel (ancestry, fidelity, and paypal)&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;At paypal – large private npm reigsry (early adopter), krakenjs can handle large number of hits framework over express, expressive more lines of README than code&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ancestry is a java and .net shop that has been converting over from monolithic microsoft model&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Adoption was over time, tested in the UI space first then organically spread but not without resistance. 2x rapid delivery convinced some.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Start out small and scale out at ancestry, 5 people week/up to about 50 people out of 120&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Support experience at fidelity - first team on node sometimes can get stretched out thin responding to 5 other teams regarding node questions even for well documented libraries like express or yeoman&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Internal open source model at ancestry and fidelity – default public, writing code with the mindset to open souce, external open source model at paypal&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Git adaoption - atlassian stash at ancestry and fidelity, github enterprise at paypal (all three companies use git).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Standardardization for documentation&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Default public model in repositories (compared to default private model previously which were siloed)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Start up small and test out the problem space, go slow to figure it out and then iterate on that&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Crack specific types of problems, restify library for converting SOAP&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Know your domain&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Engage the community&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Don’t use node for everything, don’t use it for cryto&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 28 Apr 2015 12:15:00 -0400</pubDate>
+      </item>
+    
+      <item>
+        <title>Node Day 2015</title>
+        <link>http://fengtingzhang.com/blog/2015/04/28/node-day.html</link>
+        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/28/node-day.html</guid>
+        <description>##Experiences at Condé Nast
+
+
+----------
+
+
+1.       Architecture based on each teams - Epicurious, etc
+
+2.       Greenfield rebuild
+
+3.       Jenkens for CI
+
+4.       Monitoring uses New Relic (alternative data dog)
+
+5.       Deploy (AWS CodeDeploy for zero down time deploy) – capistrano (rails) and fab are alternatives
+
+6.       Microservices mappings entitlements versus authentication in nginx
+
+7.       Logging – bunyan for node and logs in json, use logstash and elastic search to combine logs from microservices
+
+8.       Systemd (systemd is native to centOS similar to redhat)
+
+9.       Puppet for configurations
+
+10.   Private npm registry through nodejitsu (FTW, early adoption before npm private registry+enterprise is available)
+
+ 
+
+##Panel, stories from condé nast, Bloomberg Web, Dow Jones (parent of Wallstreet Journal which is running on node)
+
+
+----------
+
+
+1.       Schism between node.js and io.js
+
+2.       Date warehouse, data science and sentiment analysis in a lucene search engine?
+
+3.       Serverside vs clientside javascript – memory usage and debugging through new relics
+
+4.       EC6 is coming in June! Not yet adopted in Production, dev experiments in babeljs and typescript
+
+5.       Bloomberg’s deployment is also private and on private infrastructure, WSJ is on AWS
+
+##IOT and node (spark.io and Microsoft)
+
+
+----------
+
+
+-          8-bit+ chips are capable of running node
+
+-          Democratization of chips as they come down in cost
+
+-          Private cloud or bring your own cloud to improve security, private data
+
+ 
+##NearForm experiences with Node since 2011
+
+
+----------
+
+
+-          Since Jan 2011 the number of node modules has grown exponetially to ~140000 modules
+
+-          Isomorphic javascript
+
+-          Private repositories where developers can publish modules
+
+-          Greenfield outside of startups are rare and enterprises involve legacy migration which is brittle over time
+
+-          Keep processes small, week worth of bad code, microservices of node services versus a single monolithic process
+
+-          Rapid, Less code – value sooner, 2x faster to deliver to java and .net
+
+-          2 year +, once the problem space has been mapped out we can move to scala or go so it can scale better
+
+ 
+##Enterprise Adoption Panel (ancestry, fidelity, and paypal)
+
+
+----------
+
+
+-          At paypal – large private npm reigsry (early adopter), krakenjs can handle large number of hits framework over express, expressive more lines of README than code
+
+-          Ancestry is a java and .net shop that has been converting over from monolithic microsoft model
+
+-          Adoption was over time, tested in the UI space first then organically spread but not without resistance. 2x rapid delivery convinced some.
+
+-          Start out small and scale out at ancestry, 5 people week/up to about 50 people out of 120
+
+-          Support experience at fidelity - first team on node sometimes can get stretched out thin responding to 5 other teams regarding node questions even for well documented libraries like express or yeoman
+
+-          Internal open source model at ancestry and fidelity – default public, writing code with the mindset to open souce, external open source model at paypal
+
+-          Git adaoption - atlassian stash at ancestry and fidelity, github enterprise at paypal (all three companies use git).
+
+-          Standardardization for documentation
+
+-          Default public model in repositories (compared to default private model previously which were siloed)
+
+-          Start up small and test out the problem space, go slow to figure it out and then iterate on that
+
+-          Crack specific types of problems, restify library for converting SOAP
+
+-          Know your domain
+
+-          Engage the community
+
+-          Don’t use node for everything, don’t use it for cryto</description>
+        <pubDate>Tue, 28 Apr 2015 12:15:00 -0400</pubDate>
+      </item>
     
       <item>
         <title>Apache Mesos</title>
