@@ -5,7 +5,199 @@
     <atom:link href="http://fengtingzhang.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://fengtingzhang.com/blog/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Mon, 11 May 2015 00:09:31 -0400</pubDate>
+    <pubDate>Tue, 23 Jun 2015 22:37:13 -0400</pubDate>
+    
+      <item>
+        <title>Mesos, Marathon, and Docker</title>
+        <link>http://fengtingzhang.com/blog/2015/06/23/mesos.html</link>
+        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/06/23/mesos.html</guid>
+        <description>&lt;h2 id=&quot;how-yodel-solved-its-deployment-problems-using-mesos-and-marathon-with-docker&quot;&gt;How Yodel solved its deployment problems using Mesos and Marathon with Docker&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;goals&quot;&gt;Goals&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Enpower the developers no ops person&lt;/li&gt;
+  &lt;li&gt;Developer can set the deployment into the pipeline and go to lunch and come back&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;technologies-used&quot;&gt;Technologies used&lt;/h2&gt;
+&lt;p&gt;Some of the technology used at yodel&lt;/p&gt;
+
+&lt;h3 id=&quot;service-discovery&quot;&gt;Service Discovery&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;HA Proxy&lt;/li&gt;
+  &lt;li&gt;Qubit Bamboo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;container&quot;&gt;Container&lt;/h3&gt;
+&lt;p&gt;Docker&lt;/p&gt;
+
+&lt;h3 id=&quot;schedulerkeepalive&quot;&gt;Scheduler/keepalive&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Marathon - A Mesos scheduler and starts the process if mesos kill it&lt;/li&gt;
+  &lt;li&gt;Monitoring when processes are down and self-heal to bring up another instance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;virtual-layer&quot;&gt;Virtual layer&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Mesos&lt;/strong&gt; 
+1. Master slave topology
+2. Clustering for realms
+    * PROD mesos cluster
+    * QA mesos clsuter
+    * Staging mesos cluster
+3. Contains zookeeper&lt;/p&gt;
+
+&lt;h3 id=&quot;ci&quot;&gt;CI&lt;/h3&gt;
+&lt;p&gt;Atlassian Bamboo - CI&lt;/p&gt;
+
+&lt;h3 id=&quot;monitoring&quot;&gt;Monitoring&lt;/h3&gt;
+&lt;p&gt;New Relics&lt;/p&gt;
+
+&lt;h3 id=&quot;deploy-scripts&quot;&gt;Deploy scripts&lt;/h3&gt;
+&lt;p&gt;In house microservice called “Cerebro” - microservice in docker container deployed by marathon in mesos&lt;/p&gt;
+
+&lt;h3 id=&quot;configuration&quot;&gt;Configuration&lt;/h3&gt;
+&lt;p&gt;docker file and puppet&lt;/p&gt;
+
+&lt;h3 id=&quot;logs&quot;&gt;Logs&lt;/h3&gt;
+&lt;p&gt;syslogs (or other sensible log solution) - trade off no console log&lt;/p&gt;
+
+&lt;h3 id=&quot;scheduling&quot;&gt;Scheduling&lt;/h3&gt;
+&lt;p&gt;MPI and Hadoop schedulers&lt;/p&gt;
+
+&lt;h1 id=&quot;problems-faced-and-solutions&quot;&gt;Problems faced and solutions&lt;/h1&gt;
+
+&lt;h2 id=&quot;problem-bad-actors&quot;&gt;Problem: Bad Actors&lt;/h2&gt;
+&lt;p&gt;Some processes cause starvation&lt;/p&gt;
+
+&lt;h2 id=&quot;solution-dynamic-scalingcustomizable-services&quot;&gt;Solution: dynamic scaling/customizable services&lt;/h2&gt;
+
+&lt;h3 id=&quot;scaling&quot;&gt;Scaling&lt;/h3&gt;
+&lt;p&gt;Scales from 3 to 3000 dyanmically, through an UI for example
+  1. A process is not allowed to consume more than the resource CPU/Memory that is allocated
+  2. No starvation&lt;/p&gt;
+
+&lt;h3 id=&quot;resource-constraints&quot;&gt;Resource constraints&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;CPU (fall back to swap if set up) meso will kill and marathon will take over and startup&lt;/li&gt;
+  &lt;li&gt;Memory constraint is soft - if process is the only running on host it can consume all memory&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;problem-explicit-service-discovery&quot;&gt;Problem: explicit service discovery&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Doesn’t need to contact zookeeper discovery to figure out QA and PROD&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;solution-implicit-service-discovery&quot;&gt;Solution: implicit service discovery&lt;/h3&gt;
+&lt;p&gt;look up port 8080 and it distributes to the slaves that are 
+service-instance-1 Listening on 31003
+service-instance-2 Lisetning on 31090&lt;/p&gt;
+
+&lt;h2 id=&quot;problem-all-or-nothing-deployment-is-a-problem&quot;&gt;Problem: All or nothing deployment is a problem&lt;/h2&gt;
+&lt;p&gt;If there are problems in production you have to roll back&lt;/p&gt;
+
+&lt;h2 id=&quot;solution-canary-deployments&quot;&gt;Solution: Canary Deployments&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Canary Isolated&lt;/strong&gt;
+      - Step your toe into PROD and see if it’s working
+      - deploy to PROD tests are passing&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Canary Partial&lt;/strong&gt;
+      - Leg into PROD and see if it’s working
+      - decree 10% of the traffic, if error rollback&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Full Production&lt;/strong&gt;
+      - deploy to PROD with confidence&lt;/p&gt;
+
+&lt;h2 id=&quot;configuration-management&quot;&gt;Configuration management&lt;/h2&gt;
+&lt;p&gt;Configuration management for infrastructure and application&lt;/p&gt;
+
+&lt;h3 id=&quot;infrastructure-level&quot;&gt;Infrastructure level&lt;/h3&gt;
+&lt;p&gt;puppet for configuration to manage (ex: a system admin)
+mesos master and slave for infrastructure&lt;/p&gt;
+
+&lt;h3 id=&quot;application-level&quot;&gt;Application level&lt;/h3&gt;
+&lt;p&gt;developer configure their own docker file (ex: a java developer)&lt;/p&gt;
+
+&lt;h2 id=&quot;clean-up&quot;&gt;Clean up&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;3 newers versions brought up, mesos will tear down the old versions and taken out of rotation once marathon verifies the new versions are up and running&lt;/li&gt;
+  &lt;li&gt;deployment finished the ‘cerebro’ deamon stops watching it, new relic take over&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;deployed-outside-of-mesos-clusters&quot;&gt;Deployed outside of mesos clusters&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;databases are mapped outside of mesos&lt;/li&gt;
+  &lt;li&gt;Legacy services
+ex: using curator over zookeeper for thrift/legacy stack&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;alternatives-to-mesos&quot;&gt;Alternatives to Mesos&lt;/h2&gt;
+&lt;p&gt;CoreOS
+Fleet&lt;/p&gt;
+
+&lt;h2 id=&quot;developer-environment&quot;&gt;Developer environment&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Docker container&lt;/li&gt;
+  &lt;li&gt;No mesos in DEV but deploy the container over to mesos cluster&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;q--a&quot;&gt;Q &amp;amp; A&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Why Qubit Bamboo and HA Proxy?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;HA Proxy for canary&lt;/strong&gt;
+  - waiting for canary partial
+  - header for canary isolation&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Alternatives to Qubit Bamboo&lt;/strong&gt;
+  - Consul template instead Qubit Bamboo&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Production topology
+    &lt;ul&gt;
+      &lt;li&gt;4 Mesos slaves and 4 mesos masters&lt;/li&gt;
+      &lt;li&gt;4 machines&lt;/li&gt;
+      &lt;li&gt;20 services 3 instances each&lt;/li&gt;
+      &lt;li&gt;60 docker containers&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Chronos
+    &lt;ul&gt;
+      &lt;li&gt;being evaluated for scheduling to replace cron&lt;/li&gt;
+      &lt;li&gt;leader election is a horrible problem with shell script&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Right now only long-running services
+    &lt;ul&gt;
+      &lt;li&gt;Short running batch processes shouldn’t conflict (hadoop)
+  Constraint is resource CPU/memory&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Reliable non-flaky deployments
+    &lt;ul&gt;
+      &lt;li&gt;“Cerebro” - in house runs as a docker container through Mesos&lt;/li&gt;
+      &lt;li&gt;micro service architecture - shared state is not a thing that happens as each service has its own database&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Case study: Production process was falling over (memory issue)
+    &lt;ul&gt;
+      &lt;li&gt;Used canary isolated to continuously deploy and rollback&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;architecture&quot;&gt;Architecture&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/img/mesos1.jpg&quot; alt=&quot;Architecture 1&quot; title=&quot;Architecture 1&quot; /&gt;
+&lt;img src=&quot;/blog/img/mesos2.jpg&quot; alt=&quot;Architecture 2&quot; title=&quot;Architecture 2&quot; /&gt;
+&lt;img src=&quot;/blog/img/mesos3.jpg&quot; alt=&quot;Architecture 3&quot; title=&quot;Architecture 3&quot; /&gt;
+&lt;img src=&quot;/blog/img/mesos4.jpg&quot; alt=&quot;Architecture 4&quot; title=&quot;Architecture 4&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 23 Jun 2015 12:15:00 -0400</pubDate>
+      </item>
     
       <item>
         <title>Node Day 2015</title>
@@ -163,124 +355,6 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 28 Apr 2015 12:15:00 -0400</pubDate>
-      </item>
-    
-      <item>
-        <title>Node Day 2015</title>
-        <link>http://fengtingzhang.com/blog/2015/04/28/node-day.html</link>
-        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/28/node-day.html</guid>
-        <description>##Experiences at Condé Nast
-
-
-----------
-
-
-1.       Architecture based on each teams - Epicurious, etc
-
-2.       Greenfield rebuild
-
-3.       Jenkens for CI
-
-4.       Monitoring uses New Relic (alternative data dog)
-
-5.       Deploy (AWS CodeDeploy for zero down time deploy) – capistrano (rails) and fab are alternatives
-
-6.       Microservices mappings entitlements versus authentication in nginx
-
-7.       Logging – bunyan for node and logs in json, use logstash and elastic search to combine logs from microservices
-
-8.       Systemd (systemd is native to centOS similar to redhat)
-
-9.       Puppet for configurations
-
-10.   Private npm registry through nodejitsu (FTW, early adoption before npm private registry+enterprise is available)
-
- 
-
-##Panel, stories from condé nast, Bloomberg Web, Dow Jones (parent of Wallstreet Journal which is running on node)
-
-
-----------
-
-
-1.       Schism between node.js and io.js
-
-2.       Date warehouse, data science and sentiment analysis in a lucene search engine?
-
-3.       Serverside vs clientside javascript – memory usage and debugging through new relics
-
-4.       EC6 is coming in June! Not yet adopted in Production, dev experiments in babeljs and typescript
-
-5.       Bloomberg’s deployment is also private and on private infrastructure, WSJ is on AWS
-
-##IOT and node (spark.io and Microsoft)
-
-
-----------
-
-
--          8-bit+ chips are capable of running node
-
--          Democratization of chips as they come down in cost
-
--          Private cloud or bring your own cloud to improve security, private data
-
- 
-##NearForm experiences with Node since 2011
-
-
-----------
-
-
--          Since Jan 2011 the number of node modules has grown exponetially to ~140000 modules
-
--          Isomorphic javascript
-
--          Private repositories where developers can publish modules
-
--          Greenfield outside of startups are rare and enterprises involve legacy migration which is brittle over time
-
--          Keep processes small, week worth of bad code, microservices of node services versus a single monolithic process
-
--          Rapid, Less code – value sooner, 2x faster to deliver to java and .net
-
--          2 year +, once the problem space has been mapped out we can move to scala or go so it can scale better
-
- 
-##Enterprise Adoption Panel (ancestry, fidelity, and paypal)
-
-
-----------
-
-
--          At paypal – large private npm reigsry (early adopter), krakenjs can handle large number of hits framework over express, expressive more lines of README than code
-
--          Ancestry is a java and .net shop that has been converting over from monolithic microsoft model
-
--          Adoption was over time, tested in the UI space first then organically spread but not without resistance. 2x rapid delivery convinced some.
-
--          Start out small and scale out at ancestry, 5 people week/up to about 50 people out of 120
-
--          Support experience at fidelity - first team on node sometimes can get stretched out thin responding to 5 other teams regarding node questions even for well documented libraries like express or yeoman
-
--          Internal open source model at ancestry and fidelity – default public, writing code with the mindset to open souce, external open source model at paypal
-
--          Git adaoption - atlassian stash at ancestry and fidelity, github enterprise at paypal (all three companies use git).
-
--          Standardardization for documentation
-
--          Default public model in repositories (compared to default private model previously which were siloed)
-
--          Start up small and test out the problem space, go slow to figure it out and then iterate on that
-
--          Crack specific types of problems, restify library for converting SOAP
-
--          Know your domain
-
--          Engage the community
-
--          Don’t use node for everything, don’t use it for cryto</description>
         <pubDate>Tue, 28 Apr 2015 12:15:00 -0400</pubDate>
       </item>
     
