@@ -2,136 +2,141 @@
 
 <hr />
 
-<h1 id="goals">Goals</h1>
-<p>Enpower the developers no ops person
-Developer can set the deployment into the pipeline and go to lunch and come back</p>
+<h2 id="goals">Goals</h2>
+<ul>
+  <li>Enpower the developers no ops person</li>
+  <li>Developer can set the deployment into the pipeline and go to lunch and come back</li>
+</ul>
 
-<h1 id="technologies-used">Technologies used</h1>
+<h2 id="technologies-used">Technologies used</h2>
 <p>Some of the technology used at yodel</p>
 
-<h2 id="service-discovery">Service Discovery</h2>
-<p>HA Proxy
-Qubit Bamboo</p>
+<h3 id="service-discovery">Service Discovery</h3>
+<ul>
+  <li>HA Proxy</li>
+  <li>Qubit Bamboo</li>
+</ul>
 
-<h2 id="container">Container</h2>
+<h3 id="container">Container</h3>
 <p>Docker</p>
 
-<h2 id="schedulerkeepalive">Scheduler/keepalive</h2>
-<p>Marathon - A Mesos scheduler and starts the process if mesos kill it
-Monitoring when processes are down and self-heal to bring up another instance</p>
+<h3 id="schedulerkeepalive">Scheduler/keepalive</h3>
+<ul>
+  <li>Marathon - A Mesos scheduler and starts the process if mesos kill it</li>
+  <li>Monitoring when processes are down and self-heal to bring up another instance</li>
+</ul>
 
-<h2 id="virtual-layer">Virtual layer</h2>
-<p>Mesos 
+<h3 id="virtual-layer">Virtual layer</h3>
+<p>#### Mesos #### 
 1. Master slave topology
 2. Clustering for realms
-* PROD mesos cluster
-* QA mesos clsuter
-* Staging mesos cluster</p>
+    * PROD mesos cluster
+    * QA mesos clsuter
+    * Staging mesos cluster
+3. Contains zookeeper</p>
 
-<h2 id="ci">CI</h2>
+<h3 id="ci">CI</h3>
 <p>Atlassian Bamboo - CI</p>
 
-<h2 id="monitoring">Monitoring</h2>
+<h3 id="monitoring">Monitoring</h3>
 <p>New Relics</p>
 
-<h2 id="deploy-scripts">Deploy scripts</h2>
+<h3 id="deploy-scripts">Deploy scripts</h3>
 <p>In house microservice called “Cerebro” - microservice in docker container deployed by marathon in mesos</p>
 
-<h2 id="configuration">Configuration</h2>
+<h3 id="configuration">Configuration</h3>
 <p>docker file and puppet</p>
 
-<h2 id="logs">Logs</h2>
+<h3 id="logs">Logs</h3>
 <p>syslogs (or other sensible log solution) - trade off no console log</p>
 
-<h1 id="problem-bad-actors">Problem: Bad Actors</h1>
+<h3 id="scheduling">Scheduling</h3>
+<p>MPI and Hadoop schedulers</p>
+
+<h1 id="problems-faced-and-solutions">Problems faced and solutions</h1>
+
+<h2 id="problem-bad-actors">Problem: Bad Actors</h2>
 <p>Some processes cause starvation</p>
 
-<h1 id="solution-dynamic-scalingcustomizable-services">Solution: dynamic scaling/customizable services</h1>
-<p>Scales from 3 to 3000 dyanmically, through an UI for example
+<h2 id="solution-dynamic-scalingcustomizable-services">Solution: dynamic scaling/customizable services</h2>
+<p>### Scaling
+Scales from 3 to 3000 dyanmically, through an UI for example
 1. A process is not allowed to consume more than the resource CPU/Memory that is allocated
 2. No starvation</p>
 
-<h2 id="resource-constraints">Resource constraints</h2>
+<h3 id="resource-constraints">Resource constraints</h3>
 <ol>
   <li>CPU (fall back to swap if set up) meso will kill and marathon will take over and startup</li>
   <li>Memory constraint is soft - if process is the only running on host it can consume all memory</li>
 </ol>
 
-<h1 id="problem-explicit-service-discovery">Problem: explicit service discovery</h1>
+<h3 id="problem-explicit-service-discovery">Problem: explicit service discovery</h3>
 <ol>
   <li>Doesn’t need to contact zookeeper discovery to figure out QA and PROD</li>
 </ol>
 
-<h1 id="solution-implicit-service-discovery">Solution: implicit service discovery</h1>
+<h3 id="solution-implicit-service-discovery">Solution: implicit service discovery</h3>
 <p>look up port 8080 and it distributes to the slaves that are 
 service-instance-1 Listening on 31003
 service-instance-2 Lisetning on 31090</p>
 
-<h1 id="problem-all-or-nothing-deployment-is-a-problem">Problem: All or nothing deployment is a problem</h1>
+<h2 id="problem-all-or-nothing-deployment-is-a-problem">Problem: All or nothing deployment is a problem</h2>
 <p>If there are problems in production you have to roll back</p>
 
-<h1 id="solution-canary-deployments">Solution: Canary Deployments</h1>
-<p>## Canary Isolated
+<h2 id="solution-canary-deployments">Solution: Canary Deployments</h2>
+<p>### Canary Isolated
 * Step your toe into PROD and see if it’s working
 * deploy to PROD tests are passing</p>
 
-<h2 id="canary-partial">Canary Partial</h2>
+<h3 id="canary-partial">Canary Partial</h3>
 <ul>
   <li>Leg into PROD and see if it’s working</li>
   <li>decree 10% of the traffic, if error rollback</li>
 </ul>
 
-<h2 id="full-production">Full Production</h2>
+<h3 id="full-production">Full Production</h3>
 <ul>
   <li>deploy to PROD with confidence</li>
 </ul>
 
-<h1 id="reliable-non-flaky-deployments">Reliable non-flaky deployments</h1>
-<ul>
-  <li>“Cerebro” - in house runs as a docker container through Mesos</li>
-  <li>micro service architecture - shared state is not a thing that happens as each service has its own database</li>
-</ul>
-
-<p>Case study: Production process was falling over (memory issue)
-Used canary isolated to continuously deploy and rollback</p>
-
-<h1 id="developer-environment">Developer environment</h1>
-<ul>
-  <li>Docker container</li>
-  <li>No mesos in DEV but deploy the container over to mesos cluster</li>
-</ul>
-
-<h1 id="configuration-management">Configuration management</h1>
+<h2 id="configuration-management">Configuration management</h2>
 <p>Configuration management for infrastructure and application</p>
 
-<h2 id="infrastructure-level">Infrastructure level</h2>
+<h3 id="infrastructure-level">Infrastructure level</h3>
 <p>puppet for configuration to manage (ex: a system admin)
 mesos master and slave for infrastructure</p>
 
-<h2 id="application-level">Application level</h2>
+<h3 id="application-level">Application level</h3>
 <p>developer configure their own docker file (ex: a java developer)</p>
 
-<h1 id="clean-up">Clean up</h1>
+<h2 id="clean-up">Clean up</h2>
 <ol>
   <li>3 newers versions brought up, mesos will tear down the old versions and taken out of rotation once marathon verifies the new versions are up and running</li>
   <li>deployment finished the ‘cerebro’ deamon stops watching it, new relic take over</li>
 </ol>
 
-<h1 id="deployed-outside-of-mesos-clusters">Deployed outside of mesos clusters</h1>
+<h2 id="deployed-outside-of-mesos-clusters">Deployed outside of mesos clusters</h2>
 <ol>
   <li>databases are mapped outside of mesos</li>
   <li>Legacy services
 ex: using curator over zookeeper for thrift/legacy stack</li>
 </ol>
 
-<h1 id="alternatives-to-mesos">Alternatives to Mesos</h1>
+<h2 id="alternatives-to-mesos">Alternatives to Mesos</h2>
 <p>CoreOS
 Fleet</p>
 
-<h1 id="q--a">Q &amp; A</h1>
+<h2 id="developer-environment">Developer environment</h2>
+<ul>
+  <li>Docker container</li>
+  <li>No mesos in DEV but deploy the container over to mesos cluster</li>
+</ul>
+
+<h2 id="q--a">Q &amp; A</h2>
+
 <ol>
   <li>Why Qubit Bamboo and HA Proxy?
-## HA Proxy for canary
+### HA Proxy for canary
     <ul>
       <li>waiting for canary partial</li>
       <li>header for canary isolation</li>
@@ -139,6 +144,7 @@ Fleet</p>
   </li>
 </ol>
 
+<h3 id="alternatives-to-qubit-bamboo">Alternatives to Qubit Bamboo</h3>
 <p>Consul template instead Qubit Bamboo</p>
 
 <ol>
@@ -156,7 +162,17 @@ Fleet</p>
       <li>leader election is a horrible problem with shell script</li>
     </ul>
   </li>
-  <li>Right now only long-running services
+  <li>
+    <p>Right now only long-running services
 Short running batch processes shouldn’t conflict (hadoop)
-Constraint is resource CPU/memory</li>
+Constraint is resource CPU/memory</p>
+  </li>
+  <li>Reliable non-flaky deployments
+    <ul>
+      <li>“Cerebro” - in house runs as a docker container through Mesos</li>
+      <li>micro service architecture - shared state is not a thing that happens as each service has its own database</li>
+    </ul>
+  </li>
+  <li>Case study: Production process was falling over (memory issue)
+Used canary isolated to continuously deploy and rollback</li>
 </ol>
