@@ -1,115 +1,139 @@
-<h2 id="features-of-systemd">Features of systemd</h2>
+<h2 id="the-controversial-systemd">The controversial systemd</h2>
 
 <hr />
 
-<p>Recently went to a talk given at Facebook by Lennart Poettering. Systemd will be replacing sysvinit in the upcoming REL 7 distribution in Red Hat Linux, the Linux operating system that is commonly used in some enterprises. What interests me are the container features that it provides as an alternative to the docker style container system. </p>
+<p>I recently went to a talk given at Facebook by Lennart Poettering. Systemd will be replacing sysvinit in the upcoming REL 7 distribution in Red Hat Linux, the Linux operating system that is commonly used in some enterprises. What interests me are the container features that it provides as an alternative to the docker style container system. </p>
 
-<p>Started in 2009
-Before systemd
-sysvinit
-- no dependency management
-- code is not very clean</p>
+<h2 id="before-systemd">Before Systemd</h2>
+<ul>
+  <li>Systemd was started in 2009, before 2009 there were</li>
+</ul>
 
-<p>Upstart
-- code is clean
-- glue
-- defining a lot of events and glue them together
-- maximize what gets started at system startup</p>
+<h3 id="sysvinit">Sysvinit</h3>
+<ul>
+  <li>no dependency management</li>
+  <li>code is not very clean</li>
+</ul>
 
-<p>Instead of admin explicitly defining what happens when, up to the system to figure out what to start
-- job of the developer/admin to define dependencies and job of the system/computer to take care of the rest. Philosophy is that the computer to solve the algorithm for you.</p>
+<h3 id="upstart">Upstart</h3>
+<ul>
+  <li>code is clean</li>
+  <li>glue</li>
+  <li>defining a lot of events and glue them together</li>
+  <li>maximize what gets started at system startup</li>
+</ul>
 
-<p>Inspirations from
-1. Launchd
-Socket activation
-Inetd</p>
+<h3 id="systemd">Systemd</h3>
+<ul>
+  <li>Instead of admin explicitly defining what happens when, up to the system to figure out what to start</li>
+  <li>job of the developer/admin to define dependencies and job of the system/computer to take care of the rest. Philosophy is that the computer to solve the algorithm for you.</li>
+</ul>
 
+<h3 id="inspirations-from">Inspirations from</h3>
 <ol>
+  <li>Launchd
+    <ul>
+      <li>Socket activation</li>
+      <li>Inetd</li>
+    </ul>
+  </li>
   <li>SMF
-Solaris management framework</li>
+    <ul>
+      <li>Solaris management framework</li>
+    </ul>
+  </li>
 </ol>
 
-<p>Features of Systemd
-1. Modular
-An turn off most except 3</p>
+<h3 id="features-of-systemd">Features of Systemd</h3>
+<ol>
+  <li>Modular
+    <ul>
+      <li>Can turn off most features except 3</li>
+    </ul>
+  </li>
+</ol>
 
-<p>Basic concepts</p>
+<h4 id="basic-concepts">Basic concepts</h4>
 
 <ol>
   <li>
     <p>Everything is a unit
-Foo.service
-Bar.device
-Waldo.target
-Another.socket
-Something.automount</p>
+  Foo.service
+  Bar.device
+  Waldo.target
+  Another.socket
+  Something.automount</p>
   </li>
   <li>
     <p>Dependencies (-&gt; requires)
-Multi-user.target -&gt; http.service -&gt; basic.target -&gt; local-fs.target -&gt; home.mount -&gt; Systemd-fsck@dev-sda6.service -&gt; dev-sda7.device</p>
+  Multi-user.target -&gt; http.service -&gt; basic.target -&gt; local-fs.target -&gt; home.mount -&gt; Systemd-fsck@dev-sda6.service -&gt; dev-sda7.device</p>
   </li>
 </ol>
 
-<p>Run level vs linear dependency
-Descriptive targets (you can define and name the targets)
-Start as a little as necessary, parallel as much as possible.</p>
+<ul>
+  <li>Run level vs linear dependency</li>
+  <li>Descriptive targets (you can define and name the targets)</li>
+  <li>Start as a little as necessary, parallel as much as possible.</li>
+</ul>
 
-<p>This example above is a dependency check for a web (http service).</p>
-
-<p>System graph to see dependencies</p>
+<p>This example above is a dependency check for a web (http service). You can use system graph to see dependencies</p>
 
 <p>Example of parent and child process double forking (the classic example)
-- example if Apache needs MySQL to be started first
-systemd tracks processes using the Linux kernel’s cgroups subsystem instead of by using process identifiers (PIDs); thus, daemons cannot “escape” systemd, not even by double-forking.</p>
+  + example if Apache needs MySQL to be started first
+  systemd tracks processes using the Linux kernel’s cgroups subsystem instead of by using process identifiers (PIDs); thus, daemons cannot “escape” systemd, not even by double-forking.</p>
 
 <p>Starting a service at service level 3</p>
 
-<p>Systemctl stop service
-Systemctl restart
-Systemctl status
-- will show you the entire tree
-- how long ago was the service started
-Systemctl show
-- shows status for processes</p>
+<h4 id="systemd-family">Systemd family</h4>
+<p>Systemctl stop service</p>
+
+<p>Systemctl restart</p>
+
+<p>Systemctl status
+  + will show you the entire tree
+  + how long ago was the service started</p>
+
+<p>Systemctl show
+  + shows status for processes</p>
 
 <p>Systemctl cat (don’t have to go to the directory file/folder)
-Systemctl edit - tell MySQL to change the cpu to use</p>
+  Systemctl edit - tell MySQL to change the cpu to use</p>
 
 <p>More daemons
-Systemd-udevd</p>
+  Systemd-udevd</p>
 
 <p>Systemd-logind
-Systemd-journald
-- admin can </p>
+  Systemd-journald
+  + admin can </p>
 
 <p>Systemd-networkd
-- network manager
-- match to which configuration does his network file match
-- Intel uses it to do router configurations for example
-Uplink and downlink management
-Networks are fully hotswappable
-- does not do wifi</p>
+  + network manager
+  + match to which configuration does his network file match
+  + Intel uses it to do router configurations for example
+  Uplink and downlink management
+  Networks are fully hotswappable
+  + does not do wifi</p>
 
 <p>Systemd-resolved
-- DNS on red hat vs DNS on your local home
-- if we have information about queries then we won’t query all that we know.</p>
+  + DNS on red hat vs DNS on your local home
+  + if we have information about queries then we won’t query all that we know.</p>
 
 <p>Systemd-timesyncd
-- syncs the clock
-- when the system comes up if the clock comes up empty (ex: on raspberry pi) the time stamp might not be monotonic
--recommended over full ntp server if http is not needed</p>
+  + syncs the clock
+  + when the system comes up if the clock comes up empty (ex: on raspberry pi) the time stamp might not be monotonic
+  -recommended over full ntp server if http is not needed</p>
 
 <p>Systemd-locald
-Systemd-hostnamed</p>
+  Systemd-hostnamed</p>
 
 <p>Others for bootup
-Systemd-tmpfiles
-- setup up sync remove and setup temp/files at boot time</p>
+  Systemd-tmpfiles
+  + setup up sync remove and setup temp/files at boot time</p>
 
 <p>Systemd-sysusers
-- bootup a system with just the users around
-- will not create etc and var until necessary
-- especially useful for container based systems that just only need users, where most container information is stored in a MySQL database</p>
+  + bootup a system with just the users around
+  + will not create etc and var until necessary
+  + especially useful for container based systems that just only need users, where most container information is stored in a MySQL database</p>
 
 <ul>
   <li>useful for rpm also</li>
@@ -118,113 +142,124 @@ Systemd-tmpfiles
 <p>System-module-load</p>
 
 <p>Systemd-binfmt
-Format binaries such as Java</p>
+  Format binaries such as Java</p>
 
 <p>Systemd-backlight
-Manages background lighting actors reboot</p>
+  Manages background lighting actors reboot</p>
 
 <p>Systemd-random-seed
-Saves randomness seed across reboot</p>
+  Saves randomness seed across reboot</p>
 
 <p>Journalctl
-Log error, really useful, time zone correctly - unlike syslog, or chroot which is a steam</p>
+  Log error, really useful, time zone correctly - unlike syslog, or chroot which is a steam</p>
 
 <p>Systemctl</p>
 
 <p>Loginctl
-Show session
-Show user log</p>
+  Show session
+  Show user log</p>
 
 <p>Machinectl
-Useful for containers</p>
+  Useful for containers</p>
 
 <p>Coredumpctl
-Collects core dumps
-Ex: coredumpctl gdb
-If used this way every coredump is logged</p>
+  Collects core dumps
+  Ex: coredumpctl gdb
+  If used this way every coredump is logged</p>
 
 <p>Busctl
-What interfaces methods and dbus messages each message offer</p>
+  What interfaces methods and dbus messages each message offer</p>
 
 <p>Systemd-nspawn
-- container runs over this (docker has its own implementation), rkt is built on it
-- simple
-- spawn it to a directory and start it up
-- like qemu-Kvm but for containers</p>
+  + container runs over this (docker has its own implementation), rkt is built on it
+  + simple
+  + spawn it to a directory and start it up
+  + like qemu-Kvm but for containers</p>
 
 <p>Systemd-machined
-- rest of the system knows about what a container is
-- nspawn will register
-- place to register containers (don’t emulate Hardware but share kernel) and VM (emulate hardware)
-- every container registered with machined will get host name resolutions
-http://www.freedesktop.org/wiki/Software/systemd/machined/
-- dash M flag
-- machinectl status
-- like Unix ps command allows state of container</p>
+  + rest of the system knows about what a container is
+  + nspawn will register
+  + place to register containers (don’t emulate Hardware but share kernel) and VM (emulate hardware)
+  + every container registered with machined will get host name resolutions
+  http://www.freedesktop.org/wiki/Software/systemd/machined/
+  + dash M flag
+  + machinectl status
+  + like Unix ps command allows state of container</p>
 
 <p>Via machined
-Ps
-Systemctl -M
-In this container very thing is okay or 5 failed
-Loginctl -M who is logged in within this container
-Systemctl list-containers</p>
+  Ps
+  Systemctl -M
+  In this container very thing is okay or 5 failed
+  Loginctl -M who is logged in within this container
+  Systemctl list-containers</p>
 
 <p>Container
-Nspawn</p>
+  Nspawn</p>
 
 <p>VM
-Kvm</p>
+  Kvm</p>
 
 <p>Systemd-import
-Uncompressed/unzip and then call nspawn
-Add more containers (and VMs) to your local system</p>
+  Uncompressed/unzip and then call nspawn
+  Add more containers (and VMs) to your local system</p>
 
 <p>Nspawn va docker
-Docker’s philosophy
-- micro service within each docker</p>
+  Docker’s philosophy
+  + micro service within each docker</p>
 
 <p>Systemd
-- difference between systemd and normal container should be minimal
-More integrated isolation
-Recursively entering into the docker is annoying
-Journalctl example can interleave all service logs into one log stream</p>
+  + difference between systemd and normal container should be minimal
+  More integrated isolation
+  Recursively entering into the docker is annoying
+  Journalctl example can interleave all service logs into one log stream</p>
 
-<p>Summary
-See image</p>
+<h2 id="summary">Summary</h2>
+<p>See image</p>
 
-<p>Q&amp;A
-1 how do you deal with trolls
-Cost of open source</p>
-
-<p>2 tools are tightly bundled
-- networkd makes assumptions about how the system is run
-/var
-Assumptions that certain mounts and libraries exist
-Vendor for the operation system should integrate for you
-- it doesn’t run on FreeBSD, Solaris SMF is not inherently portable either. Making it portable is a burden and it’s not a priority for Debian.
-- benefits code is more minimal.</p>
+<h2 id="qa">Q&amp;A</h2>
+<ol>
+  <li>how do you deal with trolls
+    <ul>
+      <li>Cost of open source</li>
+    </ul>
+  </li>
+  <li>tools are tightly bundled
+    <ul>
+      <li>networkd makes assumptions about how the system is run
+  /var
+  Assumptions that certain mounts and libraries exist
+  Vendor for the operation system should integrate for you</li>
+      <li>it doesn’t run on FreeBSD, Solaris SMF is not inherently portable either. Making it portable is a burden and it’s not a priority for Debian.</li>
+      <li>benefits code is more minimal.</li>
+    </ul>
+  </li>
+</ol>
 
 <p>If you buy rel 7 (red hat) you should get systemd preconfigured</p>
 
 <p>Nspawn now works on non systemd systems now but it’s not officially supported.</p>
 
-<p>Inotify fix request - reload file from disk every 10 minutes.
-- Notify sync
-- Unix doesn’t have a transactional file system.
-- Snapshot from dbus on disk is non trivial</p>
-
-<p>Opinionated
+<ol>
+  <li>Inotify fix request - reload file from disk every 10 minutes.
+    <ul>
+      <li>Notify sync</li>
+      <li>Unix doesn’t have a transactional file system.</li>
+      <li>Snapshot from dbus on disk is non trivial</li>
+    </ul>
+  </li>
+  <li>
+    <p>Opinionated
 Syslog flaws, journal log say the earliest and everything is logged
 Consolek replaced by logind</p>
-
-<p>Journal-remote
-Journal over http protocol., understands ssl</p>
-
-<ul>
-  <li>Export to handle coredump (binary) plus json</li>
-  <li>provides both push and pull based logging</li>
-  <li>pull based in at times useful</li>
-</ul>
-
-<p>Claims only 99% compatibility with old style fs
-Not sysvinit 100% compatibility</p>
+  </li>
+  <li>Journal-remote
+Journal over http protocol., understands ssl
+    <ul>
+      <li>Export to handle coredump (binary) plus json</li>
+      <li>provides both push and pull based logging</li>
+      <li>pull based in at times useful</li>
+    </ul>
+  </li>
+  <li>Claims only 99% compatibility with old style fs
+Not sysvinit 100% compatibility</li>
+</ol>
