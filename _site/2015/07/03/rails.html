@@ -2,8 +2,8 @@
 <html class="no-js">
   <head>
 	<meta charset="utf-8">
-	<title>Rails install on OSX | Feng Ting's Blog</title>
-	<meta name="description" content="Great Rails install instructions">
+	<title>Rails resources on OSX | Feng Ting's Blog</title>
+	<meta name="description" content="Great Rails Resources">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-Frame-Options" content="sameorigin">
 
@@ -139,17 +139,34 @@
     <div class="content">
       <article >
   <header style="background-image: url('/blog/')">
-    <h1 class="title">Rails install on OSX</h1>
+    <h1 class="title">Rails resources on OSX</h1>
     <p class="meta">
     July 3, 2015
      - Feng Ting Zhang
     </p>
   </header>
-  <section class="post-content"><h2 id="great-rails-install-instructions">Great Rails install instructions</h2>
+  <section class="post-content"><h2 id="great-rails-resources">Great Rails Resources</h2>
 
 <hr />
 
-<p>Really great write up on rails install using brew <a href="http://guides.railsgirls.com/install/#setup-for-os-x">Rails Install OS X</a></p>
+<p>My job doesn’t really involve ruby, and I’ve been wanting to give rails a whirl for a while. Thought I’d take the July 4th weekend and try it and jot down resources I’ve come across.</p>
+
+<p>Installation:
+Really great write up on rails install using brew <a href="http://guides.railsgirls.com/install/#setup-for-os-x">Rails Install OS X</a></p>
+
+<p>Deployment:
+Heroku is the way to go</p>
+
+<p>Gotchas:
+I did have to upgrade my current ruby and rails installation to be compatible with the example app on heroku
+<code>
+  sudo gem update --system
+</code></p>
+
+<p>Also, it’s nice to periodically run clean
+<code>
+sudo bundle clean
+</code></p>
 </section>
 </article>
 

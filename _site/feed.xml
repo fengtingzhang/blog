@@ -5,17 +5,34 @@
     <atom:link href="http://fengtingzhang.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://fengtingzhang.com/blog/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Fri, 03 Jul 2015 14:35:54 -0400</pubDate>
+    <pubDate>Fri, 03 Jul 2015 14:45:55 -0400</pubDate>
     
       <item>
-        <title>Rails install on OSX</title>
+        <title>Rails resources on OSX</title>
         <link>http://fengtingzhang.com/blog/2015/07/03/rails.html</link>
         <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/07/03/rails.html</guid>
-        <description>&lt;h2 id=&quot;great-rails-install-instructions&quot;&gt;Great Rails install instructions&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;great-rails-resources&quot;&gt;Great Rails Resources&lt;/h2&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;Really great write up on rails install using brew &lt;a href=&quot;http://guides.railsgirls.com/install/#setup-for-os-x&quot;&gt;Rails Install OS X&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;My job doesn’t really involve ruby, and I’ve been wanting to give rails a whirl for a while. Thought I’d take the July 4th weekend and try it and jot down resources I’ve come across.&lt;/p&gt;
+
+&lt;p&gt;Installation:
+Really great write up on rails install using brew &lt;a href=&quot;http://guides.railsgirls.com/install/#setup-for-os-x&quot;&gt;Rails Install OS X&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Deployment:
+Heroku is the way to go&lt;/p&gt;
+
+&lt;p&gt;Gotchas:
+I did have to upgrade my current ruby and rails installation to be compatible with the example app on heroku
+&lt;code&gt;
+  sudo gem update --system
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, it’s nice to periodically run clean
+&lt;code&gt;
+sudo bundle clean
+&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 03 Jul 2015 09:15:00 -0700</pubDate>
       </item>
