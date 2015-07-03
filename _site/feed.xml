@@ -5,7 +5,293 @@
     <atom:link href="http://fengtingzhang.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://fengtingzhang.com/blog/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Tue, 23 Jun 2015 22:37:13 -0400</pubDate>
+    <pubDate>Fri, 03 Jul 2015 14:35:54 -0400</pubDate>
+    
+      <item>
+        <title>Rails install on OSX</title>
+        <link>http://fengtingzhang.com/blog/2015/07/03/rails.html</link>
+        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/07/03/rails.html</guid>
+        <description>&lt;h2 id=&quot;great-rails-install-instructions&quot;&gt;Great Rails install instructions&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Really great write up on rails install using brew &lt;a href=&quot;http://guides.railsgirls.com/install/#setup-for-os-x&quot;&gt;Rails Install OS X&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Jul 2015 09:15:00 -0700</pubDate>
+      </item>
+    
+      <item>
+        <title>Systemd</title>
+        <link>http://fengtingzhang.com/blog/2015/06/29/systemd.html</link>
+        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/06/29/systemd.html</guid>
+        <description>&lt;h2 id=&quot;the-controversial-systemd&quot;&gt;The controversial systemd&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I recently went to a talk given at Facebook by Lennart Poettering. Systemd will be replacing sysvinit in the upcoming REL 7 distribution in Red Hat Linux, the Linux operating system that is commonly used in some enterprises. What interests me are the container features that it provides as an alternative to the docker style container system. &lt;/p&gt;
+
+&lt;h2 id=&quot;before-systemd&quot;&gt;Before Systemd&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Systemd was started in 2009, before 2009 there were&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;sysvinit&quot;&gt;Sysvinit&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;no dependency management&lt;/li&gt;
+  &lt;li&gt;code is not very clean&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;upstart&quot;&gt;Upstart&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;code is clean&lt;/li&gt;
+  &lt;li&gt;glue&lt;/li&gt;
+  &lt;li&gt;defining a lot of events and glue them together&lt;/li&gt;
+  &lt;li&gt;maximize what gets started at system startup&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;systemd&quot;&gt;Systemd&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Instead of admin explicitly defining what happens when, up to the system to figure out what to start&lt;/li&gt;
+  &lt;li&gt;job of the developer/admin to define dependencies and job of the system/computer to take care of the rest. Philosophy is that the computer to solve the algorithm for you.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;inspirations-from&quot;&gt;Inspirations from&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Launchd
+    &lt;ul&gt;
+      &lt;li&gt;Socket activation&lt;/li&gt;
+      &lt;li&gt;Inetd&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SMF
+    &lt;ul&gt;
+      &lt;li&gt;Solaris management framework&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;features-of-systemd&quot;&gt;Features of Systemd&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Modular
+    &lt;ul&gt;
+      &lt;li&gt;Can turn off most features except 3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;basic-concepts&quot;&gt;Basic concepts&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Everything is a unit
+  Foo.service
+  Bar.device
+  Waldo.target
+  Another.socket
+  Something.automount&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Dependencies (-&amp;gt; requires)
+  Multi-user.target -&amp;gt; http.service -&amp;gt; basic.target -&amp;gt; local-fs.target -&amp;gt; home.mount -&amp;gt; Systemd-fsck@dev-sda6.service -&amp;gt; dev-sda7.device&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Run level vs linear dependency&lt;/li&gt;
+  &lt;li&gt;Descriptive targets (you can define and name the targets)&lt;/li&gt;
+  &lt;li&gt;Start as a little as necessary, parallel as much as possible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This example above is a dependency check for a web (http service). You can use system graph to see dependencies&lt;/p&gt;
+
+&lt;p&gt;Example of parent and child process double forking (the classic example)
+  + example if Apache needs MySQL to be started first
+  systemd tracks processes using the Linux kernel’s cgroups subsystem instead of by using process identifiers (PIDs); thus, daemons cannot “escape” systemd, not even by double-forking.&lt;/p&gt;
+
+&lt;p&gt;Starting a service at service level 3&lt;/p&gt;
+
+&lt;h4 id=&quot;systemd-family&quot;&gt;Systemd family&lt;/h4&gt;
+&lt;p&gt;Systemctl stop service&lt;/p&gt;
+
+&lt;p&gt;Systemctl restart&lt;/p&gt;
+
+&lt;p&gt;Systemctl status
+  + will show you the entire tree
+  + how long ago was the service started&lt;/p&gt;
+
+&lt;p&gt;Systemctl show
+  + shows status for processes&lt;/p&gt;
+
+&lt;p&gt;Systemctl cat (don’t have to go to the directory file/folder)
+  Systemctl edit - tell MySQL to change the cpu to use&lt;/p&gt;
+
+&lt;p&gt;More daemons
+  Systemd-udevd&lt;/p&gt;
+
+&lt;p&gt;Systemd-logind
+  Systemd-journald
+  + admin can &lt;/p&gt;
+
+&lt;p&gt;Systemd-networkd
+  + network manager
+  + match to which configuration does his network file match
+  + Intel uses it to do router configurations for example
+  Uplink and downlink management
+  Networks are fully hotswappable
+  + does not do wifi&lt;/p&gt;
+
+&lt;p&gt;Systemd-resolved
+  + DNS on red hat vs DNS on your local home
+  + if we have information about queries then we won’t query all that we know.&lt;/p&gt;
+
+&lt;p&gt;Systemd-timesyncd
+  + syncs the clock
+  + when the system comes up if the clock comes up empty (ex: on raspberry pi) the time stamp might not be monotonic
+  -recommended over full ntp server if http is not needed&lt;/p&gt;
+
+&lt;p&gt;Systemd-locald
+  Systemd-hostnamed&lt;/p&gt;
+
+&lt;p&gt;Others for bootup
+  Systemd-tmpfiles
+  + setup up sync remove and setup temp/files at boot time&lt;/p&gt;
+
+&lt;p&gt;Systemd-sysusers
+  + bootup a system with just the users around
+  + will not create etc and var until necessary
+  + especially useful for container based systems that just only need users, where most container information is stored in a MySQL database&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;useful for rpm also&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;System-module-load&lt;/p&gt;
+
+&lt;p&gt;Systemd-binfmt
+  Format binaries such as Java&lt;/p&gt;
+
+&lt;p&gt;Systemd-backlight
+  Manages background lighting actors reboot&lt;/p&gt;
+
+&lt;p&gt;Systemd-random-seed
+  Saves randomness seed across reboot&lt;/p&gt;
+
+&lt;p&gt;Journalctl
+  Log error, really useful, time zone correctly - unlike syslog, or chroot which is a steam&lt;/p&gt;
+
+&lt;p&gt;Systemctl&lt;/p&gt;
+
+&lt;p&gt;Loginctl
+  Show session
+  Show user log&lt;/p&gt;
+
+&lt;p&gt;Machinectl
+  Useful for containers&lt;/p&gt;
+
+&lt;p&gt;Coredumpctl
+  Collects core dumps
+  Ex: coredumpctl gdb
+  If used this way every coredump is logged&lt;/p&gt;
+
+&lt;p&gt;Busctl
+  What interfaces methods and dbus messages each message offer&lt;/p&gt;
+
+&lt;p&gt;Systemd-nspawn
+  + container runs over this (docker has its own implementation), rkt is built on it
+  + simple
+  + spawn it to a directory and start it up
+  + like qemu-Kvm but for containers&lt;/p&gt;
+
+&lt;p&gt;Systemd-machined
+  + rest of the system knows about what a container is
+  + nspawn will register
+  + place to register containers (don’t emulate Hardware but share kernel) and VM (emulate hardware)
+  + every container registered with machined will get host name resolutions
+  http://www.freedesktop.org/wiki/Software/systemd/machined/
+  + dash M flag
+  + machinectl status
+  + like Unix ps command allows state of container&lt;/p&gt;
+
+&lt;p&gt;Via machined
+  Ps
+  Systemctl -M
+  In this container very thing is okay or 5 failed
+  Loginctl -M who is logged in within this container
+  Systemctl list-containers&lt;/p&gt;
+
+&lt;p&gt;Container
+  Nspawn&lt;/p&gt;
+
+&lt;p&gt;VM
+  Kvm&lt;/p&gt;
+
+&lt;p&gt;Systemd-import
+  Uncompressed/unzip and then call nspawn
+  Add more containers (and VMs) to your local system&lt;/p&gt;
+
+&lt;p&gt;Nspawn va docker
+  Docker’s philosophy
+  + micro service within each docker&lt;/p&gt;
+
+&lt;p&gt;Systemd
+  + difference between systemd and normal container should be minimal
+  More integrated isolation
+  Recursively entering into the docker is annoying
+  Journalctl example can interleave all service logs into one log stream&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;See image&lt;/p&gt;
+
+&lt;h2 id=&quot;qa&quot;&gt;Q&amp;amp;A&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;how do you deal with trolls
+    &lt;ul&gt;
+      &lt;li&gt;Cost of open source&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;tools are tightly bundled
+    &lt;ul&gt;
+      &lt;li&gt;networkd makes assumptions about how the system is run
+  /var
+  Assumptions that certain mounts and libraries exist
+  Vendor for the operation system should integrate for you&lt;/li&gt;
+      &lt;li&gt;it doesn’t run on FreeBSD, Solaris SMF is not inherently portable either. Making it portable is a burden and it’s not a priority for Debian.&lt;/li&gt;
+      &lt;li&gt;benefits code is more minimal.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you buy rel 7 (red hat) you should get systemd preconfigured&lt;/p&gt;
+
+&lt;p&gt;Nspawn now works on non systemd systems now but it’s not officially supported.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Inotify fix request - reload file from disk every 10 minutes.
+    &lt;ul&gt;
+      &lt;li&gt;Notify sync&lt;/li&gt;
+      &lt;li&gt;Unix doesn’t have a transactional file system.&lt;/li&gt;
+      &lt;li&gt;Snapshot from dbus on disk is non trivial&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Opinionated
+Syslog flaws, journal log say the earliest and everything is logged
+Consolek replaced by logind&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Journal-remote
+Journal over http protocol., understands ssl
+    &lt;ul&gt;
+      &lt;li&gt;Export to handle coredump (binary) plus json&lt;/li&gt;
+      &lt;li&gt;provides both push and pull based logging&lt;/li&gt;
+      &lt;li&gt;pull based in at times useful&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Claims only 99% compatibility with old style fs
+Not sysvinit 100% compatibility&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 29 Jun 2015 09:15:00 -0700</pubDate>
+      </item>
     
       <item>
         <title>Mesos, Marathon, and Docker</title>
@@ -196,7 +482,7 @@ Fleet&lt;/p&gt;
 &lt;img src=&quot;/blog/img/mesos3.jpg&quot; alt=&quot;Architecture 3&quot; title=&quot;Architecture 3&quot; /&gt;
 &lt;img src=&quot;/blog/img/mesos4.jpg&quot; alt=&quot;Architecture 4&quot; title=&quot;Architecture 4&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 23 Jun 2015 12:15:00 -0400</pubDate>
+        <pubDate>Tue, 23 Jun 2015 09:15:00 -0700</pubDate>
       </item>
     
       <item>
@@ -355,7 +641,7 @@ Fleet&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 28 Apr 2015 12:15:00 -0400</pubDate>
+        <pubDate>Tue, 28 Apr 2015 09:15:00 -0700</pubDate>
       </item>
     
       <item>
@@ -363,7 +649,7 @@ Fleet&lt;/p&gt;
         <link>http://fengtingzhang.com/blog/2015/04/19/apache-mesos.html</link>
         <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/19/apache-mesos.html</guid>
         <description>Really great instructions on setting up Mesos through homebrew&lt;br /&gt;&lt;a href=&quot;https://mesosphere.com/blog/2014/07/07/installing-mesos-on-your-mac-with-homebrew/&quot;&gt;https://mesosphere.com/blog/2014/07/07/installing-mesos-on-your-mac-with-homebrew/&lt;/a&gt;</description>
-        <pubDate>Sun, 19 Apr 2015 12:15:00 -0400</pubDate>
+        <pubDate>Sun, 19 Apr 2015 09:15:00 -0700</pubDate>
       </item>
     
       <item>
@@ -371,7 +657,7 @@ Fleet&lt;/p&gt;
         <link>http://fengtingzhang.com/blog/2015/04/11/wysiwyg-versus-markdown-editors.html</link>
         <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/11/wysiwyg-versus-markdown-editors.html</guid>
         <description>Dear blogger, you should support markdown editors. It&#39;s too easy to publish a book like this on gitbook.&amp;nbsp;&lt;a href=&quot;http://fengtingzhang.gitbooks.io/blog/content/&quot;&gt;http://fengtingzhang.gitbooks.io/blog/content/&lt;/a&gt;</description>
-        <pubDate>Sat, 11 Apr 2015 18:55:00 -0400</pubDate>
+        <pubDate>Sat, 11 Apr 2015 15:55:00 -0700</pubDate>
       </item>
     
       <item>
@@ -379,7 +665,7 @@ Fleet&lt;/p&gt;
         <link>http://fengtingzhang.com/blog/2015/04/05/google-starbucks.html</link>
         <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/05/google-starbucks.html</guid>
         <description>&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;http://1.bp.blogspot.com/-J2XnEyrO_dI/VSGX9GOCT1I/AAAAAAAAGD8/mUVDb2nThZc/s1600/Screen%2BShot%2B2015-04-05%2Bat%2B4.15.05%2BPM.png&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://1.bp.blogspot.com/-J2XnEyrO_dI/VSGX9GOCT1I/AAAAAAAAGD8/mUVDb2nThZc/s1600/Screen%2BShot%2B2015-04-05%2Bat%2B4.15.05%2BPM.png&quot; height=&quot;66&quot; width=&quot;320&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;It&#39;s official, Google has invaded all walks of life in New York City. The wifi at my local Starbucks is now sponsored by Google a few blocks away, and the wifi service has been renamed to &quot;Google Starbucks&quot;.&lt;br /&gt;&lt;br /&gt;</description>
-        <pubDate>Sun, 05 Apr 2015 16:16:00 -0400</pubDate>
+        <pubDate>Sun, 05 Apr 2015 13:16:00 -0700</pubDate>
       </item>
     
       <item>
@@ -387,23 +673,23 @@ Fleet&lt;/p&gt;
         <link>http://fengtingzhang.com/blog/2015/04/05/sketchbook.html</link>
         <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/05/sketchbook.html</guid>
         <description>&lt;div&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both;&quot;&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both;&quot;&gt;&lt;a href=&quot;https://lh3.googleusercontent.com/-WA5so_O4z7s/VSFgLBvRW3I/AAAAAAAAGDs/iizmTWCW43Q/s640/blogger-image--2102938082.jpg&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://lh3.googleusercontent.com/-WA5so_O4z7s/VSFgLBvRW3I/AAAAAAAAGDs/iizmTWCW43Q/s640/blogger-image--2102938082.jpg&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;Using a sketch program on my iPad has been interesting. I still prefer the tactile feel if pencil on paper, but I like how there are different options and it&#39;s less messy.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This image was created using sketchbook, a freemium program on iOS.&lt;/div&gt;</description>
-        <pubDate>Sun, 05 Apr 2015 12:17:00 -0400</pubDate>
+        <pubDate>Sun, 05 Apr 2015 09:17:00 -0700</pubDate>
       </item>
     
       <item>
         <title>Raspberry pi recipes</title>
-        <link>http://fengtingzhang.com/blog/2015/04/05/raspberry-pi-recipes.html</link>
-        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/05/raspberry-pi-recipes.html</guid>
+        <link>http://fengtingzhang.com/blog/2015/04/04/raspberry-pi-recipes.html</link>
+        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/04/raspberry-pi-recipes.html</guid>
         <description>I love the parallels made here between a baking recipe and a raspberry pi&lt;div&gt;&lt;a href=&quot;http://www.pcworld.com/article/2598363/how-to-set-up-raspberry-pi-the-little-computer-you-can-cook-into-diy-tech-projects.html&quot;&gt;http://www.pcworld.com/article/2598363/how-to-set-up-raspberry-pi-the-little-computer-you-can-cook-into-diy-tech-projects.html&lt;/a&gt;&lt;/div&gt;</description>
-        <pubDate>Sun, 05 Apr 2015 00:05:00 -0400</pubDate>
+        <pubDate>Sat, 04 Apr 2015 21:05:00 -0700</pubDate>
       </item>
     
       <item>
         <title>Dual booting Ubuntu 14.04.2 LTS with Windows 8</title>
-        <link>http://fengtingzhang.com/blog/2015/04/04/ubuntu.html</link>
-        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/04/ubuntu.html</guid>
+        <link>http://fengtingzhang.com/blog/2015/04/03/ubuntu.html</link>
+        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/04/03/ubuntu.html</guid>
         <description>&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;http://1.bp.blogspot.com/-ndS7k3-EF3c/VR9tg1vC2CI/AAAAAAAAF_8/E7p4czT2XZ0/s1600/image-installdesktoplongtermsupport-9.jpg&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://1.bp.blogspot.com/-ndS7k3-EF3c/VR9tg1vC2CI/AAAAAAAAF_8/E7p4czT2XZ0/s1600/image-installdesktoplongtermsupport-9.jpg&quot; height=&quot;296&quot; width=&quot;400&quot; /&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;br /&gt;I&#39;ve been using RHELs of Redhat Linux at work for a while, but in the last few years, our linux boxes have all been switched over to a dynamic compute environment. I miss having full control over what I could install on my own Linux desktop and how easy it was to develop in that environment.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;Setting Ubuntu 14.04.2 LTS to dual boot alongside Windows 8 was really easy. I thought I&#39;d write down the steps to make it easier for people to install it the way I did.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Installing Ubuntu&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;First you&#39;d want to back up your PC. Then download the Ubuntu Desktop distribution here:&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;http://www.ubuntu.com/download/desktop&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;Now you probably want to put this image onto a CD or a USB drive for a bootable disk.&amp;nbsp;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Option 1: Creating an ISO&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;https://help.ubuntu.com/community/BurningIsoHowto&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;https://help.ubuntu.com/community/BurningIsoHowto&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;That should create a&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: &#39;Helvetica Neue&#39;, Arial, Helvetica, sans-serif;&quot;&gt;Bootable CD, if you run into issues check this troubleshooting page&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;https://help.ubuntu.com/community/BootFromCD&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;https://help.ubuntu.com/community/BootFromCD&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Option 2: Bootable USD drive&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: &#39;Helvetica Neue&#39;, Arial, Helvetica, sans-serif;&quot;&gt;For Windows 8, I didn&#39;t have a DVD so I used this program from Pen Drive called Universal USB Installer. If you have a USB drive with more than 2GB of space, this is an option.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: &#39;Helvetica Neue&#39;, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/&quot;&gt;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;Ubuntu also provides a program for creating a USB boot stick on Ubuntu&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Installation&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;Now you&#39;re ready to begin the installation process. Ubuntu has a step-by-step instruction page here that enumerates them:&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop/install-ubuntu-desktop&quot;&gt;http://www.ubuntu.com/download/desktop/install-ubuntu-desktop&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;div&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;font-family: &#39;Helvetica Neue&#39;, Arial, Helvetica, sans-serif;&quot;&gt;Out of the box, you should have Unity desktop preinstalled. You can also switch to a Gnome look and feel if that&#39;s more familiar. There&#39;s a pretty wide variety of apps available through apt-get, include a Spotify Linux Beta.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Apps on Ubtuntu&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.unixmen.com/top-things-installing-ubuntu-14-1014-0413-1013-0412-1012-04/&quot;&gt;http://www.unixmen.com/top-&lt;wbr&gt;&lt;/wbr&gt;things-installing-&lt;span class=&quot;il&quot;&gt;ubuntu&lt;/span&gt;-14-&lt;wbr&gt;&lt;/wbr&gt;1014-0413-1013-0412-1012-04/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Installing Sublime Text 3 in Ubuntu via PPA&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color: #1155cc; font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.webupd8.org/2013/07/sublime-text-3-ubuntu-ppa-now-available.html&quot;&gt;http://www.webupd8.org/2013/&lt;wbr&gt;&lt;/wbr&gt;07/sublime-text-3-&lt;span class=&quot;il&quot;&gt;ubuntu&lt;/span&gt;-ppa-&lt;wbr&gt;&lt;/wbr&gt;now-available.html&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;div style=&quot;background-color: white; color: #222222; font-size: 12.8000001907349px;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;background-color: white; color: #222222;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;Installing Git through PPA&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;background-color: white;&quot;&gt;&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04&quot;&gt;https://www.digitalocean.com/&lt;wbr&gt;&lt;/wbr&gt;community/tutorials/how-to-&lt;wbr&gt;&lt;/wbr&gt;install-git-on-&lt;span class=&quot;il&quot;&gt;ubuntu&lt;/span&gt;-14-04&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: #222222;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;Spotify Preview on Debian Squeeze/Ubuntu&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;span style=&quot;color: #222222; font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;https://www.spotify.com/us/download/previews/&quot;&gt;https://www.spotify.com/us/download/previews/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color: #222222;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;</description>
-        <pubDate>Sat, 04 Apr 2015 00:09:00 -0400</pubDate>
+        <pubDate>Fri, 03 Apr 2015 21:09:00 -0700</pubDate>
       </item>
     
   </channel>
