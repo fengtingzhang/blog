@@ -5,7 +5,116 @@
     <atom:link href="http://fengtingzhang.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://fengtingzhang.com/blog/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Fri, 03 Jul 2015 14:45:55 -0400</pubDate>
+    <pubDate>Sat, 26 Sep 2015 22:26:41 -0400</pubDate>
+    
+      <item>
+        <title>GraphQL</title>
+        <link>http://fengtingzhang.com/blog/2015/09/23/graphql.html</link>
+        <guid isPermaLink="true">http://fengtingzhang.com/blog/2015/09/23/graphql.html</guid>
+        <description>&lt;h2 id=&quot;strict-object-type-checking-and-reuse-an-alternative-to-rest&quot;&gt;strict object type checking and reuse, an alternative to REST&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Been knee deep in react lately, and went to another talk given at Facebook about graphql and relay - its implementation of flux. It’s interesting to look at some of these features compared to our implementation, which uses dropwizard, typesafe, react, and redux (flux).&lt;/p&gt;
+
+&lt;p&gt;Motivations&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;More than simple and custom endpoints&lt;/li&gt;
+  &lt;li&gt;Request and response are the same shape&lt;/li&gt;
+  &lt;li&gt;Arbitrarily deep&lt;/li&gt;
+  &lt;li&gt;Mental model for product developers&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Type system
+Type Query {
+  Me: user
+}&lt;/p&gt;
+
+&lt;p&gt;Type user {
+  Name: String
+  Another: foo
+}&lt;/p&gt;
+
+&lt;p&gt;All the way down&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;App server adverse what’s available, UI client request the shape that it wants&lt;/li&gt;
+  &lt;li&gt;Manages complexities of 52 weekly release to iOS and hit fixes in between, also multiple products so 1000s backward compatibility&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Compositions an decomposition
+Fragment friend fragment on User {
+Name
+Events {
+Name
+}
+}&lt;/p&gt;
+
+&lt;p&gt;Not a storage engine, query language over the application code&lt;/p&gt;
+
+&lt;p&gt;Centralize complexity, promise API
+GraphQL sever advterises schema
+_schema object&lt;/p&gt;
+
+&lt;p&gt;Example against
+Swapi api&lt;/p&gt;
+
+&lt;p&gt;GraphQL server
+Type system plus sever - interacts with rest server&lt;/p&gt;
+
+&lt;p&gt;GraphQL editor, syntax checking evaluate graphQL  and then code generate from the rest calls&lt;/p&gt;
+
+&lt;p&gt;Other Facebook products
+with relay externalize
+With react native native apps&lt;/p&gt;
+
+&lt;p&gt;Specifications
+RFC specification
+Express-graphql
+In 4 months it will be back ported into Facebook&lt;/p&gt;
+
+&lt;p&gt;Other Open source products
+Graphql-ruby
+Graphql-Java
+Rx&lt;/p&gt;
+
+&lt;p&gt;React
+Functional programming
+Immutable data structure
+Declarative API
+Opinionated platform
+Learn once and write anywhere, js, Java, hack&lt;/p&gt;
+
+&lt;p&gt;React native for iOS and android
+Relay horizontal platform to interact with react and graphql&lt;/p&gt;
+
+&lt;p&gt;Q&amp;amp;A
+Deprecation
+Add manufactured field and manufactured connection and deprecate a field&lt;/p&gt;
+
+&lt;p&gt;Bias toward one mega schema. The entire Facebook app is built on one schema.&lt;/p&gt;
+
+&lt;p&gt;Backend developer map out types and turn into GraphQL type designers&lt;/p&gt;
+
+&lt;p&gt;persistent queries in the serverside&lt;/p&gt;
+
+&lt;p&gt;It doesn’t support aggregations
+1. Intentionally leaving out
+2. Can add fields to add aggregations to opt in backend and middle tier developers to advertise this&lt;/p&gt;
+
+&lt;p&gt;Graph sever orchestration
+Direct externalizations of
+M query
+Antonette query?&lt;/p&gt;
+
+&lt;p&gt;Mapping
+Class and field types to backend&lt;/p&gt;
+
+&lt;p&gt;Centralized mutations&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Sep 2015 09:15:00 -0700</pubDate>
+      </item>
     
       <item>
         <title>Rails resources on OSX</title>

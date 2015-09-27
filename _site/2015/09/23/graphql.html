@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+	<meta charset="utf-8">
+	<title>GraphQL | Feng Ting's Blog</title>
+	<meta name="description" content="strict object type checking and reuse, an alternative to REST">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-Frame-Options" content="sameorigin">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="/blog/css/main.css">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="/blog/favicon.ico" type="image/x-icon">
+
+	<!-- Canonical -->
+	<link rel="canonical" href="http://fengtingzhang.com/blog/2015/09/23/graphql.html">
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/atom+xml" title="Feng Ting's Blog" href="http://fengtingzhang.com/blog/feed.xml" />
+
+	<!-- Font Awesome -->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+
+	<!-- KaTeX -->
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+	
+
+	<!-- Google Analytics -->
+	
+</head>
+
+  <body>
+    <header class="site-header">
+	<div class="branding">
+		
+		<a href="/blog/">
+			<img class="avatar" src="/blog/img/avatar.jpeg" alt=""/>
+		</a>
+		
+		<h1 class="site-title">
+			<a href="/blog/">Feng Ting's Blog</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+		    <li><a href="http://fengtingzhang.com/">Home</a></li>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- Social icons from Font Awesome, if enabled -->
+			
+
+
+<li>
+	<a href="mailto:info@fengtingzhang.com" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/fengtingzhang" title="Follow on GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+
+
+<li>
+	<a href="http://instagram.com/moreofsusan" title="Follow on Instagram">
+		<i class="fa fa-fw fa-instagram"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/fengtingsusanzhang" title="Follow on LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/fengtingzhang" title="Follow on Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+
+
+
+		</ul>
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header style="background-image: url('/blog/')">
+    <h1 class="title">GraphQL</h1>
+    <p class="meta">
+    September 23, 2015
+     - Feng Ting Zhang
+    </p>
+  </header>
+  <section class="post-content"><h2 id="strict-object-type-checking-and-reuse-an-alternative-to-rest">strict object type checking and reuse, an alternative to REST</h2>
+
+<hr />
+
+<p>Been knee deep in react lately, and went to another talk given at Facebook about graphql and relay - its implementation of flux. It’s interesting to look at some of these features compared to our implementation, which uses dropwizard, typesafe, react, and redux (flux).</p>
+
+<p>Motivations</p>
+
+<ol>
+  <li>More than simple and custom endpoints</li>
+  <li>Request and response are the same shape</li>
+  <li>Arbitrarily deep</li>
+  <li>Mental model for product developers</li>
+</ol>
+
+<p>Type system
+Type Query {
+  Me: user
+}</p>
+
+<p>Type user {
+  Name: String
+  Another: foo
+}</p>
+
+<p>All the way down</p>
+
+<ol>
+  <li>App server adverse what’s available, UI client request the shape that it wants</li>
+  <li>Manages complexities of 52 weekly release to iOS and hit fixes in between, also multiple products so 1000s backward compatibility</li>
+</ol>
+
+<p>Compositions an decomposition
+Fragment friend fragment on User {
+Name
+Events {
+Name
+}
+}</p>
+
+<p>Not a storage engine, query language over the application code</p>
+
+<p>Centralize complexity, promise API
+GraphQL sever advterises schema
+_schema object</p>
+
+<p>Example against
+Swapi api</p>
+
+<p>GraphQL server
+Type system plus sever - interacts with rest server</p>
+
+<p>GraphQL editor, syntax checking evaluate graphQL  and then code generate from the rest calls</p>
+
+<p>Other Facebook products
+with relay externalize
+With react native native apps</p>
+
+<p>Specifications
+RFC specification
+Express-graphql
+In 4 months it will be back ported into Facebook</p>
+
+<p>Other Open source products
+Graphql-ruby
+Graphql-Java
+Rx</p>
+
+<p>React
+Functional programming
+Immutable data structure
+Declarative API
+Opinionated platform
+Learn once and write anywhere, js, Java, hack</p>
+
+<p>React native for iOS and android
+Relay horizontal platform to interact with react and graphql</p>
+
+<p>Q&amp;A
+Deprecation
+Add manufactured field and manufactured connection and deprecate a field</p>
+
+<p>Bias toward one mega schema. The entire Facebook app is built on one schema.</p>
+
+<p>Backend developer map out types and turn into GraphQL type designers</p>
+
+<p>persistent queries in the serverside</p>
+
+<p>It doesn’t support aggregations
+1. Intentionally leaving out
+2. Can add fields to add aggregations to opt in backend and middle tier developers to advertise this</p>
+
+<p>Graph sever orchestration
+Direct externalizations of
+M query
+Antonette query?</p>
+
+<p>Mapping
+Class and field types to backend</p>
+
+<p>Centralized mutations</p>
+</section>
+</article>
+
+<!-- Disqus -->
+
+
+    </div>
+    <script src="/blog/js/main.js"></script>
+
+
+<footer class="site-footer">
+	<p class="text"></p>
+</footer>
+
+
+  </body>
+</html>
