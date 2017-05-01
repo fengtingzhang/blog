@@ -5,7 +5,169 @@
     <atom:link href="http://fengtingzhang.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://fengtingzhang.com/blog/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Sat, 26 Sep 2015 22:26:41 -0400</pubDate>
+    <pubDate>Mon, 01 May 2017 01:16:28 -0400</pubDate>
+    
+      <item>
+        <title>RailsConf 2017 Day One</title>
+        <link>http://fengtingzhang.com/blog/2017/04/25/rails-conf-day-one.html</link>
+        <guid isPermaLink="true">http://fengtingzhang.com/blog/2017/04/25/rails-conf-day-one.html</guid>
+        <description>&lt;h2 id=&quot;railsconf-2017-day-one&quot;&gt;RailsConf 2017 Day One&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;dhh---key-note-best-tools-for-the-job&quot;&gt;DHH - Key Note: Best Tools for the Job&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;started with ruby not through careful analysis, in 2002 Martin Fowler talked about Ruby so I went ahead with it&lt;/li&gt;
+  &lt;li&gt;new frameworks in javascript are created every few days&lt;/li&gt;
+  &lt;li&gt;I made that choice, at some point you just pick something and go with it&lt;/li&gt;
+  &lt;li&gt;Most open source communities last for a long time&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Like walking on high wires and at any point a gust of wind can blow you down
+I’m responsible for my own happiness? I can’t even be responsible for my own breakfast!&lt;/p&gt;
+
+&lt;p&gt;FUD - did I pick the best tool for the job? Emotional rollercoasters, did I pick the right thing?&lt;/p&gt;
+
+&lt;h2 id=&quot;ruby-on-rails-is-an-ecosystem-of-choice&quot;&gt;Ruby on Rails is an ecosystem of choice&lt;/h2&gt;
+&lt;p&gt;Real job of rails, not just productivity, easier code, surface level of bits of understanding, it’s an ecosystem of choice&lt;/p&gt;
+
+&lt;p&gt;for example: ios app use swift, apple relieves the anxiety of on the wire&lt;/p&gt;
+
+&lt;p&gt;make the things easier for ecosystem of choice&lt;/p&gt;
+
+&lt;p&gt;double edge swords in these community of choice&lt;/p&gt;
+
+&lt;p&gt;easier, simpler&lt;/p&gt;
+
+&lt;p&gt;Java refugees flees to rails
+4000 lines long for an xml file, Java was a bear to poke at&lt;/p&gt;
+
+&lt;h2 id=&quot;console-wars&quot;&gt;Console wars&lt;/h2&gt;
+&lt;p&gt;playstation vs. sega saturn vs. Nintendo 64&lt;/p&gt;
+
+&lt;p&gt;Like console wars, debates are rarely solved by people being persuaded by technical arguments&lt;/p&gt;
+
+&lt;p&gt;A novel is never anything but a philosophy expressed in images. And in a good novel the philosophy has disappeared into the images. - Albert Camus&lt;/p&gt;
+
+&lt;p&gt;Developer happiness&lt;/p&gt;
+
+&lt;p&gt;The zen of python
+Rails doctrine http://rubyonrails.org/doctrine/
+For if society lacks the unity that derives from the fact that the relationships between its parts are exactly regulated, that unity resulting from the harmonious articulation of its various functions assured by effective discipline and if, in addition, society lacks the unity based upon the commitment of men’s wills to a common objective, then it is no more than a pile of sand that the least jolt or the slightest puff will suffice to scatter.&lt;/p&gt;
+
+&lt;p&gt;Root
+Waver&lt;/p&gt;
+
+&lt;p&gt;Manfiesto for agile software devlopment&lt;/p&gt;
+
+&lt;p&gt;Everything is amazing and nbody’s happy - Louis CK&lt;/p&gt;
+
+&lt;p&gt;Fear of missing out #FOMO
+root or base yourself in something on a set of features that can be changed tomorrow&lt;/p&gt;
+
+&lt;h2 id=&quot;comparison-to-religion&quot;&gt;Comparison to Religion&lt;/h2&gt;
+&lt;p&gt;thousands of years of perfecting communal perfection
+To create community space based on the kinship of the mind
+Of being stable and not constantly on the run&lt;/p&gt;
+
+&lt;h3 id=&quot;richness-of-the-vocabulary&quot;&gt;Richness of the vocabulary&lt;/h3&gt;
+&lt;p&gt;for example: absolution, savlavation, sin&lt;/p&gt;
+
+&lt;h3 id=&quot;patron-saints&quot;&gt;Patron saints&lt;/h3&gt;
+&lt;p&gt;Jim Weirich - Patron Saint of Wonder&lt;/p&gt;
+
+&lt;h3 id=&quot;religion-is-a-buffet&quot;&gt;Religion is a buffet&lt;/h3&gt;
+&lt;p&gt;choose&lt;/p&gt;
+
+&lt;h3 id=&quot;faith&quot;&gt;Faith&lt;/h3&gt;
+&lt;p&gt;rely on your faith to get something out of it&lt;/p&gt;
+
+&lt;p&gt;Identity crisis that software developers have&lt;/p&gt;
+
+&lt;p&gt;Not scientific, provable questions - ex: best sorting algorithm was solved a long time ago&lt;/p&gt;
+
+&lt;p&gt;Some of these debates are
+1. TDD - test driven development, a faith-based idea. I inially talked about it in a deragotry way and I chave come to regret that. Like other fiath based ideas, not easily
+1. Static typing
+1. Immutability - if I program in object oriented languages should I convert to functional programming&lt;/p&gt;
+
+&lt;h3 id=&quot;absurdity&quot;&gt;Absurdity&lt;/h3&gt;
+&lt;p&gt;Not suspecitble to able to fall off the wire easily&lt;/p&gt;
+
+&lt;h4 id=&quot;shaving-the-yak&quot;&gt;shaving the yak&lt;/h4&gt;
+
+&lt;p&gt;As a software engineer sometimes we have to come to accept the absurdity of software engineering. Shaving the yak, start the day with a task and 15 minutes in transitive dependencies break.&lt;/p&gt;
+
+&lt;p&gt;You’re along for the ride for the&lt;/p&gt;
+
+&lt;p&gt;Learn to cope
+&amp;gt; The important thingis not to be cured, but to live with one’s ailments.&lt;/p&gt;
+
+&lt;h1 id=&quot;building-better-teams-through-communication&quot;&gt;Building Better Teams Through Communication&lt;/h1&gt;
+
+&lt;p&gt;http://communication-workshop.surge.sh/&lt;/p&gt;
+
+&lt;p&gt;Hands on Code reviews&lt;/p&gt;
+
+&lt;p&gt;Explain monads&lt;/p&gt;
+
+&lt;p&gt;When being critical
+ identify strengths
+ suggest solutions
+ be overly or explicitly emotive&lt;/p&gt;
+
+&lt;p&gt;Greyhounds (bus factor should be reduced) and cornfields (knowledge silos), nothing is written down and lack of process&lt;/p&gt;
+
+&lt;p&gt;books
+How to win friends and influence people&lt;/p&gt;
+
+&lt;p&gt;Checklist Manifesto
+Any sufficiently complex process could benefit from having a checklist.&lt;/p&gt;
+
+&lt;p&gt;Procedure can become your scapegoat&lt;/p&gt;
+
+&lt;p&gt;Practice collective ownership - developers should write the process?&lt;/p&gt;
+
+&lt;h1 id=&quot;docker-containers&quot;&gt;docker containers&lt;/h1&gt;
+
+&lt;p&gt;easily run any code in any containers&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;overview&lt;/h2&gt;
+&lt;p&gt;what are containers?
+1. lightweight VMs, not a full VM. When you have a linux host, you can only have a linux container - technically a container is not a virtual machine
+1. chroot on steriods: centos and ubuntu are two examples of OS containers
+1. namespaces + Cgroups: container runtimes: LXC, Docker, RKT, Systemd-nspawn&lt;/p&gt;
+
+&lt;h2 id=&quot;namespaces&quot;&gt;namespaces&lt;/h2&gt;
+&lt;p&gt;namespaces provides isolation
+creating a Mount namespace&lt;/p&gt;
+
+&lt;h3 id=&quot;dev-namespace&quot;&gt;Dev namespace&lt;/h3&gt;
+&lt;p&gt;the container for example has no acces to /dev/&lt;/p&gt;
+
+&lt;h3 id=&quot;user-namespace&quot;&gt;User namespace&lt;/h3&gt;
+
+&lt;p&gt;You’ll have root inside the container but not outside the container&lt;/p&gt;
+
+&lt;h3 id=&quot;network-namespace&quot;&gt;Network namespace&lt;/h3&gt;
+
+&lt;h2 id=&quot;cgroups&quot;&gt;Cgroups&lt;/h2&gt;
+&lt;p&gt;Groups are added in an order
+Mount
+User
+CGroup - memory and cpu&lt;/p&gt;
+
+&lt;h2 id=&quot;docker-in-production&quot;&gt;Docker in production&lt;/h2&gt;
+
+&lt;p&gt;platform
+orchestration - kubernetes, mesos, or swarm
+container runtime
+namespaces + cgroup&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 25 Apr 2017 09:15:00 -0700</pubDate>
+      </item>
     
       <item>
         <title>GraphQL</title>
