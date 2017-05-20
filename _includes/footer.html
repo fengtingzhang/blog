@@ -1,7 +1,3 @@
-<script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
-
-{% if site.theme.footer_text %}
-<footer class="site-footer">
-	<p class="text">{{ site.theme.footer_text }}</p>
-</footer>
-{% endif %}
+<div class="footer">
+  <span class="block">  <a class="home" href="http://www.fengtingzhang.com/" title="Home">Home</a> &copy; 2015-{{ site.time | date: '%Y' }} {{ site.author_name }}</span>
+</div>

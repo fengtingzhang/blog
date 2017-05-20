@@ -1,17 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Feng Ting's Blog</title>
-    <atom:link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <link>http://localhost:4000/blog/</link>
-    <description>A website with blog posts and pages</description>
-    <pubDate>Sat, 20 May 2017 18:00:16 -0400</pubDate>
+    <description>Prose I'm inspired to write</description>
+    <link>http://localhost:4000/blog</link>
     
-      <item>
-        <title>RailsConf 2017 Day One</title>
-        <link>http://localhost:4000/blog/2017/04/25/rails-conf-day-one.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2017/04/25/rails-conf-day-one.html</guid>
-        <description>&lt;h2 id=&quot;railsconf-2017-day-one&quot;&gt;RailsConf 2017 Day One&lt;/h2&gt;
+      
+        <item>
+          <title>RailsConf 2017 Day One</title>
+          <description>&lt;h2 id=&quot;railsconf-2017-day-one&quot;&gt;RailsConf 2017 Day One&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -172,14 +169,16 @@ container runtime
 namespaces + cgroup&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 25 Apr 2017 12:15:00 -0400</pubDate>
-      </item>
+          <pubDate>2017-04-25T12:15:00-04:00</pubDate>
+          <link>http://localhost:4000/blog/notes/rails-conf-day-one</link>
+          <guid isPermaLink="true">http://localhost:4000/blog/notes/rails-conf-day-one</guid>
+        </item>
+      
     
-      <item>
-        <title>GraphQL</title>
-        <link>http://localhost:4000/blog/2015/09/23/graphql.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/09/23/graphql.html</guid>
-        <description>&lt;h2 id=&quot;strict-object-type-checking-and-reuse-an-alternative-to-rest&quot;&gt;strict object type checking and reuse, an alternative to REST&lt;/h2&gt;
+      
+        <item>
+          <title>GraphQL</title>
+          <description>&lt;h2 id=&quot;strict-object-type-checking-and-reuse-an-alternative-to-rest&quot;&gt;strict object type checking and reuse, an alternative to REST&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -283,44 +282,16 @@ Class and field types to backend&lt;/p&gt;
 
 &lt;p&gt;Centralized mutations&lt;/p&gt;
 </description>
-        <pubDate>Wed, 23 Sep 2015 12:15:00 -0400</pubDate>
-      </item>
+          <pubDate>2015-09-23T12:15:00-04:00</pubDate>
+          <link>http://localhost:4000/blog/notes/graphql</link>
+          <guid isPermaLink="true">http://localhost:4000/blog/notes/graphql</guid>
+        </item>
+      
     
-      <item>
-        <title>Rails resources on OSX</title>
-        <link>http://localhost:4000/blog/2015/07/03/rails.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/07/03/rails.html</guid>
-        <description>&lt;h2 id=&quot;great-rails-resources&quot;&gt;Great Rails Resources&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;My job doesn’t really involve ruby, and I’ve been wanting to give rails a whirl for a while. Thought I’d take the July 4th weekend and try it and jot down resources I’ve come across.&lt;/p&gt;
-
-&lt;p&gt;Installation:
-Really great write up on rails install using brew &lt;a href=&quot;http://guides.railsgirls.com/install/#setup-for-os-x&quot;&gt;Rails Install OS X&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Deployment:
-Heroku is the way to go&lt;/p&gt;
-
-&lt;p&gt;Gotchas:
-I did have to upgrade my current ruby and rails installation to be compatible with the example app on heroku&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  sudo gem update --system
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Also, it’s nice to periodically run clean&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo bundle clean
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Fri, 03 Jul 2015 12:15:00 -0400</pubDate>
-      </item>
-    
-      <item>
-        <title>Systemd</title>
-        <link>http://localhost:4000/blog/2015/06/29/systemd.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/06/29/systemd.html</guid>
-        <description>&lt;h2 id=&quot;the-controversial-systemd&quot;&gt;The controversial systemd&lt;/h2&gt;
+      
+        <item>
+          <title>Systemd</title>
+          <description>&lt;h2 id=&quot;the-controversial-systemd&quot;&gt;The controversial systemd&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -611,14 +582,16 @@ Journal over http protocol., understands ssl
 Not sysvinit 100% compatibility&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>Mon, 29 Jun 2015 12:15:00 -0400</pubDate>
-      </item>
+          <pubDate>2015-06-29T12:15:00-04:00</pubDate>
+          <link>http://localhost:4000/blog/notes/systemd</link>
+          <guid isPermaLink="true">http://localhost:4000/blog/notes/systemd</guid>
+        </item>
+      
     
-      <item>
-        <title>Mesos, Marathon, and Docker</title>
-        <link>http://localhost:4000/blog/2015/06/23/mesos.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/06/23/mesos.html</guid>
-        <description>&lt;p&gt;##How Yodel solved its deployment problems using Mesos and Marathon with Docker&lt;/p&gt;
+      
+        <item>
+          <title>Mesos, Marathon, and Docker</title>
+          <description>&lt;p&gt;##How Yodel solved its deployment problems using Mesos and Marathon with Docker&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -814,14 +787,16 @@ Fleet&lt;/p&gt;
 &lt;img src=&quot;/blog/img/mesos3.jpg&quot; alt=&quot;Architecture 3&quot; title=&quot;Architecture 3&quot; /&gt;
 &lt;img src=&quot;/blog/img/mesos4.jpg&quot; alt=&quot;Architecture 4&quot; title=&quot;Architecture 4&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 23 Jun 2015 12:15:00 -0400</pubDate>
-      </item>
+          <pubDate>2015-06-23T12:15:00-04:00</pubDate>
+          <link>http://localhost:4000/blog/notes/mesos</link>
+          <guid isPermaLink="true">http://localhost:4000/blog/notes/mesos</guid>
+        </item>
+      
     
-      <item>
-        <title>Node Day 2015</title>
-        <link>http://localhost:4000/blog/2015/04/28/node-day.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/04/28/node-day.html</guid>
-        <description>&lt;p&gt;##Experiences at Conde Nast&lt;/p&gt;
+      
+        <item>
+          <title>Node Day 2015</title>
+          <description>&lt;p&gt;##Experiences at Conde Nast&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -973,56 +948,31 @@ Fleet&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 28 Apr 2015 12:15:00 -0400</pubDate>
-      </item>
+          <pubDate>2015-04-28T12:15:00-04:00</pubDate>
+          <link>http://localhost:4000/blog/notes/node-day</link>
+          <guid isPermaLink="true">http://localhost:4000/blog/notes/node-day</guid>
+        </item>
+      
     
-      <item>
-        <title>Apache Mesos</title>
-        <link>http://localhost:4000/blog/2015/04/19/apache-mesos.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/04/19/apache-mesos.html</guid>
-        <description>Really great instructions on setting up Mesos through homebrew&lt;br /&gt;&lt;a href=&quot;https://mesosphere.com/blog/2014/07/07/installing-mesos-on-your-mac-with-homebrew/&quot;&gt;https://mesosphere.com/blog/2014/07/07/installing-mesos-on-your-mac-with-homebrew/&lt;/a&gt;</description>
-        <pubDate>Sun, 19 Apr 2015 12:15:00 -0400</pubDate>
-      </item>
+      
+        <item>
+          <title>Apache Mesos</title>
+          <description>Really great instructions on setting up Mesos through homebrew&lt;br /&gt;&lt;a href=&quot;https://mesosphere.com/blog/2014/07/07/installing-mesos-on-your-mac-with-homebrew/&quot;&gt;https://mesosphere.com/blog/2014/07/07/installing-mesos-on-your-mac-with-homebrew/&lt;/a&gt;</description>
+          <pubDate>2015-04-19T12:15:00-04:00</pubDate>
+          <link>http://localhost:4000/blog/notes/apache-mesos</link>
+          <guid isPermaLink="true">http://localhost:4000/blog/notes/apache-mesos</guid>
+        </item>
+      
     
-      <item>
-        <title>gitbook</title>
-        <link>http://localhost:4000/blog/2015/04/11/wysiwyg-versus-markdown-editors.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/04/11/wysiwyg-versus-markdown-editors.html</guid>
-        <description>Dear blogger, you should support markdown editors. It's too easy to publish a book like this on gitbook.&amp;nbsp;&lt;a href=&quot;http://fengtingzhang.gitbooks.io/blog/content/&quot;&gt;http://fengtingzhang.gitbooks.io/blog/content/&lt;/a&gt;</description>
-        <pubDate>Sat, 11 Apr 2015 18:55:00 -0400</pubDate>
-      </item>
-    
-      <item>
-        <title>Google Starbucks</title>
-        <link>http://localhost:4000/blog/2015/04/05/google-starbucks.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/04/05/google-starbucks.html</guid>
-        <description>&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;http://1.bp.blogspot.com/-J2XnEyrO_dI/VSGX9GOCT1I/AAAAAAAAGD8/mUVDb2nThZc/s1600/Screen%2BShot%2B2015-04-05%2Bat%2B4.15.05%2BPM.png&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://1.bp.blogspot.com/-J2XnEyrO_dI/VSGX9GOCT1I/AAAAAAAAGD8/mUVDb2nThZc/s1600/Screen%2BShot%2B2015-04-05%2Bat%2B4.15.05%2BPM.png&quot; height=&quot;66&quot; width=&quot;320&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;It's official, Google has invaded all walks of life in New York City. The wifi at my local Starbucks is now sponsored by Google a few blocks away, and the wifi service has been renamed to &quot;Google Starbucks&quot;.&lt;br /&gt;&lt;br /&gt;</description>
-        <pubDate>Sun, 05 Apr 2015 16:16:00 -0400</pubDate>
-      </item>
-    
-      <item>
-        <title>Sketchbook</title>
-        <link>http://localhost:4000/blog/2015/04/05/sketchbook.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/04/05/sketchbook.html</guid>
-        <description>&lt;div&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both;&quot;&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both;&quot;&gt;&lt;a href=&quot;https://lh3.googleusercontent.com/-WA5so_O4z7s/VSFgLBvRW3I/AAAAAAAAGDs/iizmTWCW43Q/s640/blogger-image--2102938082.jpg&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://lh3.googleusercontent.com/-WA5so_O4z7s/VSFgLBvRW3I/AAAAAAAAGDs/iizmTWCW43Q/s640/blogger-image--2102938082.jpg&quot;&gt;&lt;/a&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;Using a sketch program on my iPad has been interesting. I still prefer the tactile feel if pencil on paper, but I like how there are different options and it's less messy.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This image was created using sketchbook, a freemium program on iOS.&lt;/div&gt;</description>
-        <pubDate>Sun, 05 Apr 2015 12:17:00 -0400</pubDate>
-      </item>
-    
-      <item>
-        <title>Raspberry pi recipes</title>
-        <link>http://localhost:4000/blog/2015/04/05/raspberry-pi-recipes.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/04/05/raspberry-pi-recipes.html</guid>
-        <description>I love the parallels made here between a baking recipe and a raspberry pi&lt;div&gt;&lt;a href=&quot;http://www.pcworld.com/article/2598363/how-to-set-up-raspberry-pi-the-little-computer-you-can-cook-into-diy-tech-projects.html&quot;&gt;http://www.pcworld.com/article/2598363/how-to-set-up-raspberry-pi-the-little-computer-you-can-cook-into-diy-tech-projects.html&lt;/a&gt;&lt;/div&gt;</description>
-        <pubDate>Sun, 05 Apr 2015 00:05:00 -0400</pubDate>
-      </item>
-    
-      <item>
-        <title>Dual booting Ubuntu 14.04.2 LTS with Windows 8</title>
-        <link>http://localhost:4000/blog/2015/04/04/ubuntu.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/04/04/ubuntu.html</guid>
-        <description>&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;http://1.bp.blogspot.com/-ndS7k3-EF3c/VR9tg1vC2CI/AAAAAAAAF_8/E7p4czT2XZ0/s1600/image-installdesktoplongtermsupport-9.jpg&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://1.bp.blogspot.com/-ndS7k3-EF3c/VR9tg1vC2CI/AAAAAAAAF_8/E7p4czT2XZ0/s1600/image-installdesktoplongtermsupport-9.jpg&quot; height=&quot;296&quot; width=&quot;400&quot; /&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;br /&gt;I've been using RHELs of Redhat Linux at work for a while, but in the last few years, our linux boxes have all been switched over to a dynamic compute environment. I miss having full control over what I could install on my own Linux desktop and how easy it was to develop in that environment.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;Setting Ubuntu 14.04.2 LTS to dual boot alongside Windows 8 was really easy. I thought I'd write down the steps to make it easier for people to install it the way I did.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Installing Ubuntu&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;First you'd want to back up your PC. Then download the Ubuntu Desktop distribution here:&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;http://www.ubuntu.com/download/desktop&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;Now you probably want to put this image onto a CD or a USB drive for a bootable disk.&amp;nbsp;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Option 1: Creating an ISO&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;https://help.ubuntu.com/community/BurningIsoHowto&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;https://help.ubuntu.com/community/BurningIsoHowto&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;That should create a&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;&quot;&gt;Bootable CD, if you run into issues check this troubleshooting page&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;https://help.ubuntu.com/community/BootFromCD&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;https://help.ubuntu.com/community/BootFromCD&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Option 2: Bootable USD drive&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;&quot;&gt;For Windows 8, I didn't have a DVD so I used this program from Pen Drive called Universal USB Installer. If you have a USB drive with more than 2GB of space, this is an option.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/&quot;&gt;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;Ubuntu also provides a program for creating a USB boot stick on Ubuntu&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Installation&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;Now you're ready to begin the installation process. Ubuntu has a step-by-step instruction page here that enumerates them:&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop/install-ubuntu-desktop&quot;&gt;http://www.ubuntu.com/download/desktop/install-ubuntu-desktop&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;div&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;&quot;&gt;Out of the box, you should have Unity desktop preinstalled. You can also switch to a Gnome look and feel if that's more familiar. There's a pretty wide variety of apps available through apt-get, include a Spotify Linux Beta.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Apps on Ubtuntu&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.unixmen.com/top-things-installing-ubuntu-14-1014-0413-1013-0412-1012-04/&quot;&gt;http://www.unixmen.com/top-&lt;wbr&gt;&lt;/wbr&gt;things-installing-&lt;span class=&quot;il&quot;&gt;ubuntu&lt;/span&gt;-14-&lt;wbr&gt;&lt;/wbr&gt;1014-0413-1013-0412-1012-04/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Installing Sublime Text 3 in Ubuntu via PPA&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color: #1155cc; font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.webupd8.org/2013/07/sublime-text-3-ubuntu-ppa-now-available.html&quot;&gt;http://www.webupd8.org/2013/&lt;wbr&gt;&lt;/wbr&gt;07/sublime-text-3-&lt;span class=&quot;il&quot;&gt;ubuntu&lt;/span&gt;-ppa-&lt;wbr&gt;&lt;/wbr&gt;now-available.html&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;div style=&quot;background-color: white; color: #222222; font-size: 12.8000001907349px;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;background-color: white; color: #222222;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;Installing Git through PPA&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;background-color: white;&quot;&gt;&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04&quot;&gt;https://www.digitalocean.com/&lt;wbr&gt;&lt;/wbr&gt;community/tutorials/how-to-&lt;wbr&gt;&lt;/wbr&gt;install-git-on-&lt;span class=&quot;il&quot;&gt;ubuntu&lt;/span&gt;-14-04&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: #222222;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;Spotify Preview on Debian Squeeze/Ubuntu&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;span style=&quot;color: #222222; font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;https://www.spotify.com/us/download/previews/&quot;&gt;https://www.spotify.com/us/download/previews/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color: #222222;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;</description>
-        <pubDate>Sat, 04 Apr 2015 00:09:00 -0400</pubDate>
-      </item>
+      
+        <item>
+          <title>Dual booting Ubuntu 14.04.2 LTS with Windows 8</title>
+          <description>&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;http://1.bp.blogspot.com/-ndS7k3-EF3c/VR9tg1vC2CI/AAAAAAAAF_8/E7p4czT2XZ0/s1600/image-installdesktoplongtermsupport-9.jpg&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://1.bp.blogspot.com/-ndS7k3-EF3c/VR9tg1vC2CI/AAAAAAAAF_8/E7p4czT2XZ0/s1600/image-installdesktoplongtermsupport-9.jpg&quot; height=&quot;296&quot; width=&quot;400&quot; /&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;br /&gt;I've been using RHELs of Redhat Linux at work for a while, but in the last few years, our linux boxes have all been switched over to a dynamic compute environment. I miss having full control over what I could install on my own Linux desktop and how easy it was to develop in that environment.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;Setting Ubuntu 14.04.2 LTS to dual boot alongside Windows 8 was really easy. I thought I'd write down the steps to make it easier for people to install it the way I did.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Installing Ubuntu&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;First you'd want to back up your PC. Then download the Ubuntu Desktop distribution here:&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;http://www.ubuntu.com/download/desktop&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;Now you probably want to put this image onto a CD or a USB drive for a bootable disk.&amp;nbsp;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Option 1: Creating an ISO&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;https://help.ubuntu.com/community/BurningIsoHowto&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;https://help.ubuntu.com/community/BurningIsoHowto&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;That should create a&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;&quot;&gt;Bootable CD, if you run into issues check this troubleshooting page&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;https://help.ubuntu.com/community/BootFromCD&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;https://help.ubuntu.com/community/BootFromCD&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Option 2: Bootable USD drive&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;&quot;&gt;For Windows 8, I didn't have a DVD so I used this program from Pen Drive called Universal USB Installer. If you have a USB drive with more than 2GB of space, this is an option.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/&quot;&gt;http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;Ubuntu also provides a program for creating a USB boot stick on Ubuntu&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Installation&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;Now you're ready to begin the installation process. Ubuntu has a step-by-step instruction page here that enumerates them:&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop/install-ubuntu-desktop&quot;&gt;http://www.ubuntu.com/download/desktop/install-ubuntu-desktop&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;div&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;&quot;&gt;Out of the box, you should have Unity desktop preinstalled. You can also switch to a Gnome look and feel if that's more familiar. There's a pretty wide variety of apps available through apt-get, include a Spotify Linux Beta.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Apps on Ubtuntu&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.unixmen.com/top-things-installing-ubuntu-14-1014-0413-1013-0412-1012-04/&quot;&gt;http://www.unixmen.com/top-&lt;wbr&gt;&lt;/wbr&gt;things-installing-&lt;span class=&quot;il&quot;&gt;ubuntu&lt;/span&gt;-14-&lt;wbr&gt;&lt;/wbr&gt;1014-0413-1013-0412-1012-04/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;b&gt;Installing Sublime Text 3 in Ubuntu via PPA&lt;/b&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color: #1155cc; font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;http://www.webupd8.org/2013/07/sublime-text-3-ubuntu-ppa-now-available.html&quot;&gt;http://www.webupd8.org/2013/&lt;wbr&gt;&lt;/wbr&gt;07/sublime-text-3-&lt;span class=&quot;il&quot;&gt;ubuntu&lt;/span&gt;-ppa-&lt;wbr&gt;&lt;/wbr&gt;now-available.html&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;div style=&quot;background-color: white; color: #222222; font-size: 12.8000001907349px;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;background-color: white; color: #222222;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;Installing Git through PPA&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;background-color: white;&quot;&gt;&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04&quot;&gt;https://www.digitalocean.com/&lt;wbr&gt;&lt;/wbr&gt;community/tutorials/how-to-&lt;wbr&gt;&lt;/wbr&gt;install-git-on-&lt;span class=&quot;il&quot;&gt;ubuntu&lt;/span&gt;-14-04&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: #222222;&quot;&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: #222222;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;Spotify Preview on Debian Squeeze/Ubuntu&lt;/span&gt;&lt;/b&gt;&lt;/div&gt;&lt;span style=&quot;color: #222222; font-family: Helvetica Neue, Arial, Helvetica, sans-serif;&quot;&gt;&lt;a href=&quot;https://www.spotify.com/us/download/previews/&quot;&gt;https://www.spotify.com/us/download/previews/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color: #222222;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;</description>
+          <pubDate>2015-04-04T00:09:00-04:00</pubDate>
+          <link>http://localhost:4000/blog/notes/ubuntu</link>
+          <guid isPermaLink="true">http://localhost:4000/blog/notes/ubuntu</guid>
+        </item>
+      
     
   </channel>
 </rss>

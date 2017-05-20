@@ -1,20 +1,28 @@
 ---
 layout: default
 ---
-<article {% if page.feature-img %}class="feature-image"{% endif %}>
-  <header style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
-    <h1 class="title">{{ page.title }}</h1>
-    <p class="meta">
-    {{ page.date | date: "%B %-d, %Y" }}
-    {% if page.author %} - {{ page.author }}{% endif %}
-    </p>
-  </header>
-  <section class="post-content">{{ content }}</section>
+
+<article>
+
+	<div class="center">
+		<h1>{{ page.title }}</h1>
+		<time>{{ page.date | date: '%B %-d, %Y' }}</time>
+	</div>
+
+	<div class="divider"></div>
+
+	{{ content }}
+
 </article>
 
-<!-- Disqus -->
-{% if site.theme.disqus_shortname %}
-<div class="comments">
-  {% include disqus.html %}
+<div class="page-navigation">
+	{% if page.next.url %}
+    <a class="next" href="{{ site.baseurl }}{{page.next.url}}" title="NEXT: {{page.next.title}}">&lt;&lt;</a>
+		<span> &middot; </span>
+  {% endif %}
+		<a class="home" href="{{site.baseurl}}/" title="Back to Homepage">All Blogs</a>
+  {% if page.previous.url %}
+		<span> &middot; </span>
+    <a class="prev" href="{{ site.baseurl }}{{page.previous.url}}" title="PREV: {{page.previous.title}}">&gt;&gt;</a>
+  {% endif %}
 </div>
-{% endif %}

@@ -1,67 +1,48 @@
-# SITE CONFIGURATION
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
-url: "http://fengtingzhang.com" # the base hostname & protocol for your site
+# Site Info
+title:              "Feng Ting's Blog"
+description:        "Prose I'm inspired to write"
 
-gems: [jekyll-paginate]
+# Author Info
+author_name:        "Feng Ting Zhang" # Your name here
+author_email:       info@fengtingzhang.com # Your email here
+twitter_username:   fengtingzhang # Your Twitter username here
+github_username:    fengtingzhang # Your GitHub username here
 
-# THEME-SPECIFIC CONFIGURATION
-theme:
-  # Meta
-  title: Feng Ting's Blog
-  avatar: avatar.jpeg
-  gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+# Site Settings
+baseurl:            "/blog" # Base URL must end WITHOUT a slash, default: ""
+permalink:          /notes/:title # Post permalink
+timezone:           America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+mathjax:            true  # enables support for mathjax - set to false to disable
 
-  # Header and footer text
-
-  header_text_feature_image:
-  footer_text: >
-
-  # Icons
-  rss: false
-  email_address: "info@fengtingzhang.com"
-  behance:
-  bitbucket:
-  dribbble:
-  facebook:
-  flickr:
-  github: "fengtingzhang"
-  google_plus:
-  instagram: "moreofsusan"
-  linkedin:  "https://www.linkedin.com/in/fengtingsusanzhang"
-  pinterest:
-  reddit:
-  soundcloud:
-  stack_exchange:  # Full URL
-  steam:
-  tumblr:
-  twitter: "fengtingzhang"
-  wordpress:
-  youtube:
-
-  # Scripts
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname:
-  katex: true # Enable if using math markup
-
-  # Localization strings
-  str_follow_on: "Follow on"
-  str_rss_follow: "Follow RSS feed"
-  str_email: "Email"
-  str_next: "Next"
-  str_prev: "Prev"
-  str_continue_reading: "Continue reading"
-
-  # Colours, typography and padding
-  # Open the "_sass > base" folder, and open "_variables.scss"
-
-# PAGINATION
-paginate: 5
-paginate_path: "blog/page:num"
-
-# BUILD SETTINGS
-markdown: kramdown
-highlighter: rouge
+# Site Build
+highlighter:        rouge
+markdown:           kramdown
+kramdown:
+    input:          GFM
 sass:
-  sass_dir: _sass
-  style: :compressed
+    style:          :compressed
+
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
+gems:
+  - jekyll-sitemap
+
+
+
+defaults:
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"
