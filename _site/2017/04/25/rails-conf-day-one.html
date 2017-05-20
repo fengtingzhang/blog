@@ -14,10 +14,10 @@
 	<link rel="shortcut icon" href="/blog/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="http://fengtingzhang.com/blog/2017/04/25/rails-conf-day-one.html">
+	<link rel="canonical" href="http://localhost:4000/blog/2017/04/25/rails-conf-day-one.html">
 
 	<!-- RSS -->
-	<link rel="alternate" type="application/atom+xml" title="Feng Ting's Blog" href="http://fengtingzhang.com/blog/feed.xml" />
+	<link rel="alternate" type="application/atom+xml" title="Feng Ting's Blog" href="http://localhost:4000/blog/feed.xml" />
 
 	<!-- Font Awesome -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@
 	</div>
 	<nav class="site-nav">
 		<ul>
-		    <li><a href="http://fengtingzhang.com/">Home</a></li>
+		    <li><a href="http://localhost:4000/">Home</a></li>
 			
 			
 			
@@ -223,10 +223,12 @@ Of being stable and not constantly on the run</p>
 
 <p>Not scientific, provable questions - ex: best sorting algorithm was solved a long time ago</p>
 
-<p>Some of these debates are
-1. TDD - test driven development, a faith-based idea. I inially talked about it in a deragotry way and I chave come to regret that. Like other fiath based ideas, not easily
-1. Static typing
-1. Immutability - if I program in object oriented languages should I convert to functional programming</p>
+<p>Some of these debates are</p>
+<ol>
+  <li>TDD - test driven development, a faith-based idea. I inially talked about it in a deragotry way and I chave come to regret that. Like other fiath based ideas, not easily</li>
+  <li>Static typing</li>
+  <li>Immutability - if I program in object oriented languages should I convert to functional programming</li>
+</ol>
 
 <h3 id="absurdity">Absurdity</h3>
 <p>Not suspecitble to able to fall off the wire easily</p>
@@ -237,8 +239,10 @@ Of being stable and not constantly on the run</p>
 
 <p>You’re along for the ride for the</p>
 
-<p>Learn to cope
-&gt; The important thingis not to be cured, but to live with one’s ailments.</p>
+<p>Learn to cope</p>
+<blockquote>
+  <p>The important thingis not to be cured, but to live with one’s ailments.</p>
+</blockquote>
 
 <h1 id="building-better-teams-through-communication">Building Better Teams Through Communication</h1>
 
@@ -270,10 +274,12 @@ Any sufficiently complex process could benefit from having a checklist.</p>
 <p>easily run any code in any containers</p>
 
 <h2 id="overview">overview</h2>
-<p>what are containers?
-1. lightweight VMs, not a full VM. When you have a linux host, you can only have a linux container - technically a container is not a virtual machine
-1. chroot on steriods: centos and ubuntu are two examples of OS containers
-1. namespaces + Cgroups: container runtimes: LXC, Docker, RKT, Systemd-nspawn</p>
+<p>what are containers?</p>
+<ol>
+  <li>lightweight VMs, not a full VM. When you have a linux host, you can only have a linux container - technically a container is not a virtual machine</li>
+  <li>chroot on steriods: centos and ubuntu are two examples of OS containers</li>
+  <li>namespaces + Cgroups: container runtimes: LXC, Docker, RKT, Systemd-nspawn</li>
+</ol>
 
 <h2 id="namespaces">namespaces</h2>
 <p>namespaces provides isolation

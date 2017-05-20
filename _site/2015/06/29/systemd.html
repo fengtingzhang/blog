@@ -14,10 +14,10 @@
 	<link rel="shortcut icon" href="/blog/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="http://fengtingzhang.com/blog/2015/06/29/systemd.html">
+	<link rel="canonical" href="http://localhost:4000/blog/2015/06/29/systemd.html">
 
 	<!-- RSS -->
-	<link rel="alternate" type="application/atom+xml" title="Feng Ting's Blog" href="http://fengtingzhang.com/blog/feed.xml" />
+	<link rel="alternate" type="application/atom+xml" title="Feng Ting's Blog" href="http://localhost:4000/blog/feed.xml" />
 
 	<!-- Font Awesome -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@
 	</div>
 	<nav class="site-nav">
 		<ul>
-		    <li><a href="http://fengtingzhang.com/">Home</a></li>
+		    <li><a href="http://localhost:4000/">Home</a></li>
 			
 			
 			
@@ -151,7 +151,7 @@
 
 <hr />
 
-<p>I recently went to a talk given at Facebook by Lennart Poettering. Systemd will be replacing sysvinit in the upcoming REL 7 distribution in Red Hat Linux, the Linux operating system that is commonly used in some enterprises. What interests me are the container features that it provides as an alternative to the docker style container system. </p>
+<p>I recently went to a talk given at Facebook by Lennart Poettering. Systemd will be replacing sysvinit in the upcoming REL 7 distribution in Red Hat Linux, the Linux operating system that is commonly used in some enterprises. What interests me are the container features that it provides as an alternative to the docker style container system.</p>
 
 <h2 id="before-systemd">Before Systemd</h2>
 <ul>
@@ -227,9 +227,11 @@
 
 <p>This example above is a dependency check for a web (http service). You can use system graph to see dependencies</p>
 
-<p>Example of parent and child process double forking (the classic example)
-  + example if Apache needs MySQL to be started first
-  systemd tracks processes using the Linux kernel’s cgroups subsystem instead of by using process identifiers (PIDs); thus, daemons cannot “escape” systemd, not even by double-forking.</p>
+<p>Example of parent and child process double forking (the classic example)</p>
+<ul>
+  <li>example if Apache needs MySQL to be started first
+  systemd tracks processes using the Linux kernel’s cgroups subsystem instead of by using process identifiers (PIDs); thus, daemons cannot “escape” systemd, not even by double-forking.</li>
+</ul>
 
 <p>Starting a service at service level 3</p>
 
@@ -238,12 +240,16 @@
 
 <p>Systemctl restart</p>
 
-<p>Systemctl status
-  + will show you the entire tree
-  + how long ago was the service started</p>
+<p>Systemctl status</p>
+<ul>
+  <li>will show you the entire tree</li>
+  <li>how long ago was the service started</li>
+</ul>
 
-<p>Systemctl show
-  + shows status for processes</p>
+<p>Systemctl show</p>
+<ul>
+  <li>shows status for processes</li>
+</ul>
 
 <p>Systemctl cat (don’t have to go to the directory file/folder)
   Systemctl edit - tell MySQL to change the cpu to use</p>
@@ -252,39 +258,50 @@
   Systemd-udevd</p>
 
 <p>Systemd-logind
-  Systemd-journald
-  + admin can </p>
+  Systemd-journald</p>
+<ul>
+  <li>admin can</li>
+</ul>
 
-<p>Systemd-networkd
-  + network manager
-  + match to which configuration does his network file match
-  + Intel uses it to do router configurations for example
+<p>Systemd-networkd</p>
+<ul>
+  <li>network manager</li>
+  <li>match to which configuration does his network file match</li>
+  <li>Intel uses it to do router configurations for example
   Uplink and downlink management
-  Networks are fully hotswappable
-  + does not do wifi</p>
+  Networks are fully hotswappable</li>
+  <li>does not do wifi</li>
+</ul>
 
-<p>Systemd-resolved
-  + DNS on red hat vs DNS on your local home
-  + if we have information about queries then we won’t query all that we know.</p>
+<p>Systemd-resolved</p>
+<ul>
+  <li>DNS on red hat vs DNS on your local home</li>
+  <li>if we have information about queries then we won’t query all that we know.</li>
+</ul>
 
-<p>Systemd-timesyncd
-  + syncs the clock
-  + when the system comes up if the clock comes up empty (ex: on raspberry pi) the time stamp might not be monotonic
-  -recommended over full ntp server if http is not needed</p>
+<p>Systemd-timesyncd</p>
+<ul>
+  <li>syncs the clock</li>
+  <li>when the system comes up if the clock comes up empty (ex: on raspberry pi) the time stamp might not be monotonic
+  -recommended over full ntp server if http is not needed</li>
+</ul>
 
 <p>Systemd-locald
   Systemd-hostnamed</p>
 
 <p>Others for bootup
-  Systemd-tmpfiles
-  + setup up sync remove and setup temp/files at boot time</p>
-
-<p>Systemd-sysusers
-  + bootup a system with just the users around
-  + will not create etc and var until necessary
-  + especially useful for container based systems that just only need users, where most container information is stored in a MySQL database</p>
-
+  Systemd-tmpfiles</p>
 <ul>
+  <li>setup up sync remove and setup temp/files at boot time</li>
+</ul>
+
+<p>Systemd-sysusers</p>
+<ul>
+  <li>bootup a system with just the users around</li>
+  <li>will not create etc and var until necessary</li>
+  <li>
+    <p>especially useful for container based systems that just only need users, where most container information is stored in a MySQL database</p>
+  </li>
   <li>useful for rpm also</li>
 </ul>
 
@@ -319,21 +336,25 @@
 <p>Busctl
   What interfaces methods and dbus messages each message offer</p>
 
-<p>Systemd-nspawn
-  + container runs over this (docker has its own implementation), rkt is built on it
-  + simple
-  + spawn it to a directory and start it up
-  + like qemu-Kvm but for containers</p>
+<p>Systemd-nspawn</p>
+<ul>
+  <li>container runs over this (docker has its own implementation), rkt is built on it</li>
+  <li>simple</li>
+  <li>spawn it to a directory and start it up</li>
+  <li>like qemu-Kvm but for containers</li>
+</ul>
 
-<p>Systemd-machined
-  + rest of the system knows about what a container is
-  + nspawn will register
-  + place to register containers (don’t emulate Hardware but share kernel) and VM (emulate hardware)
-  + every container registered with machined will get host name resolutions
-  http://www.freedesktop.org/wiki/Software/systemd/machined/
-  + dash M flag
-  + machinectl status
-  + like Unix ps command allows state of container</p>
+<p>Systemd-machined</p>
+<ul>
+  <li>rest of the system knows about what a container is</li>
+  <li>nspawn will register</li>
+  <li>place to register containers (don’t emulate Hardware but share kernel) and VM (emulate hardware)</li>
+  <li>every container registered with machined will get host name resolutions
+  http://www.freedesktop.org/wiki/Software/systemd/machined/</li>
+  <li>dash M flag</li>
+  <li>machinectl status</li>
+  <li>like Unix ps command allows state of container</li>
+</ul>
 
 <p>Via machined
   Ps
@@ -353,14 +374,18 @@
   Add more containers (and VMs) to your local system</p>
 
 <p>Nspawn va docker
-  Docker’s philosophy
-  + micro service within each docker</p>
+  Docker’s philosophy</p>
+<ul>
+  <li>micro service within each docker</li>
+</ul>
 
-<p>Systemd
-  + difference between systemd and normal container should be minimal
+<p>Systemd</p>
+<ul>
+  <li>difference between systemd and normal container should be minimal
   More integrated isolation
   Recursively entering into the docker is annoying
-  Journalctl example can interleave all service logs into one log stream</p>
+  Journalctl example can interleave all service logs into one log stream</li>
+</ul>
 
 <h2 id="summary">Summary</h2>
 <p>See image</p>

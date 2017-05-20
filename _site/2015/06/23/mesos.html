@@ -3,7 +3,7 @@
   <head>
 	<meta charset="utf-8">
 	<title>Mesos, Marathon, and Docker | Feng Ting's Blog</title>
-	<meta name="description" content="How Yodel solved its deployment problems using Mesos and Marathon with Docker">
+	<meta name="description" content="##How Yodel solved its deployment problems using Mesos and Marathon with Docker">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-Frame-Options" content="sameorigin">
 
@@ -14,10 +14,10 @@
 	<link rel="shortcut icon" href="/blog/favicon.ico" type="image/x-icon">
 
 	<!-- Canonical -->
-	<link rel="canonical" href="http://fengtingzhang.com/blog/2015/06/23/mesos.html">
+	<link rel="canonical" href="http://localhost:4000/blog/2015/06/23/mesos.html">
 
 	<!-- RSS -->
-	<link rel="alternate" type="application/atom+xml" title="Feng Ting's Blog" href="http://fengtingzhang.com/blog/feed.xml" />
+	<link rel="alternate" type="application/atom+xml" title="Feng Ting's Blog" href="http://localhost:4000/blog/feed.xml" />
 
 	<!-- Font Awesome -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@
 	</div>
 	<nav class="site-nav">
 		<ul>
-		    <li><a href="http://fengtingzhang.com/">Home</a></li>
+		    <li><a href="http://localhost:4000/">Home</a></li>
 			
 			
 			
@@ -147,7 +147,7 @@
      - Feng Ting Zhang
     </p>
   </header>
-  <section class="post-content"><h2 id="how-yodel-solved-its-deployment-problems-using-mesos-and-marathon-with-docker">How Yodel solved its deployment problems using Mesos and Marathon with Docker</h2>
+  <section class="post-content"><p>##How Yodel solved its deployment problems using Mesos and Marathon with Docker</p>
 
 <hr />
 
@@ -176,13 +176,18 @@
 </ul>
 
 <h3 id="virtual-layer">Virtual layer</h3>
-<p><strong>Mesos</strong> 
-1. Master slave topology
-2. Clustering for realms
-    * PROD mesos cluster
-    * QA mesos clsuter
-    * Staging mesos cluster
-3. Contains zookeeper</p>
+<p><strong>Mesos</strong></p>
+<ol>
+  <li>Master slave topology</li>
+  <li>Clustering for realms
+    <ul>
+      <li>PROD mesos cluster</li>
+      <li>QA mesos clsuter</li>
+      <li>Staging mesos cluster</li>
+    </ul>
+  </li>
+  <li>Contains zookeeper</li>
+</ol>
 
 <h3 id="ci">CI</h3>
 <p>Atlassian Bamboo - CI</p>
@@ -210,9 +215,11 @@
 <h2 id="solution-dynamic-scalingcustomizable-services">Solution: dynamic scaling/customizable services</h2>
 
 <h3 id="scaling">Scaling</h3>
-<p>Scales from 3 to 3000 dyanmically, through an UI for example
-  1. A process is not allowed to consume more than the resource CPU/Memory that is allocated
-  2. No starvation</p>
+<p>Scales from 3 to 3000 dyanmically, through an UI for example</p>
+<ol>
+  <li>A process is not allowed to consume more than the resource CPU/Memory that is allocated</li>
+  <li>No starvation</li>
+</ol>
 
 <h3 id="resource-constraints">Resource constraints</h3>
 <ol>
@@ -285,12 +292,16 @@ Fleet</p>
   <li>Why Qubit Bamboo and HA Proxy?</li>
 </ol>
 
-<p><strong>HA Proxy for canary</strong>
-  - waiting for canary partial
-  - header for canary isolation</p>
+<p><strong>HA Proxy for canary</strong></p>
+<ul>
+  <li>waiting for canary partial</li>
+  <li>header for canary isolation</li>
+</ul>
 
-<p><strong>Alternatives to Qubit Bamboo</strong>
-  - Consul template instead Qubit Bamboo</p>
+<p><strong>Alternatives to Qubit Bamboo</strong></p>
+<ul>
+  <li>Consul template instead Qubit Bamboo</li>
+</ul>
 
 <ol>
   <li>Production topology
