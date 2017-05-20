@@ -591,7 +591,7 @@ Not sysvinit 100% compatibility&lt;/li&gt;
       
         <item>
           <title>Mesos, Marathon, and Docker</title>
-          <description>&lt;p&gt;##How Yodel solved its deployment problems using Mesos and Marathon with Docker&lt;/p&gt;
+          <description>&lt;h2 id=&quot;how-yodel-solved-its-deployment-problems-using-mesos-and-marathon-with-docker&quot;&gt;How Yodel solved its deployment problems using Mesos and Marathon with Docker&lt;/h2&gt;
 
 &lt;hr /&gt;
 
@@ -677,7 +677,7 @@ Not sysvinit 100% compatibility&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;solution-implicit-service-discovery&quot;&gt;Solution: implicit service discovery&lt;/h3&gt;
-&lt;p&gt;look up port 8080 and it distributes to the slaves that are 
+&lt;p&gt;look up port 8080 and it distributes to the slaves that are
 service-instance-1 Listening on 31003
 service-instance-2 Lisetning on 31090&lt;/p&gt;
 
