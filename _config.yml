@@ -9,8 +9,8 @@ twitter_username:   fengtingzhang # Your Twitter username here
 github_username:    fengtingzhang # Your GitHub username here
 
 # Site Settings
-baseurl:            "/blog" # Base URL must end WITHOUT a slash, default: ""
-permalink:          /notes/:title # Post permalink
+baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
+permalink:          /blog/:title # Post permalink
 timezone:           America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 mathjax:            true  # enables support for mathjax - set to false to disable
 
