@@ -16,7 +16,7 @@ modified_time: '2017-11-15T09:16:43.607-07:00'
 
 Ruby is almost 25 years old, almost as old as Java.
 Recently new languages have come in, typescript, swift, go, elixir. Some people claim ruby is dead.
-Numerous applications written in Ruby, compatibility matters.
+Since there are numerous applications written in Ruby, compatibility matters.
 
 ### Second System Syndrome
 Ruby 1.9 (breaking changes going from 1.8), other languages that introduced breaking changes include Python3, Php6 and ECMAScript4
@@ -93,13 +93,13 @@ C files, compiles into .so, then dynmically loaded
 e.g. did you mean
 
 ##### Grapheme
-Byte -> Codepoint -> Grpheme
+Byte -> Codepoint -> Grapheme
 
 
 #### Controversial changes
 * Frozen string by default
-* pro: faster, less memory
-* con: incompatible
+1. pro: faster, less memory
+1. con: incompatible
 
 * "Real" Keyword arguments
 foo(1, option:true) becomes foo(1, {option: true})
