@@ -219,4 +219,30 @@ This is the first year I am at Ruby Conf without Jim Weichert
 
 Years ago, all the feature requests were to make Ruby more like Java. Now all the feature requests are to make Ruby more like TypeScript. Sculpters Gaudi, musicians like Beethoven, the world of fashion, painters and creators of visual poetry all create lasting legacy body of work. We have a problem in the software world. If you write software it might live for five year, I made this up. Good software takes ten years. Get used to it.
 
-How do you create rare OLD still-in-use code that last? I tried to talk to Michael C. Feathers, who wrote the book `Working effectively with Legacy Code`, and judging from his response he didn't get my question. My twitter questions also got sarcastic or negative responses
+How do you create rare OLD still-in-use code that last? I tried to talk to Michael C. Feathers, who wrote the book `Working effectively with Legacy Code`, and judging from his response he didn't get my question. My twitter questions also got sarcastic or negative responses.
+
+Step 1: Has to be born. Few people know that when twitter was born, it was a database-based rails app.
+
+Code survives by providing value and being difficult to replace. Biological systems are very much larger than anything (coherent) that people have built. Homeostasis - a balancing process between major organs, such as Brain, Liver - metabolize toxic substances, and Kidney. An inability to maintain homeostatis... result in death. You are dying right now! 3 milion cells die per seoncd out of 50 trillion cells in your body.
+
+What are the oldest surviing software system you regularly use? GNU Linux comes to mind. What else?
+```
+emacs
+UNIX
+BSD
+C-language toolchain
+grep
+Apache
+make
+X-windows system
+```
+
+They're either small (do one thing and does it well) or large systems.
+
+When do you build a system vs. a cell? Are you building the right one right now?
+```
+Cell = tiny components
+```
+
+Make smaler things - Sandi's talk from 2015 railsconf
+> All of the problems we cause have the same simple solution... Make smaller calsses, make smaller methods, and let them know as little about each other as possible. - Sandi Metz
