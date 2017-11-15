@@ -59,7 +59,7 @@ Register based IR
 2. uses less memory
 
 In one year, YARV was by RTL Vm, which consumes as much memory as 2.4
-[https://github.com/vnmakarov/ruby/tree/rtl_mjit_branch](RTL MJIT Branch)
+[RTL MJIT Branch](https://github.com/vnmakarov/ruby/tree/rtl_mjit_branch)
 
 RTL files
 C files, compiles into .so, then dynmically loaded
