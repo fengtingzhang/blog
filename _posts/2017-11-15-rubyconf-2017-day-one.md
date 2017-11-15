@@ -221,8 +221,10 @@ Years ago, all the feature requests were to make Ruby more like Java. Now all th
 
 How do you create rare OLD still-in-use code that last? I tried to talk to Michael C. Feathers, who wrote the book `Working effectively with Legacy Code`, and judging from his response he didn't get my question. My twitter questions also got sarcastic or negative responses.
 
-Step 1: Has to be born. Few people know that when twitter was born, it was a database-based rails app.
+### Step 1: Has to be born.
+Few people know that when twitter was born, it was a database-based rails app.
 
+### Step 2: Make smaller things and regularly replace them.
 Code survives by providing value and being difficult to replace. Biological systems are very much larger than anything (coherent) that people have built. Homeostasis - a balancing process between major organs, such as Brain, Liver - metabolize toxic substances, and Kidney. An inability to maintain homeostatis... result in death. You are dying right now! 3 milion cells die per seoncd out of 50 trillion cells in your body.
 
 What are the oldest surviing software system you regularly use? GNU Linux comes to mind. What else?
@@ -245,4 +247,60 @@ Cell = tiny components
 ```
 
 Make smaler things - Sandi's talk from 2015 railsconf
-> All of the problems we cause have the same simple solution... Make smaller calsses, make smaller methods, and let them know as little about each other as possible. - Sandi Metz
+> All of the problems we cause have the same simple solution... Make smaller classes, make smaller methods, and let them know as little about each other as possible. - Sandi Metz
+
+Kill and replace cells regularly - forces you to work with small components.
+- shows intefaces are clean enough, the rest of the system doesn't have to replace it.
+- it shows you can replace it.
+- healthy meta system for develop, even if they're working and don't need to be replaced.
+
+
+### Step 3: Deploy
+
+Always deploy. If the system is healthy, and the meta system proves that everything is healthy, we should be able to cycle through the servers constantly and still have 100% uptime.
+
+
+### Rules to keep in mind
+
+```
+The system is the asset, code is a liability.
+
+```
+
+Immutability - something that we can learn from biological systems. Thinking in terms of pure functions is a way to write tiny components with no side effects.
+
+```
+Never edit a method. Always rewrite it.
+```
+
+```
+Mutability of the system is enhanced by the immutability of its components.
+```
+
+```
+Be conservative in what your produce and liberal in what you can accept.
+```
+
+
+### Loose coupling
+
+Simple interfaces
+```
+UNIX pipes
+Bull RPC
+```
+
+### Assume failure
+
+#### MTBF vs MTTR
+Tests are actually coupled to your code, so they're an example of MBTF. Don't let your tests be an anchor that drags you around. 
+Arguably sometimes it's better to fix things really fast in production. Experience the worst case scenario so you don't have to fear it. Delete servers until they crash (perhaps not in production). Chad was the CTO of a company where the code was so in stasis that everyone was afraid to change it.
+
+
+#### Create problems that you can react to.
+Chaos Monkey (Netflix) Homeostasis 
+Spot instances in AWS, bid on a secondary market for AWS servers and the servers will die in production when price threshold is exceeded. Pinterest switch entirely to spot instances and built services around the failures to deal and recover.
+
+Encapsulation and referential integrity.
+The Big Rewrite *No MORE*
+
