@@ -147,7 +147,7 @@ Tomorrow, join us from 11:30 - 12 to discuss types and ruby programming langauge
 * faster block passing (&blk)
 * trace instructions
 
-> tweet hashtag #ruby25 to help celebrate ruby's 25th birthday next year
+> tweet hashtag `#ruby25` to help celebrate ruby's 25th birthday next year
 ----
 
 Aside from Matz's opening keynote, these were some of the other talks that I went to that I found interesting.
@@ -156,14 +156,14 @@ Aside from Matz's opening keynote, these were some of the other talks that I wen
 
 Programmers are the middle user between end user and the machine
 We should encourage the community to improve interpreter and compiler errors
-* improved (accurate error) messages
+### improved (accurate error) messages
 
 For example, when missing a parametrized argument to a method, the current version of ruby reports
 > expected 0 argument and received 1
 
-That's a bug, the presented reported it and Nobu fixed it with a patch
+That's a bug, the presenter reported it and Nobu fixed it with a patch
 
-* more context around errors
+### more context around errors
 Elm is doing a good job about that
 
 
@@ -187,6 +187,7 @@ Elm is doing a good job about that
 
 
 ----
+
 ## The evolution/best of of the community and talks by Justin Searls and Josh Greenwood
 
 A talk that featured the best of talk videos from past ruby conferences. Including talks about
@@ -198,8 +199,8 @@ At the beginning there were a lot of tribal knowledge
 Meta Programming in which DHH introduced Rails
 
 The first railscast videos introducing "new" rails features
-db:create task
-Auto timestamps
+> db:create task
+> Auto timestamps
 
 Code generation 11 years ago is revoluationary, it changed the industry and is now the norm in many other languages.
 
@@ -207,3 +208,15 @@ Heroku was released in 2007
 
 
 The videos of all these talks will be up soon in Justin's blog
+
+----
+
+## Closing Keynote: Growing Old by Chad Fowler
+
+This is the first year I am at Ruby Conf without Jim Weichert
+
+> Ruby is getting old - Matz from this morning
+
+Years ago, all the feature requests were to make Ruby more like Java. Now all the feature requests are to make Ruby more like TypeScript. Sculpters Gaudi, musicians like Beethoven, the world of fashion, painters and creators of visual poetry all create lasting legacy body of work. We have a problem in the software world. If you write software it might live for five year, I made this up. Good software takes ten years. Get used to it.
+
+How do you create rare OLD still-in-use code that last? I tried to talk to Michael C. Feathers, who wrote the book `Working effectively with Legacy Code`, and judging from his response he didn't get my question. My twitter questions also got sarcastic or negative responses
