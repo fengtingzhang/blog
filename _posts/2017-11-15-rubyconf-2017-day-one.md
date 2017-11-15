@@ -14,15 +14,14 @@ modified_time: '2017-11-15T09:16:43.607-07:00'
 
 ## Opening Key note by Matz
 
-Ruby is almost 25 years old, almost as old as Java.
-Recently new languages have come in, typescript, swift, go, elixir. Some people claim ruby is dead.
-Since there are numerous applications written in Ruby, compatibility matters.
+* Ruby is almost 25 years old, almost as old as Java.
+* Recently new languages have come in, typescript, swift, go, elixir. Some people claim ruby is dead.
+* Since there are numerous applications written in Ruby, compatibility matters.
+* Ruby is stable and mature, not keeping compatibility incurs migration cost and causes divisions in the community
 
 ### Second System Syndrome
-Ruby 1.9 (breaking changes going from 1.8), other languages that introduced breaking changes include Python3, Php6 and ECMAScript4
-ECMAScript4 was canceled and ECMAScript5 restarted from 3
-
-* Ruby is stable and mature, not keeping compatibility incurs migration cost and causes divisions in the community
+* Ruby 1.9 (breaking changes going from 1.8), other languages that introduced breaking changes include Python3, Php6 and ECMAScript4
+* ECMAScript4 was canceled and ECMAScript5 restarted from 3
 
 ### Changes
 
@@ -43,35 +42,39 @@ ECMAScript4 was canceled and ECMAScript5 restarted from 3
 Stack IR vs Register
 
 ##### Current ruby is stack based IR
-> get a
-> get b
-> some opt
-> puts c
-
+```
+get a
+get b
+some opt
+puts c
+```
 
 ##### Register based IR
-> plus a b c
+```
+plus a b c
+```
 
 Register based IR
 1. creates less traffic
 2. uses less memory
 
-In one year Replaced YARV by RTL Vm, which consumes as much memory as 2.4
-https://github.com/vnmakarov/ruby/tree/rtl_mjit_branch
+In one year, YARV was by RTL Vm, which consumes as much memory as 2.4
+[https://github.com/vnmakarov/ruby/tree/rtl_mjit_branch](RTL MJIT Branch)
 
 RTL files
 C files, compiles into .so, then dynmically loaded
 
 ##### Stack based IR vs RTL benchmarks
 
-
 * Current implementation
 1. load IR
 2. Execute IR
 
+
 * Baseline
 1. Load TRL
 1. Execute TRL
+
 
 * MJIT - MJIT is far from completion, runs most of the ruby tasks but doesn't run rails yet
 1. Generate TRL
@@ -85,9 +88,11 @@ C files, compiles into .so, then dynmically loaded
 1. MJTI runs 6x faster than ruby 2.0 in average
 1. MJIT consumes 5x more memory than ruby 2.0
 
+
 * Optcarrot benchmark
 1. MJIT runs 2.8x faster than ruby.20
 1. MJIT consumes consumes 1.16x more memory than ruby 2.0
+
 
 ##### Error reporting
 e.g. did you mean
@@ -95,34 +100,31 @@ e.g. did you mean
 ##### Grapheme
 Byte -> Codepoint -> Grapheme
 
-
-#### Controversial changes
-* Frozen string by default
+#### Controversial changes - still being discussed
+##### Frozen string by default
 1. pro: faster, less memory
 1. con: incompatible
 
-* "Real" Keyword arguments
+##### "Real" Keyword arguments
+```
 foo(1, option:true) becomes foo(1, {option: true})
+```
 1. pro: faster
 1. con: incomptabile
 
-* we are considering pattern matching
-* tail recursion/optimization
+##### pattern matching
+##### tail recursion/optimization
 1. pro: faster, no recursion limit
 1. con: confusing backtrace
 
-* adding concurrency model
+##### adding concurrency model
 1. pro: multi-core aware
 1. con: complexity, makes the language less undesrstable
 
-* finding error at compile time
-complex, less rigid
+#### finding error at compile time
+* complex, less rigid
 
-Tomorrow 11:30 - 12 types and ruby programming langauge
-There's no clear decision yet in these controversial changes
-
-minimize impact (emphasize compatibility)
-
+Tomorrow, join us from 11:30 - 12 to discuss types and ruby programming langauge. There's no clear decision yet in these controversial changes, he'd minimize impact (emphasize compatibility)
 
 #### Release dates
 * January - August: discussion
@@ -145,11 +147,12 @@ minimize impact (emphasize compatibility)
 * faster block passing (&blk)
 * trace instructions
 
-tweet hashtag #ruby25 for celebrate ruby's 25th birthday next year
+> tweet hashtag #ruby25 to help celebrate ruby's 25th birthday next year
 ----
 
-## (Taking better care of middle) User Error
-Olivier Lucan - Zombies eries
+Aside from Matz's opening keynote, these were some of the other talks that I went to that I found interesting.
+
+## (Taking better care of middle) User Error by Olivier Lacan
 
 Programmers are the middle user between end user and the machine
 We should encourage the community to improve interpreter and compiler errors
@@ -166,7 +169,7 @@ Elm is doing a good job about that
 
 ----
 
-## Writing Rocket software using Ruby
+## Writing Rocket software using Ruby by Nate Berkopec
 * An Apollo Guide Controller (AGC) simulator using the constraints from rocket launches from 1960s
 * Javascript version moon.js
 
@@ -184,16 +187,23 @@ Elm is doing a good job about that
 
 
 ----
-## The evolution/best of of the community and talks by Justin Searle
+## The evolution/best of of the community and talks by Justin Searls and Josh Greenwood
+
+A talk that featured the best of talk videos from past ruby conferences. Including talks about
+
 Matz took the best features from Perl, Lisp, and other programming languages
 
 At the beginning there were a lot of tribal knowledge
 
-Meta Programming
-Rails
-db:create task
-Auto timestamp
+Meta Programming in which DHH introduced Rails
 
-Code generation 11 years ago
+The first railscast videos introducing "new" rails features
+db:create task
+Auto timestamps
+
+Code generation 11 years ago is revoluationary, it changed the industry and is now the norm in many other languages.
 
 Heroku was released in 2007
+
+
+The videos of all these talks will be up soon in Justin's blog
