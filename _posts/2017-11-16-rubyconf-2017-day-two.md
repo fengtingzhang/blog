@@ -186,3 +186,40 @@ $ bundle --system ignore_messages true
 ```
 
 ----
+
+## Dispelling the dark magic: Inside a Ruby debugger by Daniel Azuma
+
+### mystery of the debugger
+like how the total eclipse can be mysterfiying for the ancients
+
+[https://tenderlovemaking.com/2016/02/05/i-am-a-puts-debuggerer.html](I am a puts debugger by tenderlove)
+
+## Debugger features live coding
+* breakpoints by file/line
+* command shell
+* step in/out/over
+
+Since Ruby 2.0
+http://ruby-doc.org/core-2.0.0/TracePoint.html
+
+
+### debuggers at the basic level are straightforward!
+In about 60 lines we can write a complete MiniDebug class + module that breakpoint, irb, step/out and over
+
+MiniDebug class
+
+```
+def initialize(description, breakpoint, line_number)
+  <add the description and breakpoint to an arary>
+end
+```
+
+In the `add_breakpoint` method
+
+```
+Tracepoint.trace(... <other events>, :call) |tp| do
+  <find the matching breakpoint class and line)
+  ...
+  tp.bindings.irb
+end
+```
