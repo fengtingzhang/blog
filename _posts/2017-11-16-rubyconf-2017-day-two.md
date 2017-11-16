@@ -34,6 +34,7 @@ packages into a jar
 * button in a few more lines
 * drawings
 * tetris
+* the presentation was written using shoes [https://github.com/PragTob/wingtips](Wingtips)
 
 ### History
 * originally written by _why who maintained it until 2009
