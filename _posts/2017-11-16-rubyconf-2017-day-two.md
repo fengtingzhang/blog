@@ -221,3 +221,110 @@ Tracepoint.trace(... <other events>, :call) |tp| do
   tp.bindings.irb
 end
 ```
+
+----
+
+## JRuby: What Why How by Thomas E Enebo and Charles Oliver Nutter
+
+### Use of java libraries
+* Hadoop
+
+### Polyglot
+* use right tool for the right job
+* Running in the same VM
+* Another dimension of libraries
+
+### Demo
+
+```
+$ jirb
+> frame = javax.swing.JFrame.new "hello!"
+> frame.show
+> frame.set_size 300, 300
+> frame.add button
+> frame.show
+
+```
+
+JVM Tooling
+* Graphical console into your application
+* Visual VM
+* Monitor GC, threads, CPU usage
+* connect to live web
+
+Comes with visual JDK
+
+Java JVM Just in time compiler (JIT)
+* Run code through our profiling interpreter
+* optimize ruby code before sending through to the bytecode
+
+### Benchmarks compared to CRuby High Performance
+```
+JRuby 1.25x (Slightly faster than CRuby)
+JRuby + JIT 1.34x
+JRuby + JIT + inline 5x
+JRuby + JIT + inline + indy 8x
+JRuby + JIT + indy + inline + Graal 8+x
+```
+
+### Do we need it?
+Better concurrency
+
+MRI requires a process per concurrent request
+* copy-on-write helps a little bit
+
+JRuby can handle all rewuests in on e process
+* bigger, but less memory than many MRI processes
+
+### JRuby on Rails
+* Working since 2006
+* Support lagged but Ruby 2.3-2.4x works
+1. Rails 5.0
+1. CRuby is on 2.5
+
+### Why are we lagging behind
+1. compatbility
+```
+ARJDBC -> AR    to         Java DataBase Connectivity
+           |                |     |             |
+          ActiveRecord     jruby  Postgresql   connectivity library
+           |                |
+           Rails            Ruby
+```
+
+Multiple versions of each library
+
+2. will be supporting a subset of versions
+
+### Set Up App
+`bundle install` = 90% of the work
+Run through the tests, migrate
+
+Deploying JRuby
+* puma or torquebox
+* warbler into a jar
+
+Recommended books
+- Deploying with JRuby 9k by Joe Kutner
+
+### Migration case studies
+* Redmine
+* Mastodon
+
+Good news
+- most extensions have jruby versions
+
+Bad news
+- some extensions don't have jruby versions but might have java native or java library equivalents
+```
+binding_of_caller
+rainbow
+hamlit
+charlock_holmes
+oj - early release
+```
+
+### We could need help
+* triage open issues
+* update wiki, docs
+* help us with patching up open bug requests and patching the core
