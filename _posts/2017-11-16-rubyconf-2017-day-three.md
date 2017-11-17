@@ -256,7 +256,7 @@ We have three major challenges this year, one of the chanlleges is concurrency (
 * A: You ask this in every conference and I have two answers, 1: never, 2: perhaps there is a way to introduce macros into ruby, perhaps you can implement it
 
 * Q: Can you give us an update on MRuby?
-* A: Last year we decided to run MRuby in a sandbox, we're working on making it more stable and try to reduce memory
+* A: Last year we decided to run MRuby in a sandbox, we're working on making it more stable and reducing memory.
 
 * Q: How does the core team report bad members and what does it take to become a core member?
 * A: If you submit a bug report taht we fix or if you fix the bug report that save people time I will add you
