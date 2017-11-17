@@ -14,10 +14,10 @@ modified_time: '2017-11-17T09:16:43.607-07:00'
 ## You insufficiently persuasive by Sandi Metz
 
 ### Happiness
-Recent study `On the Unhappiness of Software Developers`
-456,293 emails
-~100 responded
-219 unhappiness codes
+* Recent study `On the Unhappiness of Software Developers`
+* 456,293 emails
+* ~100 responded
+* 219 unhappiness codes
 
 ### Top external problems
 1. Time pressure
