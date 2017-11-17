@@ -201,3 +201,73 @@ ObjectSpace.dump_all
 ```
 
 Conclusion: There are a lot of objects that we cannot move, compact savings are unknown
+
+----
+
+## LLVM-based JIT compiler for MRI by Takashi Kokubun
+
+### Ruby 2.5
+* HAML 5x faster
+* ERB 2x faster
+
+What's JIT compiler
+JIT: Just-in-time
+
+JIT compiler optimizes a program by compling it to "native code"
+
+
+How the current MRI works
+
+ruby code
+def urby
+3 * 3
+end
+parse
+
+|
+abstract syntax tree
+compile
+|
+
+bytecode VM
+
+There are several varieties of JIT compilers and the subject matter was too difficult for me to understand, but it seems that he went through several versions of them in 6 months, and eventually forked from one of the JIT compilers and optimized it.
+
+----
+
+## Fireside chat with Matz
+
+Paraphrased
+
+* Q: How much time do you spend coding?
+* A: I try to spend 50% coding and 50% designing but in practice it's more like 20% coding/20% designing and 60% something else.
+
+* Q: Who is on the core team
+* A: We give permissiong by giving out commit previliges, most people have active code contributions or documentation, we have less than 20 commiters
+
+* Q: What other languages are interesting to you?
+* A: Elixir and some other languages like typescript, typscript having static type checking, elixir for its distrubted and concurrent programming
+We have three major challenges this year, one of the chanlleges is concurrency (3 - 5 years ago we only had 1 cpu per computer, but these days threading are run in parallel cpus). In ruby we have so many mutable objects. We are working on GIL to isolatie execution body (making it immutable) over threads.
+
+* Q: If you can break everyone's code, what would you change and what are you the most proud of?
+* A: I'm proud of inventing the block, I regret many things, I regret the Thread (class), Thread was added at the very beginning
+
+* Q: You mentioned elixir, at what version will you add macros to ruby (Aaron Patterson ask this in every conference)
+* A: You ask this in every conference and I have two answers, 1: never, 2: perhaps there is a way to introduce macros into ruby, perhaps you can implement it
+
+* Q: Can you give us an update on MRuby?
+* A: Last year we decided to run MRuby in a sandbox, we're working on making it more stable and try to reduce memory
+
+* Q: How does the core team report bad members and what does it take to become a core member?
+* A: If you submit a bug report taht we fix or if you fix the bug report that save people time I will add you
+
+* Q: Earlier you were talking about MINSWAM, do you have any advice for us on how to be better rubyists?
+* A: I am not a nice person every day but I pretend, I ask you as a member of the ruby community to pretend and then you will become nice
+
+* Q: When we moved from 1.8 to 2.0 we had a long release candidate. When we move to 3 will there be a longe release canidate period to address the breaking changes?
+* A: I don't have an idea about 3 yet but I expect there will be a 2.9. Adding ruby 3 will come with new features, it should be additions and it shouldn't have huge breaking changes. Of course we will be adding small breaking changes but we will try to make the damage as small as possible. Right now we think the keyword element.
+
+* Q: When you're back home and not going to conferences, do you go to ruby meetups and do people see you on the streets?
+* A: I seldom attend ruby meetups and I'm not really recognized. I love talking to people but I'm not social, it's a contadiction. Once I was recognized in the computer section of a bookstore, and he asked me "are you Matz?" and then asked me how do I learn programming? The other time was also in a bookstore in the computer section.
+
+
