@@ -83,10 +83,10 @@ installing different gems on different computers in a deterministic way
 * lots less data, but lots more requests
 
 #### Cool new stuff!
-```
-bundle clean
-bundle outdated
-bundle cache
+```ruby
+$ bundle clean
+$ bundle outdated
+$ bundle cache
 ```
 big deal for CI and heroku
 
@@ -199,7 +199,7 @@ like how the total eclipse can be mysterfiying for the ancients
 * command shell
 * step in/out/over
 
-[Since Ruby 2.0](http://ruby-doc.org/core-2.0.0/TracePoint.html)
+[TracePoint has been available since Ruby 2.0](http://ruby-doc.org/core-2.0.0/TracePoint.html)
 
 ### debuggers at the basic level are straightforward!
 In about 60 lines we can write a complete MiniDebug class + module that breakpoint, irb, step/out and over
@@ -216,7 +216,7 @@ In the `add_breakpoint` method
 
 ```
 Tracepoint.trace(... <other events>, :call) |tp| do
-  <find the matching breakpoint class and line)
+  <find the matching breakpoint class and line>
   ...
   tp.bindings.irb
 end
@@ -324,7 +324,7 @@ charlock_holmes
 oj - early release
 ```
 
-### We could need help
+### We could use some help
 * triage open issues
 * update wiki, docs
 * help us with patching up open bug requests and patching the core
