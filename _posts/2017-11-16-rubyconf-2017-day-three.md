@@ -29,15 +29,15 @@ modified_time: '2017-11-17T09:16:43.607-07:00'
 ### Persuasion
 #### Influence: The Psychology of Persuasion by Robert B. Cialdini
 1. Reciprocity
-  * Hare Krishnas
   * Evolutionary tendency to form groups, and the expectation that when you give up something you will receive something bigger in return
+  * Hare Krishnas heavily relied on this psychological concept, they'd force push flowers on people for money, and people felt they had to reciprocate even though he had no use for these flowers
 
 2. Consistency
-  * you promised, a child's expectations for a toy
+  * you promised, and it's hard to break a promise. That's how the retailers are able to increase the price of toys around holidays, because a child's expectations for a toy makes it difficult for a parent to renege on a promise, regardless of the price.
 
 3. Social Proof
-  * follow what other people do
-  * being ostricized for doing something that isn't the norm
+  * we are more likely to follow what other people do
+  * being ostricized for doing something that isn't the norm isn't a psychological barrier to overcome
 
 4. Authority
 
@@ -54,12 +54,12 @@ modified_time: '2017-11-17T09:16:43.607-07:00'
 
 #### How to Win Friends & Influence People by Dale Carnegie
 * Carnegie's book is about changing you, if you want to persuade people you should do that by changing the way you behave
-* I like it much better than the weaponized way that Cialdini has
+* I like it much better than the weaponized methods that Cialdini has in his book
 
 ### How do you know you're right?
 * Ends vs Means, the arguments are not about the ends but about how you do them
 * People aren't inherently evil, they have the same lofty goals as you but disagree about how to get there
-* If you understand motivation you will be better forged to gain agreements.
+* If you understand motivation you will be better forged to gain agreements
 
 #### Drive by Daniel H. Pink
 * if the task are mechanical - higher pay leads to higher performance
