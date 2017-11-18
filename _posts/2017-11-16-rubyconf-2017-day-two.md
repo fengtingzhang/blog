@@ -285,7 +285,7 @@ JRuby can handle all rewuests in on e process
 ### Why are we lagging behind
 1. compatbility
 ```
-ARJDBC -> AR    to       Java DataBase Connectivity
+ARJDBC -> AR    to     Java  Database Connectivity
            |                |     |             |
           ActiveRecord     jruby  Postgresql   connectivity library
            |                |
