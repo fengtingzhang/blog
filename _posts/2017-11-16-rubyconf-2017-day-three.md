@@ -30,10 +30,10 @@ modified_time: '2017-11-17T09:16:43.607-07:00'
 #### Influence: The Psychology of Persuasion by Robert B. Cialdini
 1. Reciprocity
   * Evolutionary tendency to form groups, and the expectation that when you give up something you will receive something bigger in return
-  * Hare Krishnas heavily relied on this psychological concept, they'd force push flowers on people for money, and people felt they had to reciprocate even though he had no use for these flowers
+  * Hare Krishnas heavily relied on this psychological concept, they'd force push flowers on people for money, and people felt they had to reciprocate even though they had no use for these flowers
 
 2. Consistency
-  * you promised, and it's hard to break a promise. That's how the retailers are able to increase the price of toys around holidays, because a child's expectations for a toy makes it difficult for a parent to renege on a promise, regardless of the price.
+  * you promised, and it's hard to break a promise. That's how the retailers are able to increase the price of toys around holidays, because a child's expectations for a toy makes it difficult for a parent to renege on a promise, regardless of the price
 
 3. Social Proof
   * we are more likely to follow what other people do
