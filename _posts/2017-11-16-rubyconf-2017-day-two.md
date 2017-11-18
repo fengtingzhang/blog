@@ -36,7 +36,7 @@ packages into a jar
 * tetris
 
 ### History
-* originally written by _why who maintained it until 2009
+* originally written by _why who maintained it until 2009, read _why's blog here https://poignant.guide/
 * afterwards was community maintained, aside from native cross-platform C code, there are several other version in SWT, javascript, coffeescript
 * run on MRI which can be run on a pi more easily than a JVM
 
@@ -49,7 +49,7 @@ Shoes::Rect --- Shoes::Swt::Rect
 
 swt can be swapped out with others, for example Electron
 
-```
+```ruby
 gem 'warbler'
 gem 'furoshiki' (OS-specific packaging on top of warbler)
 gem 'shoes-manual'
@@ -148,40 +148,40 @@ bundle config default_install_uses_path true (nokogiri doesn't get compiled twic
 ### Lightning Pro-tips
 
 * You override github gems to https with
-```
+```bash
 git_source(:github)
 ```
 
 * Better binstubs
-```
+```bash
 $ binstubs on rspec
 ```
 
 * To visualize dependencies
-```
+```bash
 $ bundle viz
 ```
 
 * Stable lockfile that doesn't change for other platforms
-```
+```bash
 $ bundle lock --add-platform java
 ```
 
 * You can write a script without creating a gem
-```
+```bash
 $ bundle inline
 ```
 
 * You can editing an existing gem and use pristine to discard changes
 
-```
+```bash
 $ bundle open <GEMNAME>
 <edit you gem>
 $ bundle pristine <GEMNAME>
 ```
 
 * You can turn off the post install messages
-```
+```bash
 $ bundle --system ignore_messages true
 ```
 
@@ -285,7 +285,7 @@ JRuby can handle all rewuests in on e process
 ### Why are we lagging behind
 1. compatbility
 ```
-ARJDBC -> AR    to         Java DataBase Connectivity
+ARJDBC -> AR    to       Java DataBase Connectivity
            |                |     |             |
           ActiveRecord     jruby  Postgresql   connectivity library
            |                |
