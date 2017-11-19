@@ -99,9 +99,9 @@ A culture of accountability and clear goals are also important but psychological
 
 ----
 
-## Building a Compactin GC for MRI by Aaron Patterson
-* [Be my boss]https://goo.gl/4rg2F6
-* come talk to me and if you don't know what to say I will give you one of my cat stickers
+## Building a Compacting GC for MRI by Aaron Patterson
+* [Be my boss](https://goo.gl/4rg2F6)
+* come talk to me, it's okay even if you don't know what to say - I will give you one of my cat stickers
 * Hidden sponsors of ruby development
 1. Funding for ruby development: github, heroku, oracle, redhat, cookpad, shopify, money forward
 1. You
@@ -113,7 +113,7 @@ Be here, write ruby, tell your friends
 
 ### Mark / Compact GC
 Low level talk, for new people
-* What is "copy on write"? (coW)
+* What is "copy on write"? (CoW)
 * what is "compaction"?
 * I can do this!
 
@@ -123,12 +123,12 @@ Algorithms and Implemntation details
 Don't copy something until we write to it
 
 #### String example
-```
+```ruby
 p = 'foo'
 p.ObjectSpace.memsize_of(str) => 9021
 p2.ObjectSpace.memsize_of(str) => 40
 p2 = 'bar'
-p2.ObjectSpace.memsize_of(str) => 9021
+p2.ObjectSpace.memsize_of(str) => 9021 # memory isn't allocated until write happens
 ```
 
 Same for array and hashes but larger than strings.
@@ -166,7 +166,7 @@ Unicorn Child1, Child2, Child3
 
 Problem is if child process loads a copy of rails we wind up with 3 copies of rails
 
-If Unicorn parent loads the parent rails and then have the child process make a copy of the preant process then we only make one copy of the parent. This is how unicorn works today. What I am doing is proving to myself that it's possible to use CoW to some optimizations before fork.
+If Unicorn parent loads the parent rails and then have the child process make a copy of the parent process, then we only make one copy of the parent. This is how unicorn works today. What I am doing is proving to myself that it's possible to use CoW to perform some optimizations before unicorn parent forks.
 
 #### What causes CoW Page fault? Mutating share memory
 
@@ -184,7 +184,7 @@ GC are few times before we fork
 ##### 2. Object allocation
 The other place where GC will write to memory is object allocation
 * Problem: The effect is that we have pages that are duplicated. How do we reduce this space
-* Solution: GC compact, compact Before Fork
+* Solution: GC compact, compact before Fork
 
 #### Compaction algorithm
 * two pointers one at the beining and one at the end of the heap
@@ -200,7 +200,7 @@ require 'objspace'
 ObjectSpace.dump_all
 ```
 
-Conclusion: There are a lot of objects that we cannot move, compact savings are unknown.
+Conclusion: There are a lot of objects that we cannot move, compaction savings are unknown.
 
 ----
 
