@@ -37,7 +37,7 @@ modified_time: '2017-11-17T09:16:43.607-07:00'
 
 3. Social Proof
   * we are more likely to follow what other people do
-  * being ostricized for doing something that isn't the norm isn't a psychological barrier to overcome
+  * being ostricized for doing something that isn't the norm is a psychological barrier to overcome
 
 4. Authority
 
@@ -50,7 +50,7 @@ modified_time: '2017-11-17T09:16:43.607-07:00'
 6. Scarcity
   * the value of things go up when there are fewer things
   * that's why Amazon tells you only 7 items of something are left
-  * the more value you place on something the more unwiling people are unwilling to let it go, for example a parking space
+  * the more value you place on something the more unwiling people are to let it go, for example a parking space
 
 #### How to Win Friends & Influence People by Dale Carnegie
 * Carnegie's book is about changing you, if you want to persuade people you should do that by changing the way you behave
@@ -80,12 +80,12 @@ teamwork
 #### Project Aristole by Google
 * They could not find patterns based on teams
 * They knew things that don't matter, for example personality
-* Group can have identities that were different from the identity from the individual
+* Group can have identities that were different from the identity of the individual
 
 #### Psycholoical safety
-* The fundamental thing that differentiate high performing team to dysfunctional ones are how the members of the team speak and treat each other. Group culture where everyone feels comfortable to speak
+The fundamental thing that differentiate high performing team to dysfunctional ones are how the members of the team speak and treat each other. Higher performing teams inculcated a group culture where everyone feels comfortable to speak.
 
-Equality in distrubtion of conversational turn-taking
+* Equality in distrubtion of conversational turn-taking
 - as long as everyone spoke in turn the team did well, if a few individuals spoke roughly all the time the teams performed poorly
 
 * Average social sensitivity
