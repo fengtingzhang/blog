@@ -125,10 +125,10 @@ Don't copy something until we write to it
 #### String example
 ```
 p = 'foo'
-p.ObjectSpace.memsizee_of(str) => 9021
-p2.ObjectSpace.memsizee_of(str) => 40
+p.ObjectSpace.memsize_of(str) => 9021
+p2.ObjectSpace.memsize_of(str) => 40
 p2 = 'bar'
-p2.ObjectSpace.memsizee_of(str) => 9021
+p2.ObjectSpace.memsize_of(str) => 9021
 ```
 
 Same for array and hashes but larger than strings.
