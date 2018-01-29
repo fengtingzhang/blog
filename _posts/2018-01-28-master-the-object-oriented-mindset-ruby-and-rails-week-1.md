@@ -1,3 +1,12 @@
+---
+layout: post
+title: Master the Object-Oriented Mindset Week 1
+date: '2018-01-28T09:15:00.001-07:00'
+author: Feng Ting Zhang
+tags:
+modified_time: '2018-01-28T09:16:43.607-07:00'
+---
+
 # Master the Object-Oriented Mindset in Ruby and Rails Week 1
 
 ## According to Alan Kay, definition of object-oriented programming is made up of three pieces
