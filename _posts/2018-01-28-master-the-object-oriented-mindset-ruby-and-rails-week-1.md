@@ -46,3 +46,17 @@ my_class.greeting
 ```
 
 It provides flexibility and late-binding benefits in ruby, if we decide to change their implementation later, we can implement them as another form of bareword and save ourselves from rewriting our implementation.
+
+## Methods vs. Messages
+In Ruby, messaging is implemented using object methods.
+
+1. Messages are late-bound
+In some statically typed programming languages such as C++, object methods are early-bound by default unless prefixed with the virtual keyword.
+
+2. Messages are discretionary
+* Null Object Pattern
+
+3. Messages are one-way, no return values
+* In Ruby messages are two-way
+
+4. Messages use commoditized formats
