@@ -109,7 +109,7 @@ GigUpdated bad
 ### Protobufs
 * Allow us to have a view of our aggregates
 * Previously, we currently had a weakly typed, decentralized messaging contact. JSON schema. That's problematic because it's not byte code and not typed. So we started using protobufs, a strongly typed State Change Event. Now instead of being json, it had to be strongly typed.
-* We added a single repo of protobufs definitions. Now, any developer that needs a contact of the information if the aggregate can reference this repo.
+* We added a single repo of protobufs definitions. Now, any developer that needs a contract or information on aggregates can reference this repo.
 * For Ruby, we compile this code, it's a gem that's version bumped so every service that needs this new functionality would need to upgrade.
 
 ### Event sourcing
