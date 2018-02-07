@@ -126,7 +126,7 @@ If a user has an related order, but you hear about the order first in the consum
 * A: we use upserts but it is case by case
 
 ## Presentation layers
-* LOSA - lots of small apps (node just app)
+* LOSA - lots of small apps (node.js app)
 * We keep rails as the presentation layer, then we have microfrontends in front of the rails presentation layer.
 * Are we still constructing the data for the presentation? Caching is one of the hardest problem to solve.
 
@@ -142,4 +142,4 @@ If a user has an related order, but you hear about the order first in the consum
 * API gateway
 
 * Q: How do you do logging and tracing?
-* A: We can push to aws and use data brick to massage everything into the normalized shape we want. Every write and every consumption and persisted into s3. We save the event id, the transaction id, and command that caused it, so that when a support request comes in we know which microservice broke it.
+* A: We can push to aws and use data brick to massage everything into the normalized shape we want. Every write and every consumption are persisted into s3. We save the event id, the transaction id, and command that caused it, so that when a support request comes in we know which microservice broke it.
