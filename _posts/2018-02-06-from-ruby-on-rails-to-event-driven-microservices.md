@@ -9,64 +9,71 @@ modified_time: '2018-02-06T09:16:43.607-07:00'
 
 # From Ruby on rails to event driven micro apps at Fivrr
 
-Persistence
-Mysql Dynamo redis mongodb
+## Persistence
+* Mysql 
+* Dynamo 
+* Redis 
+* Mongodb
 
-Messaging
+## Messaging
 Rabbitmq and Kafka
 
-Deployment
-Aws kubernetes docker deployment
+## Deployment
+* AWS 
+* kubernetes 
+* docker
 
-The monolith
-Everyone starts with a monolith
-Ror MySQL memchached for views
-Fast to deploy
+## The monolith
+* Everyone starts with a monolith
+* RoR MySQL memchached for views
+* Fast to deploy
 
-Problems
-Models lose cohesiveness
-No ownership
-Fear to deploy
-Long running tests
-No way to scale part of the system
-The data set is getting bigger, so the queues were taking longer
+### Problems
+* Models lose cohesiveness
+* No ownership
+* Fear to deploy
+* Long running tests
+* No way to scale part of the system
+* The data set is getting bigger, so the queries were taking longer
 
-The chimera
+## The chimera
 A Fiverr template for
 1. Rest endpoint for synchronous reads
-2. Rabbitmq for asynchronous writes
+1. Rabbitmq for asynchronous writes
 
-The writes posts to an endpoint that validates, which puts the messages into mangodb as a message hospital in case write fails, and then rabbitmq writes to the DB
+The writes posts to an endpoint that validates, which puts the messages into mongoDB as a message hospital in case write fails, and then rabbitmq writes to the DB
 
-Various DB connectors
-Monitoring and logging
-Write side safety
+### Benefits
+* Various DB connectors
+* Monitoring and logging
+* Write side safety
 
-With the template a mess of microservices that need to reach into each other
+### Problems
+* With the template, a mess of microservices spawned that need to reach into each other
+* Fiverr is at about 100 microservice, not at 1700 like Uber
 
-Bounded contexts
-DDD - Martin Fowler's concept about bounding services based on business activities/processes. Not based on entities.
+## Bounded contexts
+* DDD - Martin Fowler's concept about bounding services based on business activities/processes. Not based on entities.
+* However data is still shared between two services, and that can still a problem depending on how the data is shared
 
-However data is still shared between two services, and that can still a problem depending on how the data is shared
-
-Approach 1
+### Approach 1
 Share database between services
-The initial MySQL database
-Coupling at the lowest level
-Database grows, query slows
-Someone can affect your data
+* The initial MySQL database
+* Coupling at the lowest level
+* Database grows, query slows
+* Someone can affect your data
 
-Approach 2
+### Approach 2
 Pull data push command
-Service A API changes due to service B needs
-REST sucks as a query language
-Do this instead of something happened
+* Service A API changes due to service B needs
+* REST sucks as a query language
+* "Do this" instead of "something happened"
 
-Approach 3
+### Approach 3
 Event driven - domain events
-Producer and consumer are decoupled
-Services becomes reactive
-Data can be sent in the payload of the event
+* Producer and consumer are decoupled
+* Services becomes reactive
+* Data can be sent in the payload of the event
 
 BUT
 If data is persisted in each service, there is no single point if truth
