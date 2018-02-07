@@ -131,15 +131,15 @@ If a user has an related order, but you hear about the order first in the consum
 * Are we still constructing the data for the presentation? Caching is one of the hardest problem to solve.
 
 ## Conclusion
-* Only embark of this journey if you really to scale
-* Break the microservices bounded contracts, not data
+* Only embark of this journey if you really need to scale
+* Break the microservices by bounded contracts, not data
 * Domain events are great for providing events and not data
 * Design for failures, we designed messaging hospitals so we can recover from failures
-* Prefer strongly typed, well documented messaging contacts
+* Prefer strongly typed, well documented messaging contracts
 * Event sourcing works great with CQRS, but don't use it everywhere, only use it if it makes your life easier. Don't event source any entity in your system, for example a very static catalog that never changes.
-
-### Not there yet:
-* API gateway
 
 * Q: How do you do logging and tracing?
 * A: We can push to aws and use data brick to massage everything into the normalized shape we want. Every write and every consumption are persisted into s3. We save the event id, the transaction id, and command that caused it, so that when a support request comes in we know which microservice broke it.
+
+### Not there yet:
+* API gateway
