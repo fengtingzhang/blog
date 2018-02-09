@@ -76,17 +76,19 @@ Event driven - domain events
 * Data can be sent in the payload of the event
 
 BUT
-* If data is persisted in each service, there is no single point if truth
+* If data is persisted in each service, there is no single point of truth
 * Also, there is no history of the data so data can be lost
 
 ### CQRS
 Command query responsibility segregation
 
 * Most systems reads far more than writes
-* Separation between reads and writes. Most writes need to be normalized, but the problem is the read query of group by then count (aggregating in SQL) is extremely slow. * It's much better to set up a consumer of rabbitmq that persist a denormalized view data, in this case the aggregated count, that is fast to serve up in the view. Consume just the data that is relevant and optimized for the view.
+* Separation between reads and writes: You can use a different model to update information than the model you use to read information.
+* Most writes need to be normalized, but the problem is the read query of group by then count (aggregating in SQL) can be extremely slow. 
+* It's much better to set up a consumer of rabbitmq that persist a denormalized view data, in this case the aggregated count, that is fast to serve up in the view. Consume just the data that is relevant and optimized for the view.
 
 ## Kafka
-* Messaging broker designed for high volume processing, but it's better than rabbitmq because it is durable. In case of fails, Kafka will relay from it's queue.
+* Messaging broker designed for high volume processing like rabbitmq, but it's better than rabbitmq because it is durable. In case of fails, Kafka will replay from its queue.
 
 ### Producer and consumer
 * Dumb broker smart consumer. The producer is dumb, all it does is adding and putting the data out, and let the consumer decide where he is on the the topic to consume.
@@ -108,7 +110,7 @@ GigUpdated bad
 
 ### Protobufs
 * Allow us to have a view of our aggregates
-* Previously, we currently had a weakly typed, decentralized messaging contact. JSON schema. That's problematic because it's not byte code and not typed. So we started using protobufs, a strongly typed State Change Event. Now instead of being json, it had to be strongly typed.
+* Previously, we had a weakly typed, decentralized messaging contract. JSON schema. That's problematic because it's not byte code and not typed. So we started using protobufs, a strongly typed State Change Event. Now instead of being json, it had to be strongly typed.
 * We added a single repo of protobufs definitions. Now, any developer that needs a contract or information on aggregates can reference this repo.
 * For Ruby, we compile this code, it's a gem that's version bumped so every service that needs this new functionality would need to upgrade.
 
