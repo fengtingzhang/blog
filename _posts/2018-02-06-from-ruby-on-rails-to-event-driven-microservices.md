@@ -115,9 +115,9 @@ GigUpdated bad
 * For Ruby, we compile this code, it's a gem that's version bumped so every service that needs this new functionality would need to upgrade.
 
 ### Event sourcing
-Just look at the attributes that I care about, reconstruct the action to the data that I care about.
+Instead of storing just the current state of the data in a domain, use an append-only store to record the full series of actions taken on that data. The store acts as the system of record and can be used to materialize the domain objects. 
 
-### Producing and consuming your own writes for consistency
+#### Producing and consuming your own writes for consistency
 * Kafka as the source of truth would be ideal, meaning instead of directly writing to the database, we both produce and consume the data to make sure the data is consistent between the MySQL database and kakfa. Eating your own dogfood.
 
 ### Result
