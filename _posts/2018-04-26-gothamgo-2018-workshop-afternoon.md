@@ -81,7 +81,7 @@ for key, value := range beatles {
 
 
 ## Pointers
-* pointers are simpler, no pointer arithmatic and can't overwrite memory locations
+* pointers are simpler, no pointer arithmetics and can't overwrite memory locations
 
 
 ### `pass by value` vs `pass by reference`
@@ -123,3 +123,61 @@ And we can store pointers too:
 ```go
 b := &Beatle{}
 ```
+
+
+```go
+func main() {
+  x := "George"
+  printValue(&x)
+  fmt.Println(x)
+}
+
+func printValue(s *string) {
+  // print the pointer value
+  fmt.Println(s)
+
+  // print the string value
+  fmt.Println(*s)
+
+  // change the string value
+  *s = "Susan"
+}
+
+// Produces
+// 0xc42000e1e0
+// George
+// Susan
+```
+
+#### Pointer type checking
+go is so strongly typed that you can't do this
+```go
+type Beatle struct {
+    Name string
+}
+
+type NonBeatle struct {
+    Name string
+}
+
+func main() {
+    b := &Beatle{Name: "Ringo"}
+    n := &NonBeatle{Name: "Susan"}
+
+    changeUserName(n)
+}
+
+func changeUserName(b *Beatle) {
+    b.Name = "George"
+    fmt.Println(b.Name) // George
+}
+```
+
+will result in
+```go
+cannot use n (type *NonBeatle) as type *Beatle in argument to changeUserName
+```
+
+#### Security vs. Performance
+By default go passes by value for security, but it can be more performant to pass a pointer to a large file by pointer (reference)
+
