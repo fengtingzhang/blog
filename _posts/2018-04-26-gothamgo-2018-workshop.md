@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: GOTHAMGO 2018: THE EMPIRE STATE OF GO Workshop
