@@ -37,7 +37,7 @@ Add the bin to the PATH
 ### Common Layout
 $GOPATH/src/github.com/username/project
 
-### Caveats in the language
+### Syntax and Types
 #### keywords
 fallthough - in a switch it means it will not break, but also go to the next case. It's a bit confusing and I never use it
 
@@ -113,3 +113,101 @@ u := User {
   Email: "bar", //note you must provide this second comma here or the linter will complain
 }
 ```
+
+Caveat: there is no constructor. You can set as many of the field values on a struct at initialization time as you want.
+```go
+u := User{Email: "marge@example.com"}
+u.Name = "Marge Simpson"
+````
+
+#### scope
+* There are no type hierarchies
+* Capitalized field and struct names are exported, otherwise they're internal to the package
+
+
+### Arrays and Iterations
+
+### Initialization
+```go
+names := [4]string{}
+names[0] = "John"
+```
+
+* 0 by default
+
+### Array Types
+* The length is actually part of the type that is defined for arrays.
+* An array of size 2 cannot be assigned to an array of size 3
+
+### Matrix
+```go
+type Matrix [3][3]int
+
+m := Matrix{
+    {0, 0, 0},
+    {1, 1, 1},
+    {2, 2, 3},
+  }
+```
+
+### Loops
+```go
+  names := [4]string{"John", "Paul", "George", "Ringo"}
+
+  for i := 0; i < len(names); i++ {
+    fmt.Println(names[i])
+  }
+```
+
+Loop forever, continue or break at a condition
+```go
+for {
+  if i == 3 {
+    // go to the start of the loop
+    continue
+  }
+
+  if i == 4 {
+    break
+  }
+}
+```
+
+Range, much more useful than for loop
+```go
+func main() {
+  names := [4]string{"John", "Paul", "George", "Ringo"}
+
+  for i, n := range names {
+    fmt.Printf("%d - %s\n", i, n)
+  }
+```
+
+
+### Slices
+* A window into that array
+* Pointers, very efficient
+* Similar to arrays but dynamically sized. Fixedtyped but flexible, the language still needs arrays but I tend to use slices.
+
+```go
+nameSlice :=[]string{'foo','bar'}
+```
+
+#### Slice internals
+Think of slice as having three members
+* length
+* capacity
+* pointer to the underlying array
+
+If you know how big the slice will grow to be, you can allocate extra capacity to save some memory, but it can be tempting to optimize too early because the bottleneck are often I/O or waiting for user input
+
+Append
+```go
+append(nameSlice, 'baz')
+
+...
+// append entire other slice
+append(nameSlice, anotherSlice...)
+```
+
+Should the slice not have enough space Go will automatically reallocate the slice to have more capacity
