@@ -66,3 +66,50 @@ uint/int - either 32 or 64 bits depending on the system
 * strings are immutable in Go
 * UTF-8 support is built-in
 
+#### zero values, constant types
+* if a variable is declared but not assigned a value, a default value will be provided for that type
+* constants cannot be changed at run-time
+
+#### iota
+* iota is like an enum
+* you can do shift and multipliers on an iota
+```go
+const (
+  _  = 1 << (iota * 10) // ignore the first value
+  KB                    // decimal:       1024 -> binary 00000000000000000000010000000000
+  MB                    // decimal:    1048576 -> binary 00000000000100000000000000000000
+  GB                    // decimal: 1073741824 -> binary 01000000000000000000000000000000
+)
+
+```
+
+* You can use the _ to ignore a variable
+
+#### Structs
+
+* Go doesn't have classes, instead we have structs
+* A struct is a collection of fields, often called members (or attributes).
+
+
+```go
+type User struct {
+  Name string
+  Email string
+}
+
+...
+
+func main() {
+  foo := User{}
+  User.Name = "foo"
+  User.Name = "bar"
+}
+```
+
+A more compact way to initialize the struct
+```go
+u := User {
+  Name: "foo",
+  Email: "bar", //note you must provide this second comma here or the linter will complain
+}
+```
