@@ -72,6 +72,7 @@ uint/int - either 32 or 64 bits depending on the system
 #### iota
 * iota is like an enum
 * you can do shift and multipliers on an iota
+
 ```go
 const (
   _  = 1 << (iota * 10) // ignore the first value
@@ -79,7 +80,6 @@ const (
   MB                    // decimal:    1048576 -> binary 00000000000100000000000000000000
   GB                    // decimal: 1073741824 -> binary 01000000000000000000000000000000
 )
-
 ```
 
 * You can use the _ to ignore a variable
