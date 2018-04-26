@@ -1,13 +1,13 @@
 ---
 layout: post
-title: GOTHAMGO 2018: THE EMPIRE STATE OF GO Workshop
+title: gothamgo 2018 workshop morning
 date: '2018-04-26T09:15:00.001-07:00'
 author: Feng Ting Zhang
 tags:
 modified_time: '2018-04-26T09:16:43.607-07:00'
 ---
 
-# GOTHAMGO 2018: THE EMPIRE STATE OF GO
+# gothamgo 2018 workshop morning
 
 ## Welcome
 
