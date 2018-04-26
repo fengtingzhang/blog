@@ -209,7 +209,8 @@ type scribe struct {
 }
 
 // note the pointer receiver `s *scribe` is because you need to mutate the byte field, you have to pass a reference
-// if you change it to a value accessor `s scribe`, value accessor will not allow a mutate but can be access by both pointers and values
+// if you change it to a value accessor `s scribe`, value accessor will not allow a mutate
+// the compiler will allow both but it's more maintainability
 func (s *scribe) Write(p []byte) (int, error) {
   s.data = p
   return len(p), nil
@@ -297,3 +298,224 @@ func print(i interface{}) {
   }
 }
 ```
+
+## Errors
+
+### No try/catch
+```go
+f, err := os.Open("/not/a/real/path")
+if err != nil { // note you should explicitly check for nil, `if !err` only works for bool
+  // alert
+  return or break
+}
+
+// f is the file handle
+```
+
+### creating errors
+Defining errors in the standard library
+```go
+// in the `errors` package
+errors.New("a message")
+
+// in the `fmt` package
+fmt.Errorf("a %s message", "formatted")
+```
+
+Defining custom errors
+```go
+type error interface {
+  Error() string
+}
+```
+
+### Recovering from panics
+* Panics are caused by run time errors, such as cannot find a file path, index out of bound, access nil pointer
+* use `defer` with its built-in `recover()` function to recover from panics. Also you can log the error while you're at it.
+
+```go
+func main() {
+  defer func() {
+    if err := recover(); err != nil {
+      fmt.Println(err)
+    }
+  }()
+  a := []string{}
+  a[42] = "Bring a towel"
+}
+```
+
+### Sentinenal errors
+* Instead of invoking the `recover` function in the `defer`, use a specific value to signify that no further processing is possible.
+* Considered bad practice
+1. Sentinel errors become part of your public API
+1. Sentinel errors create a dependency between two packages
+
+### Alternate error package with stack and wrap
+* The standard library errors package lacks support for things like capturing a stack trace or annotating errors.
+[github.com/pkg/errors](github.com/pkg/errors)
+
+## Best practices
+* use a value receiver for an accessor and a pointer receiver for a mutator
+* smaller interfaces
+* try not to use else to left align happy paths
+* others, check [gometalinter](https://github.com/alecthomas/gometalinter)
+
+## Concurrency
+### go routine
+* A goroutine is a lightweight "thread" managed by the Go runtime. Goroutines execute concurrently.
+```go
+func main() {
+  go sayHello()
+}
+
+func sayHello() {
+  fmt.Println("hello")
+}
+```
+
+This won't print anything, because main exited because the goroutine finished. Instead just wait.
+
+### waitgroup
+[waitgroup](https://golang.org/pkg/sync/#WaitGroup)
+
+* Add function
+Add adds delta, which may be negative, to the WaitGroup counter. If the counter becomes zero, all goroutines blocked on Wait are released. If the counter goes negative, Add panics.
+
+```go
+func main() {
+  wg := &sync.WaitGroup{}
+  wg.Add(1)
+  go sayHello(wg)
+  wg.Wait()
+}
+
+func sayHello(wg *sync.WaitGroup) {
+  defer wg.Done()
+  fmt.Println("hello")
+}
+```
+
+### anonymous functions and closure
+Instead of explicitly defining `sayHello`, you can use an anonymous function
+```go
+for i := 0; i < 5; i++ {
+  go func(i int) {
+    defer wg.Done()
+    fmt.Printf("starting %d...\n", i)
+    time.Sleep(1 * time.Second)
+    fmt.Printf("ending %d...\n", i)
+  }(i)
+}
+```
+
+Note, you must pass in the `i` variable. If you don't, the scope of `i` would at the outer scope.
+Since the goroutines are being added to the execution stack, but not run, by the time they run,
+and access that memory space, i has already been changed.
+
+Sending i in as an argument creates a new scope and copies the value to a new memory location to preserve the proper value.
+
+### Mutex
+A mutex allows you to synchronize goroutines for safe access to the same shared memory. There are two types of mutexes
+1. full lock
+1. read/write lock
+
+```go
+func main() {
+  var mu sync.Mutex
+  var counter int
+
+  set := func(i int) {
+    mu.Lock()
+    defer mu.Unlock()
+    counter = i
+  }
+
+  get := func() int {
+    mu.Lock()
+    defer mu.Unlock() // Note, defer will execute at the exit of a function, not at the exit of a code {} block
+    return counter
+  }
+
+  go func() {
+    for {
+      time.Sleep(500 * time.Millisecond)
+      i := get()
+      fmt.Printf("counter: %d\n", i)
+    }
+  }()
+
+  var wg sync.WaitGroup
+
+  for i := 0; i <= 10; i++ {
+    wg.Add(1)
+    go func(i int) {
+      set(i)
+    }(i)
+    time.Sleep(750 * time.Millisecond)
+  }
+
+  wg.Done()
+}
+```
+
+### Channel
+Channels are a typed conduit through which you can send and receive values.
+
+
+#### initialize a channel
+```go
+message := make(chan string)
+```
+
+#### Send and receive
+```go
+ch <- // data is going into the channel
+<- ch // data is coming out of the channel
+```
+
+#### Buffered channels
+By default channels are unbuffered -- sends on a channel will block until there is something ready to receive from it.
+You can create a buffered channel - which allows you to control how many items can sit in a channel unread.
+
+```go
+  // Adding a second argument to the make function creates a buffered channel
+  messages := make(chan string, 2)
+```
+
+Channels are not message queues. Only one channel will receive a message sent down a channel. If multiple goroutines are listening to a channel, only one will receive the message.
+
+#### Closing Channels
+You can signal that there are no more values in a channel by closing it.
+```go
+func echo(s string, c chan string) {
+  for i := 0; i < cap(c); i++ {
+    // write the string down the channel
+    c <- s
+  }
+  close(c)
+}
+
+func main() {
+  // make a channel with a capacity of 10
+  c := make(chan string, 10)
+
+  // launch the goroutine
+  go echo("hello!", c)
+
+  for s := range c {
+    fmt.Println(s)
+  }
+}
+```
+
+
+### books and channel
+### Books
+* The Go Programming Language
+* Go Programming Blueprints, 2nd Edition
+
+### Videos
+* O'Reilly O'Reilly has a lot of great videos.
+* Just For Func is a great series by Francesc Campoy
+
