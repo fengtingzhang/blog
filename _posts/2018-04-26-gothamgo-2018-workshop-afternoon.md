@@ -9,6 +9,9 @@ modified_time: '2018-04-26T09:16:43.607-07:00'
 
 # gothamgo 2018 workshop afternoon
 
+## Testing in Go
+* You can import packages to make assertions nicer, for example the `is` package
+
 ## Maps
 
 ### Initializing maps
@@ -64,6 +67,12 @@ for key, value := range beatles {
     fmt.Println("not found")
   }
 
+  ...
+  // or more simply
+  if _, ok := beatles["Bob"]; !ok {
+    fmt.Println("not found")
+  }
+
 ```
 
 ### Thread Safety
@@ -71,3 +80,46 @@ for key, value := range beatles {
 * Maps are not thread safe, since Go 1.9x use [sync.Map](https://golang.org/pkg/sync/#Map)
 
 
+## Pointers
+* pointers are simpler, no pointer arithmatic and can't overwrite memory locations
+
+
+### `pass by value` vs `pass by reference`
+* by default, functions in go are pass by value
+* you can pass by reference by passing a pointer to the pointer
+
+#### Pass by value
+```go
+type Beatle struct {
+  Name string
+}
+
+func main() {
+  b := Beatle{Name: "Ringo"}
+  changeBeatleName(b)
+  fmt.Println(b.Name) // Ringo
+}
+
+func changeBeatleName(b Beatle) {
+  b.Name = "George"
+  fmt.Println(b.Name) // George
+}
+
+```
+
+#### To pass by reference
+
+To indicate we are expecting a pointer, we use the * modifier:
+```go
+func changeBeatleName(b *Beatle) {}
+```
+
+To get the address of a value we use the & modifier:
+```go
+&Beatle{}
+```
+
+And we can store pointers too:
+```go
+b := &Beatle{}
+```
