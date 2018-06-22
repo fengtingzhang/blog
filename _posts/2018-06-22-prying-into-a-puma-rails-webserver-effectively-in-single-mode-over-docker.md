@@ -57,7 +57,7 @@ From: /opt/demo-service/app/controllers/my_controller.rb @ line 4 MyController#c
 ### Adding puma
 * for staging and production use, it's recommended that you use a multi-threaded webserver such as `puma` rather than webbrick. As an aside, many people also use a multi-processed webserver such a unicorn, which isn't within the scope of this blog.
 * To add puma, include the `puma` gem in your `Gemfile`, and run `bundle` to install it
-* Heroku has written up a nice article about how to deploy (Rails Application with the Puma Web Server)[https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#config]
+* Heroku has written up a nice article about how to deploy [Rails Application with the Puma Web Server](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server)
 
 Now, when you run `rails s`, you'll get something like
 ```
@@ -83,7 +83,7 @@ From: /opt/demo-service/app/controllers/my_controller.rb @ line 4 MyController#c
 ```
 
 ### Problem with `binding.pry` timeouts in cluster mode
-* once you've configured your webserver with this configuration file, https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#config, and loaded the configuration file into your rails webserver,
+* once you've configured your webserver with [this configuration file](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#config), and loaded the configuration file into your rails webserver,
 puma will start in cluster mode.
 * In cluster mode, puma will cause your break point to time out after a default of 60 seconds
 * this problem is especially exacerbated in some dockerized environments, and it can even render your entire terminal session within that docker container unusable
