@@ -124,5 +124,10 @@ https://tinyurl.com/ruby26
 ## Designing Engineering Teams
 
 ### Just hire great engineers
-* You can't just hire great engineer
+* You can't just hire great engineers
 * Engineers have different kinds of backgrounds, a traditional CS background, bootcamp, languages
+
+### The Venn diagram of You and them
+* People want to work with people who are exactly like them, but if there's a 100% overlap between YOU and THEM, then one of you is redundant
+* The best candidates are people are have some overlap with you but bring a lot to the team from their non-overlaps
+
