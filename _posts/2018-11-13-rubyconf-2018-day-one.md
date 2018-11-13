@@ -106,3 +106,18 @@ https://tinyurl.com/ruby26
 * The creator of python has retired
 * 2025 Ruby 4 - practice for the future
 * Test-be for new design process
+
+## The games developers play - Andy Caroll
+
+#### Psychology
+* Games People Play by Eric Berne
+
+#### Roles
+* Parent
+* Adult
+* Child
+
+* Perpetrator, Rescuer, and Victim
+* I'm not a victim
+* Code review
+
