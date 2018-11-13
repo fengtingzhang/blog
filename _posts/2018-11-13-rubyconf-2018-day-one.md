@@ -260,7 +260,7 @@ Code Generator        Client Libary
 * See shapes and colors of classes that are reaching into other classes
 * These can all be pulled out and separated into sedifrent classes
 
-### Anti-pattern 3: large modules
+### Anti-pattern 1: large modules
 * Smaller modules
 * It's about having smaller pieces of components that composes
 
@@ -284,7 +284,7 @@ Code Generator        Client Libary
 #### Designing Data-Intensive Applications by Martin Kleppmann. take aways
 * Encoding
 * GRPC vs JSON
-* Partitioning databases, find a cardinal value, find something that's unique to a set of data
+* Partitioning databases, find a cardinal value, find something that's unique to a set of data. Con: you can't table scan, no joins, no transactions
 * Specialized data-stores
 * Catch and stream processing
 There's a lot misconceptions that stream processing is same as event processing, but that's false. Latter is order-dependent.
@@ -292,20 +292,24 @@ There's a lot misconceptions that stream processing is same as event processing,
 events != streams
 ```
 
-1. Systems of records and deriving data
+* Create a systems of records and deriving data, do not make law of demiter violations
 
 Method 1
 ```
 f(g(h(x)))
 ```
 
-2. Alternatively - make changes that are not dependent on each
-
-* Law of demiter violations
+Method 2 - Make changes that are not dependent on each preceeding functions
+```
+x
+f(x) g(x) h(x)
+```
 
 #### Summary
-* Communcat through queues
-* Retryable, didempotent workers
+* Communcate through queues
+* Retryable, idempotent workers
 * Pre-compute work. If you know what you will display to the user, do it out of band before you have to
 * Identify derived data
 * Determine consistency-costs
+
+
