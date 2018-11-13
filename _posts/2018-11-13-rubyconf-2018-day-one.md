@@ -131,3 +131,20 @@ https://tinyurl.com/ruby26
 * People want to work with people who are exactly like them, but if there's a 100% overlap between YOU and THEM, then one of you is redundant
 * The best candidates are people are have some overlap with you but bring a lot to the team from their non-overlaps
 
+### A digression into the history of aviation
+#### Fatal airline accidents per year 1946-2017 decreased because they figured out
+1. what do you need to do to make flying safe
+1. who are the people you need
+1. how do you train them
+
+### A digression into the history of medicine
+1. division of responsibilities and roles
+1. teaching hospitals
+
+"Let's rewrite this patient in React"
+
+### Roles
+* People leadership
+* Technical leadership
+* Customer focus and metrics
+* Students
