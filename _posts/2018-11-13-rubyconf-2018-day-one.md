@@ -88,16 +88,16 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 * Blog, tweet, share share your ideas, it will be a drop of water and it will form a ocean. You do your part and we will do our part
 
 #### We are working on Ruby 3
-Performance
-Concurrency
-Code Analysis
-Tools
-Endless-range
-JIT (experiment)
-Proc_call
-Transient heap
-Pattern matching
-Sane keyword arguments
+* Performance
+* Concurrency
+* Code Analysis
+* Tools
+* Endless-range
+* JIT (experiment)
+* Proc_call
+* Transient heap
+* Pattern matching
+* Sane keyword arguments
 
 ### Ruby 2.6
 https://tinyurl.com/ruby26
@@ -121,3 +121,8 @@ https://tinyurl.com/ruby26
 * I'm not a victim
 * Code review
 
+## Designing Engineering Teams
+
+### Just hire great engineers
+* You can't just hire great engineer
+* Engineers have different kinds of backgrounds, a traditional CS background, bootcamp, languages
