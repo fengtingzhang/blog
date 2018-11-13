@@ -60,3 +60,20 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 * Types
 * JIT
 * Concurrency
+
+#### Feeding the community
+* I created the shell and put it on the internet, but it's not where the value is
+* Ruby the community is the value
+* Comfortable
+* Intellectual Challenge
+* We (the core members) need to feed the community, like feeding a shark
+# Are we losing the members
+
+#### Hype cycle
+![Hype cycle](https://emtemp.gcom.cloud/ngw/globalassets/en/research/images/illustrations/researchmethodology-illustration-hype-cycle.jpg "Hype cycle")
+
+* People love new and shiny things
+* Ruby is grown up, but if we're in the trough in the cycle then it's where people should invest
+* Ruby helped to form twitter
+* We must *NOT* be fragile in our choice
+
