@@ -74,6 +74,35 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 
 * People love new and shiny things
 * Ruby is grown up, but if we're in the trough in the cycle then it's where people should invest
-* Ruby helped to form twitter
 * We must *NOT* be fragile in our choice
 
+#### Ruby's role in twitter development
+* Ruby helped to form twitter Ruby 1.8
+* We implemented the new Ruby virtual machine after that, and made it feature rich
+* Not perl
+* Ruby was slow in 1.8 but has gotten faster
+* We had other languages in the 90s and they went away because they gave up
+* The best way for survival - Policy and Philosophy - Never give up, be nice and be happy, form positive feedback loops, hire developments, great tools & libraries. out of comfort zone, try new things and make new friends
+
+#### You do your part
+* Blog, tweet, share share your ideas, it will be a drop of water and it will form a ocean. You do your part and we will do our part
+
+#### We are working on Ruby 3
+Performance
+Concurrency
+Code Analysis
+Tools
+Endless-range
+JIT (experiment)
+Proc_call
+Transient heap
+Pattern matching
+Sane keyword arguments
+
+### Ruby 2.6
+https://tinyurl.com/ruby26
+
+### Future
+* The creator of python has retired
+* 2025 Ruby 4 - practice for the future
+* Test-be for new design process
