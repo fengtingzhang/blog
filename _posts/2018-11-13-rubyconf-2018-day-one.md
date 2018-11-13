@@ -28,6 +28,11 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 * 1995 Ruby mailing list was formed with 200 users, report bugs and gave me suggestions - it predated the concept of open source in 1998, we didn't have a term for it so we called them free software
 * 2000 The Pickaxe Book - Total nuber of users, 10000 users?
 * 2001 First Ruby Conf held in Tampa, Florida - 34 Attendees
-
 ...
 * 2018 Estimated Number of Users Over 1M+
+* Businesses use Ruby
+* DevOps use Ruby, Chef
+* Embedded Programming people
+* Robots, payments devices, micro satellites
+* Web Servers (ngx_mruby, h2o)
+* You
