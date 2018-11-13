@@ -150,3 +150,102 @@ https://tinyurl.com/ruby26
 * Technical leadership
 * Customer focus and metrics
 * Students (students with newer knowledge and questions helps teams)
+
+## Family feud - twitter polls
+
+* my take away is there is a `lazy` enumerator
+
+
+## Yes, You Should Provide a Client Library For Your API - Daniel Azuma
+
+### The role of a client library
+* As an API user, you have a long list of things that you have handle
+* Ex: Auth, Retry, Caching, Quotas
+* Real APIs are much more than just HTTP requests
+* The role of a client library is to know the protocol, not just HTTP protocol, but the session, the auth, the retry, the caching, so that your users don't have to handle those concerns
+
+
+#### Client example
+```ruby
+client = Google::Cloud::Tranlsate.new(
+  project_id: 'my-project',
+  credentials: 'path/to/keyfile.json'
+)
+
+transation = client.translate('foobar')
+```
+
+* we are hiding the URL, the retry, the auth
+* things like productivity, the experience of being a developer, are emphasized
+
+
+### Use Ruby abstractions
+* It means integrating with standard Ruby libraries, for example logging libaries
+
+#### Handle errors, because error handling is annoying, token might expire, quota errors
+* As much as possible, the client library should handle its own errors, for example retries.
+* It's very important for a happy user experience.
+
+
+#### Improve safety/Security
+* If there is a security or encryption protocol, build it into the client library
+
+#### Improve perfomance
+* The fear is about performance, but if built correct the client libary can improve performance
+* The bottleneck performance is often inside the server itself, for example queries or indexes, rather than the network or retries
+* Caching in the client library done correctly can improve the performance
+* For example, logging, having the client log (asynchronously in batch) can be done in the client library
+
+
+#### Client libraries should provide instrumentation
+* Logging calls, log events
+* If you expect your client to be a Rails App, you can use ActiveSupport notifications
+
+
+### Inteface Description Language (IDL)
+* At google to support over 10 languages
+
+* A machine readable description of your API
+* Describes
+1. Calls
+1. Parameters/results
+1. Data types
+1. Properties
+1. Documentations
+
+Examples:
+1. [OpenAPI](httsp://openapis.org)
+1. Swagger
+1. GRPC/Protobuf
+
+### Early Google Libraries
+
+```
+                     IDL
+                       \
+Metaprogramming Engine ---> Generated Class
+
+Client libaries
+```
+
+* Metaprogramming makes for very obscure code
+* Wading through layers for debugging is not easy
+* This leads to generated client libraries rather than fetching the IDL through metaprogramming
+
+### Generated Ruby files
+```
+                IDL
+                  \
+Generator Engine ---> Generated Ruby Files (and documentation)
+Code Generator        Client Libary
+```
+
+
+### How do I get started?
+1. Choose a spec standard - for example protobuf/GRPC, or openAPI
+1. Write an API description
+1. Invoke a code generator
+1. Customize the generator
+
+### Additional resources
+[rubyconf2018](https://daniel-azuma.com/rubyconf2018)
