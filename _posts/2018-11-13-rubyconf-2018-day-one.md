@@ -30,9 +30,18 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 * 2001 First Ruby Conf held in Tampa, Florida - 34 Attendees
 ...
 * 2018 Estimated Number of Users Over 1M+
+
+
+#### 2018
 * Businesses use Ruby
 * DevOps use Ruby, Chef
 * Embedded Programming people
 * Robots, payments devices, micro satellites
 * Web Servers (ngx_mruby, h2o)
 * You
+
+#### Community
+* We are the community, there is no registration, or membership
+* Everyone uses Javascript here, we are not exclusive
+* Like Typhoon - We see Wind, Rain and Low Pressure; A vague structure, we cannot touch, move, or delete the typhoon. But comes with a huge power.
+
