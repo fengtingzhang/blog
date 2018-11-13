@@ -31,7 +31,6 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 ...
 * 2018 Estimated Number of Users Over 1M+
 
-
 #### 2018
 * Businesses use Ruby
 * DevOps use Ruby, Chef
@@ -44,4 +43,20 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 * We are the community, there is no registration, or membership
 * Everyone uses Javascript here, we are not exclusive
 * Like Typhoon - We see Wind, Rain and Low Pressure; A vague structure, we cannot touch, move, or delete the typhoon. But comes with a huge power.
+* Ruby cannot be Ruby without its community
 
+
+#### Bug reports and Community Contributions
+* I was not a great programmer and created many bugs
+* We owe much to the community
+* Intellectual curiosity
+
+#### Features from community contributions
+* I was not the one that came up with these ideas
+* UTF-8
+* Enumerator
+* Generational GC
+* Keyword Args
+* Types
+* JIT
+* Concurrency
