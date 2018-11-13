@@ -99,8 +99,7 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 * Pattern matching
 * Sane keyword arguments
 
-### Ruby 2.6
-https://tinyurl.com/ruby26
+[List of Ruby 2.6 features](https://tinyurl.com/ruby26)
 
 ### Future
 * The creator of python has retired
@@ -249,3 +248,64 @@ Code Generator        Client Libary
 
 ### Additional resources
 [rubyconf2018](https://daniel-azuma.com/rubyconf2018)
+
+
+## Uncoupling systems - Jeremy Hanna
+* Practical Object-Oriented Programming in Ruby book
+
+### Case study
+* A cataloger class that takes a list of books and catalogs them
+* Deeply nested in shape
+* There is a lot of behavior baked into a cataloger code
+* See shapes and colors of classes that are reaching into other classes
+* These can all be pulled out and separated into sedifrent classes
+
+### Anti-pattern 3: large modules
+* Smaller modules
+* It's about having smaller pieces of components that composes
+
+### Anti-pattern 2: Not being open to change
+* Newer engineers should be given the same opportunities to learn and fail the same way established engineers do
+
+### Anti-pattern 3 - not discussing trade offs
+* topology
+* latency
+
+### Books
+
+#### Distributed System by Marteen Van Steen - warning it's very dry. take aways
+* aysnchornous calls
+* load balance the work
+* replicate data, cache it locally
+1. variable
+1. redis key store, but leads to cache invalidation problems. Only key store is predictable because we can tell it to expire.
+1. database
+
+#### Designing Data-Intensive Applications by Martin Kleppmann. take aways
+* Encoding
+* GRPC vs JSON
+* Partitioning databases, find a cardinal value, find something that's unique to a set of data
+* Specialized data-stores
+* Catch and stream processing
+There's a lot misconceptions that stream processing is same as event processing, but that's false. Latter is order-dependent.
+```
+events != streams
+```
+
+1. Systems of records and deriving data
+
+Method 1
+```
+f(g(h(x)))
+```
+
+2. Alternatively - make changes that are not dependent on each
+
+* Law of demiter violations
+
+#### Summary
+* Communcat through queues
+* Retryable, didempotent workers
+* Pre-compute work. If you know what you will display to the user, do it out of band before you have to
+* Identify derived data
+* Determine consistency-costs
