@@ -126,10 +126,12 @@ https://tinyurl.com/ruby26
 ### Just hire great engineers
 * You can't just hire great engineers
 * Engineers have different kinds of backgrounds, a traditional CS background, bootcamp, languages
+* Growth isn't linear, people grow unique, interesting sets of skills
 
 ### The Venn diagram of You and them
 * People want to work with people who are exactly like them, but if there's a 100% overlap between YOU and THEM, then one of you is redundant
 * The best candidates are people are have some overlap with you but bring a lot to the team from their non-overlaps
+* The field is vast, nobody knows even 10% of software
 
 ### A digression into the history of aviation
 #### Fatal airline accidents per year 1946-2017 decreased because they figured out
@@ -143,8 +145,8 @@ https://tinyurl.com/ruby26
 
 "Let's rewrite this patient in React"
 
-### Roles
+### You need a variety of skills
 * People leadership
 * Technical leadership
 * Customer focus and metrics
-* Students
+* Students (students with newer knowledge and questions helps teams)
