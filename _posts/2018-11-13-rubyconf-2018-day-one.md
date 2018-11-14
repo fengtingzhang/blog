@@ -346,3 +346,9 @@ Service A - Service B - Service C
 Q: How do you balance with being tolerant with a month later wind up with garbage data?
 A: The service needs to validate that the data returned is accurate, even if you're just doing partial acceptance that you don't ingest the bad portion of the data.
 
+Q: In the case of the partial response, do you still return a 200
+A: We do, but we also notify the consumers that there is an error array that needs to be checked for partial responses
+
+Q: How do you differentiate because a malicious service
+A: not publically routable in this case, access control would be needed for publically accessible services
+
