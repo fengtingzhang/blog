@@ -156,13 +156,6 @@ qux.key?(:quux) #=> true
 ### Direct ISeq Marking
 #### Taking a look at Ruby VM
 * stack-tracked VM
-____
-|PC |
-____
-|PC |
-____
-|PC |
-
 * How do we get to these instructions?
 
 Processing phases
@@ -191,14 +184,81 @@ https://www.youtube.com/watch?v=YJPE5yTfvyQ
 ## Reducing Enumerable - An Illustrated Adventure
 
 ```ruby
-# 1,2,3 => 6
-[1,2,3].reduce(0) { |a, v| a + v }
+irb(main):001:0> [1,2,3].reduce(0) { |a, v| a + v}
+=> 6
+irb(main):002:0> [1,2,3].reduce(1) { |a, v| a + v}
+=> 7
 ```
 
 ### Accumulator
-```ruby
-0
 ```
+a   v    new
+0 + 1 => 1
+1 + 2 => 3
+3 + 3 => 6
+```
+
+### Sum (Ruby 2.4+)
+```ruby
+[1,2,3].sum => 6
+```
+
+### Ruby Map
+```
+irb(main):005:0> [1,2,3].map{ |a| a * 2 }
+=> [2, 4, 6]
+```
+
+### Implement Map with Reduce
+```ruby
+def map(list, &function)
+  list.reduce([]) do |a, v|
+    a.push function.call(v)
+    a
+  end
+end
+
+map([1,2,3]) {|v| v * 2}
+=> [2,4,6]
+```
+
+### Ruby Select
+```ruby
+[1,2,3].select{|v| v.even?}
+=> 2
+```
+
+### Implement select with reduce
+```ruby
+def select(list, &function)
+  list.reduce([]) { |a, v|
+    a.push(v) if function.call(v) # create a list if the return value is trueth
+    a
+  }
+end
+
+select([1,2,3]) {|v| v.even?}
+=> [2]
+```
+
+### Ruby find
+```ruby
+[1,2,3,4].find{|v| v.even?}
+=> 2
+```
+
+### Implement find with reduce
+```ruby
+def find(list, &function)
+  list.reduce(nil) { |_, v|
+    break v if function.call(v)
+  }
+end
+
+find([1,2,3,4]) {|v| v.even?}
+=> 2
+```
+
 
 ## Cache is King: Get the Most Bang for Your Buck From Ruby
 ## Make Ruby Write Your Code for You
