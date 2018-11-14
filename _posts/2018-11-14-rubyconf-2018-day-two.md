@@ -103,7 +103,7 @@ end
 mash.zip = 'bar' # bug - it actually invokes enumerable's zip method
 ```
 
-Fix - dhh (sharp knife)
+Fix - dhh [sharp knife](https://m.signalvnoise.com/provide-sharp-knives-cc0a22bf7934)
 * made a OverrideALotOfMethods module
 * there were a lot of methods to override
 
@@ -124,9 +124,8 @@ qux.key?(:quux) #=> true
 ```
 
 * value using splats breaks because of `core_hash_merge_kwd` in ruby code
-* :poop: emoji - a fix would slow down the performance so we wrote up the gotcha' in the README
-https://github.com/intridea/hashie#potential-gotchas
-
+* :poop: emoji - a fix would slow down the performance so we wrote up the [gotchas](https://github.com/intridea/hashie#potential-gotchas
+) in the README
 
 ## The Developer's Toolkit: Everything We Use But Ruby by Noel Rappin
 
@@ -142,9 +141,13 @@ https://github.com/intridea/hashie#potential-gotchas
 * We expect complexity and we're immune to it
 * Simplifying your keystrokes is the ability to minimize the amount of load on your brain
 
+### Choose your tools
+* Large Tool - choose 1 or 2
+* Waffle iron - spariningly
+* sidewalk ramps - use everywhere
 
 ## Pointers for Eliminating Heaps of Memory - Aaron Patterson
-## Optimizations in Multiple Dimensions
+## Reducing Enumerable - An Illustrated Adventure
 ## Cache is King: Get the Most Bang for Your Buck From Ruby
 ## Make Ruby Write Your Code for You
 
