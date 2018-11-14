@@ -324,7 +324,7 @@ f(x) g(x) h(x)
 
 ### Trust carefully
 
-* 500 error - outage for the entire feature. It could also be a network partition or service becoming unavailable.
+* 500 error - outage for the entire feature. It could also be a network partition or a service becoming unavailable.
 * Assuming the network had zero latency and unlimited bandwidth is a fallacy
 * Nowhere along the way could we inercept and deal with the error in a graceful way
 
@@ -354,4 +354,16 @@ Service A - Service B - Service C
 
 ## Closing Key Notes - Bianca Escalante
 
-###
+### The people and ideas that we leave behind and what are the costs of doing that
+* It is an equity issues and addressing it in this (open source) day and age is challenging and revoluntionary act.
+
+```
+Incorrect:
+
+Solving human inconveniences > Solving society problems
+```
+
+* When people are excluded, so are their ideas. When ideas are excluded, innovation stalls.
+* Why are we still OK with leaving people behind?
+* Sitting with discomfort and overcoming fears are how we grow as humans.
+
