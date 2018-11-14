@@ -367,3 +367,13 @@ Solving human inconveniences > Solving society problems
 * Why are we still OK with leaving people behind?
 * Sitting with discomfort and overcoming fears are how we grow as humans.
 * Are our communities safe spaces? Many marginalized folks still find our communities to be unsafe.
+
+### What we learned about the Ruby community
+1. The Ruby community was punk rock - Ruby was something born out of frustration with the prevalent language
+1. The Ruby community valued feelings - there was a desire to encourage developer happiness
+1. The Ruby community was friendly - MINASWAN
+
+### The criticisms about the Ruby community
+1. what constitues nice in own region might be mean the same in another region or community
+1. despite the Ruby community's best efforts, it wasn't all cats riding on unicorn down a rainbow slide
+1. open source can be put to bad use because it's created by people, not all of it is created for good. We need to get comfortable having these 'negative' conversations.
