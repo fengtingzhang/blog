@@ -366,4 +366,4 @@ Solving human inconveniences > Solving society problems
 * When people are excluded, so are their ideas. When ideas are excluded, innovation stalls.
 * Why are we still OK with leaving people behind?
 * Sitting with discomfort and overcoming fears are how we grow as humans.
-
+* Are our communities safe spaces? Many marginalized folks still find our communities to be unsafe.
