@@ -343,12 +343,15 @@ Service A - Service B - Service C
 * Once we get to the point have our failures visible to us, we can anlyze them and we can start figuring out how to make our systems more forgiving and tolerant.
 
 ### Q&A
-Q: How do you balance with being tolerant with a month later wind up with garbage data?
-A: The service needs to validate that the data returned is accurate, even if you're just doing partial acceptance that you don't ingest the bad portion of the data.
+* Q: How do you balance with being tolerant with a month later wind up with garbage data?
+* A: The service needs to validate that the data returned is accurate, even if you're just doing partial acceptance that you don't ingest the bad portion of the data.
 
-Q: In the case of the partial response, do you still return a 200
-A: We do, but we also notify the consumers that there is an error array that needs to be checked for partial responses
+* Q: In the case of the partial response, do you still return a 200
+* A: We do, but we also notify the consumers that there is an error array that needs to be checked for partial responses
 
-Q: How do you differentiate because a malicious service
-A: not publically routable in this case, access control would be needed for publically accessible services
+* Q: How do you differentiate because a malicious service
+* A: not publically routable in this case, access control would be needed for publically accessible services
 
+## Closing Key Notes - Bianca Escalante
+
+###
