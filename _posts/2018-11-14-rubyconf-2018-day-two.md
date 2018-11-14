@@ -181,7 +181,7 @@ Byte Code)
 https://www.youtube.com/watch?v=YJPE5yTfvyQ
 
 
-## Reducing Enumerable - An Illustrated Adventure
+## Reducing Enumerable - An Illustrated Adventure by Brandon Weaver
 
 ```ruby
 irb(main):001:0> [1,2,3].reduce(0) { |a, v| a + v}
@@ -259,6 +259,20 @@ find([1,2,3,4]) {|v| v.even?}
 => 2
 ```
 
+### Implemnt tally by
+```ruby
+def tally_by(list, &function)
+  init = Hash.new(0)
+  list.reduce(init) { |a, v|
+    key = function.call(v)
+    a[key] += 1
+    a
+  }
+end
+
+tally_by([1,2,3]) {|v| v.even?}
+=> { true => 1, false => 2}
+```
 
 ## Cache is King: Get the Most Bang for Your Buck From Ruby
 ## Make Ruby Write Your Code for You
