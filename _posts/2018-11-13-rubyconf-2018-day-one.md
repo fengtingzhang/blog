@@ -12,23 +12,25 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 ----------
 
 
-## Opening Key note by Matz - The Power of The Community
+## Opening Key Note by Matz - The Power of The Community
 
 ### Programming languages
 
-* In early 1980s the BASIC programming language was limited, I didn't know any other language, I felt so frustrated by the limitations of BASICS
-* PASCAL compiler was expensive so I didn't compile but just read through the book - designed to be teaching language
+* In early 1980s the BASICS programming language was limited, I didn't know any other language, I felt so frustrated by the limitations of BASICS
+* PASCAL compiler was expensive so I didn't compile but just read through the book - PASCAL is designed to be teaching language
 * C was designed to replace Assembly, so those languages were designed with clear intentions
 * Programming language is a form of expressing human ideas
 
 #### History
 * I made it for fun, I didn't try to make any money out of it.
 * Why not me? This was my teenage dream, and then I went to college and majored in Computer Science.
-* 1993 I started developing Ruby with 1 user
-* 1995 Ruby mailing list was formed with 200 users, report bugs and gave me suggestions - it predated the concept of open source in 1998, we didn't have a term for it so we called them free software
-* 2000 The Pickaxe Book - Total nuber of users, 10000 users?
-* 2001 First Ruby Conf held in Tampa, Florida - 34 Attendees
-...
+* In 1993 I started developing Ruby with 1 user
+* In 1995 Ruby mailing list was formed with 200 users. These users reported bugs and gave me suggestions.
+* The first email from the mail list was a friend congratulating me for creating the list, the second email was from him reporting that he found a bug. I fixed it, he reported another one, I fixed it again.
+* It predated the concept of open source in 1998, we didn't have a term for it so we called them free software
+* 2000: The Pickaxe Book - Total number of users, 10000 users?
+* 2001: First Ruby Conf held in Tampa, Florida - 34 Attendees
+  ...
 * 2018 Estimated Number of Users Over 1M+
 
 #### 2018
@@ -42,14 +44,13 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 #### Community
 * We are the community, there is no registration, or membership
 * Everyone uses Javascript here, we are not exclusive
-* Like Typhoon - We see Wind, Rain and Low Pressure; A vague structure, we cannot touch, move, or delete the typhoon. But comes with a huge power.
+* A community is like a Typhoon - We see wind, wain and low Pressure; It's a vague structure that we cannot touch, move, or delete., but it comes with a huge power.
 * Ruby cannot be Ruby without its community
 
 
 #### Bug reports and Community Contributions
 * I was not a great programmer and created many bugs
-* We owe much to the community
-* Intellectual curiosity
+* We owe much to the community and its intellectual curiosity
 
 #### Features from community contributions
 * I was not the one that came up with these ideas
@@ -67,7 +68,7 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 * Comfortable
 * Intellectual Challenge
 * We (the core members) need to feed the community, like feeding a shark
-# Are we losing the members
+* Are we losing the members?
 
 #### Hype cycle
 ![Hype cycle](https://emtemp.gcom.cloud/ngw/globalassets/en/research/images/illustrations/researchmethodology-illustration-hype-cycle.jpg "Hype cycle")
@@ -112,13 +113,9 @@ modified_time: '2018-11-13T09:16:43.607-07:00'
 * Games People Play by Eric Berne
 
 #### Roles
-* Parent
-* Adult
-* Child
-
-* Perpetrator, Rescuer, and Victim
-* I'm not a victim
-* Code review
+* Parent, Adult, and Child dyanmic
+* Perpetrator, Rescuer, and Victim dynamic
+* Code review, other developer interactions - remember that I'm not a victim
 
 ## Designing Engineering Teams
 
@@ -213,7 +210,7 @@ transation = client.translate('foobar')
 1. Documentations
 
 Examples:
-1. [OpenAPI](httsp://openapis.org)
+1. [OpenAPI](https://openapis.org)
 1. Swagger
 1. GRPC/Protobuf
 
@@ -247,7 +244,7 @@ Code Generator        Client Libary
 1. Customize the generator
 
 ### Additional resources
-[rubyconf2018](https://daniel-azuma.com/rubyconf2018)
+[Yes, you should provide a client library for your API! (RubyConf 2018)](http://daniel-azuma.com/articles/talks/rubyconf-2018)
 
 
 ## Uncoupling systems - Jeremy Hanna
@@ -389,5 +386,5 @@ Solving human inconveniences > Solving society problems
 1. How do I create a safe environment for others to speak up?
 1. Listen to others, pause when you're called out, refrain from centering yourself
 
-Reference to her slides for volunteering opportunities
+Reference to Bianca's slides for volunteering opportunities
 
