@@ -133,8 +133,9 @@ qux.key?(:quux) #=> true
 * [All the slides to this talk are found here](http://bit.ly/dev-toolkit-cheat)
 
 ### Other useful links
-* https://www.kickstarter.com/projects/tablexi/inclusion-meeting-cards
+* [Make sure everyone is heard during meetings](https://www.kickstarter.com/projects/tablexi/inclusion-meeting-cards)
 * https://www.techdoneright.io/
+* http://pragprog.com/book/nrtest3
 * http://www.noelrappin.com/
 
 ### Memory and focus
@@ -147,7 +148,58 @@ qux.key?(:quux) #=> true
 * sidewalk ramps - use everywhere
 
 ## Pointers for Eliminating Heaps of Memory - Aaron Patterson
+* Reducing the amount of string allocations with caching and bypassing ruby object creation in Ruby 2.6 over 2.5
+* Reduce 'dead space' memory overhead found in all Ruby programs today.
+
+### The compilation process of Ruby programs
+
+### Direct ISeq Marking
+#### Taking a look at Ruby VM
+* stack-tracked VM
+____
+|PC |
+____
+|PC |
+____
+|PC |
+
+* How do we get to these instructions?
+
+Processing phases
+```
+Source code (text)
+ |
+AST (Abstract Syntax Tree)
+ |
+Linked List
+ |
+Byte Code)
+```
+
+### Instruction optimizations
+
+### Internal data structures used for running Ruby code.
+
+### Use this information to maintain liveness of Ruby objects in the code.
+
+### we'll take all the information we covered so far to develop a technique for reducing dead space in the heap.
+
+### Video (from past conference)
+https://www.youtube.com/watch?v=YJPE5yTfvyQ
+
+
 ## Reducing Enumerable - An Illustrated Adventure
+
+```ruby
+# 1,2,3 => 6
+[1,2,3].reduce(0) { |a, v| a + v }
+```
+
+### Accumulator
+```ruby
+0
+```
+
 ## Cache is King: Get the Most Bang for Your Buck From Ruby
 ## Make Ruby Write Your Code for You
 
