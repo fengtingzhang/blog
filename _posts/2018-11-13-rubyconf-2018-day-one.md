@@ -312,4 +312,37 @@ f(x) g(x) h(x)
 * Identify derived data
 * Determine consistency-costs
 
+## Building for Gracious Failure - James Thompson
+### Return what we can
+* Returning a 500 is not gracious
+* Specific status codes
+* Partial successful responses
+
+### Accept what we can
+* allow test calls
+* allows and defaults missing parameters
+
+### Trust carefully
+
+* 500 error - outage for the entire feature. It could also be a network partition or service becoming unavailable.
+* Assuming the network had zero latency and unlimited bandwidth is a fallacy
+* Nowhere along the way could we inercept and deal with the error in a graceful way
+
+```
+Service A - Service B - Service C
+500         500         500
+```
+
+* We have to get into the mindset where we expect failure. Expect chaos.
+* More likely than network failures, it's crappy code, untested code in one of the services.
+
+
+### Expect failure
+* We need to build our services so that failures don't always lead to firefights and ruin our night or weeks
+* The first step is raise visibility.
+* Once we get to the point have our failures visible to us, we can anlyze them and we can start figuring out how to make our systems more forgiving and tolerant.
+
+### Q&A
+Q: How do you balance with being tolerant with a month later wind up with garbage data?
+A: The service needs to validate that the data returned is accurate, even if you're just doing partial acceptance that you don't ingest the bad portion of the data.
 
