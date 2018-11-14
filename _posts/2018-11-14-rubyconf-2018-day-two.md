@@ -26,8 +26,7 @@ modified_time: '2018-11-14T09:16:43.607-07:00'
 * But if that one person didn't speak up, then we wouldn't have this feature
 
 ## Let's subclass Hash - what's the worst that could happen? by Michael Herold
-
-### This is a talk about the hashie gem
+* This is a talk about the hashie gem
 
 ### To err is human
 * This talk is centered about 3 bugs in the hashie library
@@ -129,7 +128,21 @@ qux.key?(:quux) #=> true
 https://github.com/intridea/hashie#potential-gotchas
 
 
-## The Developer's Toolkit: Everything We Use But Ruby
+## The Developer's Toolkit: Everything We Use But Ruby by Noel Rappin
+
+### Slides
+* [All the slides to this talk are found here](http://bit.ly/dev-toolkit-cheat)
+
+### Other useful links
+* https://www.kickstarter.com/projects/tablexi/inclusion-meeting-cards
+* https://www.techdoneright.io/
+* http://www.noelrappin.com/
+
+### Memory and focus
+* We expect complexity and we're immune to it
+* Simplifying your keystrokes is the ability to minimize the amount of load on your brain
+
+
 ## Pointers for Eliminating Heaps of Memory - Aaron Patterson
 ## Optimizations in Multiple Dimensions
 ## Cache is King: Get the Most Bang for Your Buck From Ruby
