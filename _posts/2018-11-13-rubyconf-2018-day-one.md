@@ -377,3 +377,17 @@ Solving human inconveniences > Solving society problems
 1. what constitues nice in own region might be mean the same in another region or community
 1. despite the Ruby community's best efforts, it wasn't all cats riding on unicorn down a rainbow slide
 1. open source can be put to bad use because it's created by people, not all of it is created for good. We need to get comfortable having these 'negative' conversations.
+
+### Addressing the problems
+1. Addressing the problems in your communities does not make you 'negative' or 'toxic'
+1. Do most folks in my community come from similar backgrounds as me? If not, reach out and diversify for their perspectives
+1. If you cannot hire people, consider volunteering and mentoring
+1. It's important that you take a look at your project, your workplace, you community, and think critically about how to improve the culture.
+
+### Foster an inclusive culture
+1. Who have I not heard from?
+1. How do I create a safe environment for others to speak up?
+1. Listen to others, pause when you're called out, refrain from centering yourself
+
+Reference to her slides for volunteering opportunities
+
