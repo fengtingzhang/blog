@@ -275,6 +275,29 @@ tally_by([1,2,3]) {|v| v.even?}
 ```
 
 ## Cache is King: Get the Most Bang for Your Buck From Ruby
+
+### CPU in Database
+* Database to Model, but at over 200 Millions records our RDS CPU utilization were spiking to 100%
+* We found a lot of ms queries that were happening often, and our database was being overwhelmed
+* What if instead of all these individual queries what if we made 1 query and have that go through cache? - BulkVelnerabilityCache
+* Decrease in database hits (Individual ActiveModel Serializers serializations from 2100 to 7)
+
+### Now we have a Redis cache problem
+* Instead of caching all 2 million records in redis we cached the client (configuration) into redis
+* Rest are stored in memory
+
+### Sharding configuration growth
+* 20 bytes -> 1KB -> 13 KB
+* ActiveRecord already stores these (Octopus Proxy) configurations in a memoized way, there is no need to further to cache in Redis
+
+### Making database requests where you don't expect
+```ruby
+return unless user.ids.any? # optimized to bypass opening that database connection (probably pooled) and querying the database
+User.where(users_ids: user.ids).each do
+  # process users
+end
+```
+
 ## Make Ruby Write Your Code for You
 
 
