@@ -237,13 +237,13 @@ def select(list, &function)
   }
 end
 
-select([1,2,3]) {|v| v.even?}
+select([1,2,3]) { |v| v.even? }
 => [2]
 ```
 
 ### Ruby find
 ```ruby
-[1,2,3,4].find{|v| v.even?}
+[1,2,3,4].find{ |v| v.even? }
 => 2
 ```
 
@@ -255,7 +255,7 @@ def find(list, &function)
   }
 end
 
-find([1,2,3,4]) {|v| v.even?}
+find([1,2,3,4]) { |v| v.even? }
 => 2
 ```
 
@@ -270,7 +270,7 @@ def tally_by(list, &function)
   }
 end
 
-tally_by([1,2,3]) {|v| v.even?}
+tally_by([1,2,3]) { |v| v.even? }
 => { true => 1, false => 2}
 ```
 
@@ -356,5 +356,55 @@ a.order()
 
 
 ### Abstractions
-* Functions provide abstractions over __functionality__ actions
+* Functions provide abstractions over ~~functionality~~ actions
 * Classes provide abstractions over functions
+
+```ruby
+def order_pizza
+  a = Pizza.new()
+  a.add('Pepperoni')
+  a.add('Oregano')
+  a.order
+end
+```
+
+```ruby
+def order_salad
+  a = Salad.new()
+  a.add('Caeser Dressing')
+  a.order
+end
+```
+
+* How do you take care of copy and pasted code that are just slightly different?
+* Adding new features by auto-generation takes tons of time at first, but eventually it pays off
+
+### When do you auto-generate?
+* You auto-generate when you have *lots and lots* of similar code
+* To auto-generate code we need 3 distinct things
+1. Define a word bank
+1. build out some human-readable templates
+1. inject values into templates
+
+### Why is Ruby great for auto-generating code?
+* Ruby has an erb template library
+
+```ruby
+def order_<%= food %>()
+  a = <%= food.capitalize %>.new()
+  <% for topping in toppings %>
+  a.add(topping)
+  a.order
+end
+```
+
+### How does this differ from Rails web development?
+* You want as much logic in your templates as possible
+* Templates should be human readable, don't be too clever
+
+
+### Word Bank
+* Contains everything needed in your templates
+* Best way is to reverse engineer your word banks from your templates
+* For example, use YAML
+
