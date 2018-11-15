@@ -321,9 +321,9 @@ User.none.tall.etc # better
 * log performance and requests for diagnostics
 * used datadog apm
 
-## Make Ruby Write Your Code for You
+## Make Ruby Write Your Code for You by Google Cloud Compute
 
-### motivations
+### Motivations
 * Cusomters use many different deployment tools to provision and manage their operating environments.
 * Companies like Puppet, Chef, Ansible, Hashicorp produce open source tools to meet these needs and typically provide enterprise versions and support.
 * Once customers invest in these tools they prefer to use a single management system (and style). For this reason Google wants to provide integration for these tools, so that our customers have an easier path to GCP versus abandoning a tool they're already comfortable with.
@@ -333,16 +333,28 @@ User.none.tall.etc # better
 * Developed by Google Cloud team
 * Open sourced
 * Generate code to generate code that we ship off to terraform (chef, ansible, and others)
+* For example, you can provision a redis instance in GCP using this [terraform template](https://github.com/GoogleCloudPlatform/magic-modules/blob/master/products/redis/terraform.yaml)
 
 
 ### Like mad lips
 * templates to add customization
 
 ```ruby
-a = ___.new(0)
+a = ____.new(0)
     food
 a.add(______)
       topping
 a.order()
 ```
 
+* Auto-generation is just Mad Libs
+
+### What auto-generation isn't (for us)
+* No blockchains
+* No machine learning!
+* No compiler magic!
+
+
+### Abstractions
+* Functions provide abstractions over __functionality__ actions
+* Classes provide abstractions over functions
