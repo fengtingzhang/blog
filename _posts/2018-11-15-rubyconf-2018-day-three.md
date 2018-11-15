@@ -93,3 +93,120 @@ git annotate file.rb
 ```
 
 * Help each other git better
+
+## Building Generic Software by Chris Salzberg
+
+
+### common patterns in translation libraries
+
+1. The translated attribute
+
+2. Storage patterns - tables in postgres
+
+3. Fallbacks - if a locale is not found return the english translation rather than nil
+
+4. Dirty tracking
+```
+talk.changes
+```
+
+5. control flows
+```ruby
+read_from_storage(:title)
+write_to_storage(:title, value)
+```
+
+```ruby
+module InstanceMethods
+  def read_from_storage(attirbute)
+    fallback_locales.each do |locale|
+      value = column_value(attribute, locale)
+      return value if value.present?
+    end
+  end
+
+  def column_value(attribute, locale)
+    ...
+  end
+end
+```
+
+```
+ talk               application-code
+  |
+ \|/
+translates          high-level-interface
+  |
+ \|/
+read_from_storage   low-elevl-implemenation
+```
+
+
+* [Idea: pluggable translation backends](https://github.com/globalize/globalize/issues/500)
+* wouldn't it be nice to swap in jsonb storage for postgres storage?
+* how do you make something that's not pluggable, pluggable
+
+
+### Inversin of control
+```
+talk
+ |    /|\
+\|/    |
+translates
+```
+
+[Designing Reusable Classes - Ralph E. Johnson. Brian Foote](https://www.cse.msu.edu/~cse870/Input/SS2002/MiniProject/Sources/DRC.pdf)
+
+
+### The hollywood principle
+* Don't call us, we'll call you
+
+
+```ruby
+
+class Talk
+  define_accessor(:title)
+
+  def title
+    title_backend.read(I18n.locale)
+  end
+
+  def title(:value)
+    title_backend.write(I18n.locale, value)
+  end
+
+
+  def title_backend
+    @backends[:title] ||=
+      ColumnBackend.new(self, :title)
+    end
+  end
+end
+```
+
+* Now we defined the interface, and we need to implement it
+```ruby
+class ColumnBackend
+  # ... implement the read and write methods
+end
+```
+
+1. plugins.each include plugin
+2. attributes.each define_accessor, define_backend
+3. backend.setup_model
+4. pass fallback class as an argument to the initializer
+
+### Mobility is a Pluggable Ruby translation framework
+* [https://github.com/shioyama/mobility](https://github.com/shioyama/mobility)
+* No Activerecord, ActiveSupport, no persistence layer
+
+### Other pluggable libraries
+* [Roda](https://github.com/jeremyevans/roda)
+* [Shrine](https://github.com/shrinerb/shrine)
+
+
+### Complexity of protocol vs. reusability of software
+* Most gems wind up in the swiss army knife model - "maximally general interface"
+* Generatic software is the maximum reusability of software but minimal complexity of protocol, sharp knife
+
+
