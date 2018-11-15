@@ -204,7 +204,7 @@ a   v    new
 ```
 
 ### Ruby Map
-```
+```ruby
 irb(main):005:0> [1,2,3].map{ |a| a * 2 }
 => [2, 4, 6]
 ```
@@ -287,7 +287,10 @@ tally_by([1,2,3]) {|v| v.even?}
 * Rest are stored in memory
 
 ### Sharding configuration growth
-* 20 bytes -> 1KB -> 13 KB
+```
+20 bytes -> 1KB -> 13 KB
+```
+
 * ActiveRecord already stores these (Octopus Proxy) configurations in a memoized way, there is no need to further to cache in Redis
 
 ### Making database requests where you don't expect
@@ -307,16 +310,16 @@ User.none.tall.etc # better
 ### Increasing resque workers
 * from 45 - 70 caused Redis connection errors
 * Redis load spike to 100%
-# removed throttling code to Redis
-# database performance stayed the same
+* removed throttling code to Redis
+* database performance stayed the same
 
 ### Cache invalidation
-# frequency and duration are adjusted over time
-# cache was in a local instance
+* frequency and duration are adjusted over time
+* cache was in a local instance
 
 ### Logs and monitoring
-# log performance and requests for diagnostics
-# used datadog apm
+* log performance and requests for diagnostics
+* used datadog apm
 
 ## Make Ruby Write Your Code for You
 
