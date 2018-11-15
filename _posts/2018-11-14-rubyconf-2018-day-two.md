@@ -323,5 +323,11 @@ User.none.tall.etc # better
 
 ## Make Ruby Write Your Code for You
 
+### Magic modules
+* https://github.com/googlecloudplatform/magic-modules
+* Developed by Google Cloud team
+* Open sourced
+* Generate code to generate code that we ship off to ansible and terraform
+
 
 
