@@ -323,11 +323,26 @@ User.none.tall.etc # better
 
 ## Make Ruby Write Your Code for You
 
+### motivations
+* Cusomters use many different deployment tools to provision and manage their operating environments.
+* Companies like Puppet, Chef, Ansible, Hashicorp produce open source tools to meet these needs and typically provide enterprise versions and support.
+* Once customers invest in these tools they prefer to use a single management system (and style). For this reason Google wants to provide integration for these tools, so that our customers have an easier path to GCP versus abandoning a tool they're already comfortable with.
+
 ### Magic modules
-* https://github.com/googlecloudplatform/magic-modules
+* [Magic modules](https://github.com/googlecloudplatform/magic-modules)
 * Developed by Google Cloud team
 * Open sourced
-* Generate code to generate code that we ship off to ansible and terraform
+* Generate code to generate code that we ship off to terraform (chef, ansible, and others)
 
 
+### Like mad lips
+* templates to add customization
+
+```ruby
+a = ___.new(0)
+    food
+a.add(______)
+      topping
+a.order()
+```
 
