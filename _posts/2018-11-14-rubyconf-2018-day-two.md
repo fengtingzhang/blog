@@ -321,7 +321,7 @@ User.none.tall.etc # better
 * log performance and requests for diagnostics
 * used datadog apm
 
-## Make Ruby Write Your Code for You by Google Cloud Compute
+## Make Ruby Write Your Code for You
 
 ### Motivations
 * Cusomters use many different deployment tools to provision and manage their operating environments.
@@ -408,3 +408,5 @@ end
 * Best way is to reverse engineer your word banks from your templates
 * For example, use YAML
 
+### Slides
+* [Make Ruby Write Your Code for You](https://speakerdeck.com/rambleraptor)
