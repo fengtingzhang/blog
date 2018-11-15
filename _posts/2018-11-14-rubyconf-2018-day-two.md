@@ -298,6 +298,26 @@ User.where(users_ids: user.ids).each do
 end
 ```
 
+### .none scope
+```ruby
+User.where(id: []).tall.etc # bad
+User.none.tall.etc # better
+```
+
+### Increasing resque workers
+* from 45 - 70 caused Redis connection errors
+* Redis load spike to 100%
+# removed throttling code to Redis
+# database performance stayed the same
+
+### Cache invalidation
+# frequency and duration are adjusted over time
+# cache was in a local instance
+
+### Logs and monitoring
+# log performance and requests for diagnostics
+# used datadog apm
+
 ## Make Ruby Write Your Code for You
 
 
