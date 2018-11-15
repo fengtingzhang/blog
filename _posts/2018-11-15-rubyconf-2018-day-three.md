@@ -42,3 +42,54 @@ modified_time: '2018-11-15T09:16:43.607-07:00'
 
 ### Books
 * CTRL-SHIFT Paperback by Mike Bonifer
+
+## Branch in Time by Tekin Suleyman
+
+### Case study
+* How does a new maintainer figure out why a line of code is doing an in-memory sort long after the decisions are made?
+1. `git blame`
+2. `git log -S "sorted_patients" --patch --reverse # (the pickaxe)`
+3. pull requests
+
+### Commands for revising commits
+
+```bash
+git commit --amend --no-edit # this is useful rather than `git commit` then `git rebase -i`
+git push --force-with-lease # in case someone else has published revisions
+```
+
+### Resources
+* [Peter Naur – Programming as Theory Building](http://pages.cs.wisc.edu/~remzi/Naur.pdf)
+* [RESOURCES FOR CREATING USEFUL REVISION HISTORIES](https://tekin.co.uk/)
+
+### Recommendations
+1. Configure your git environment
+```bash
+git config --global core.editor # (the editor of your choice)
+git config --global commit.verbose true
+```
+
+2. In your commit message, capture the why and not the what
+3. Think carefully about the shape of your commit
+* create small atmoic commits, if your commit message has an "and"
+* shape as you go and not at the end
+```bash
+git add --patch / -p
+```
+4. Treat your local commits as mutable
+```bash
+git commit --amend
+# --fixup / --autosquash
+git rebase -i # --interactive
+```
+
+* Use less
+~~git blame file.rb~~
+
+* Use more
+```bash
+git log -S 'Some_code"'
+git annotate file.rb
+```
+
+* Help each other git better
