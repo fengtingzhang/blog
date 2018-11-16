@@ -17,7 +17,7 @@ modified_time: '2018-11-15T09:16:43.607-07:00'
 
 ### Your brain on unlearning
 * Learning a new keyboard
-# Learning a new language
+* Learning a new language
 
 ### Adapt
 * Unlearn the way that we do things - companies that no longer exist: Toys'R Us, Blockbuster, Kodak
@@ -138,7 +138,7 @@ end
 translates          high-level-interface
   |
  \|/
-read_from_storage   low-elevl-implemenation
+read_from_storage   low-level-implementaion
 ```
 
 
@@ -147,7 +147,7 @@ read_from_storage   low-elevl-implemenation
 * how do you make something that's not pluggable, pluggable
 
 
-### Inversin of control
+### Inversion of control
 ```
 talk
  |    /|\
@@ -207,6 +207,6 @@ end
 
 ### Complexity of protocol vs. reusability of software
 * Most gems wind up in the swiss army knife model - "maximally general interface"
-* Generatic software is the maximum reusability of software but minimal complexity of protocol, sharp knife
+* Generic software is the maximum reusability of software but minimal complexity of protocol, sharp knife
 
 
