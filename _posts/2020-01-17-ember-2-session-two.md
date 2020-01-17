@@ -33,8 +33,8 @@ modified_time: '2020-01-17T09:16:43.607-07:00'
 - Ember provides its own functions sometimes, which provides polyfills over native javascript functions
 - For example, deep copy
 JavaScript objects are copied by reference, if you try using ember object's copy function, it will provide a deep copy
-http://api.emberjs.com/ember/3.12/functions/@ember%2Fobject%2Finternals/copy
-- Note: ember object has decided to move this function to an add-on in newer ember versions. If you feel like helping the future Michael and Travis, install and use the add-on like this https://github.com/emberjs/ember-copy/blob/master/README.md#usage
+(Ember 3.12 Deep Copy)[http://api.emberjs.com/ember/3.12/functions/@ember%2Fobject%2Finternals/copy]
+- Note: ember object has decided to move this function to an add-on in newer ember versions. If you feel like helping the future Michael and Travis, install and use the add-on like this (ember-copy)[https://github.com/emberjs/ember-copy/blob/master/README.md#usage]
 
 ## Routing
 ```javascript
@@ -46,7 +46,7 @@ ember generate route
 
 ### Ember routes 
 - nested routes accessed using dots, not slash in handlebar templates
-- activating the child route will activate the parent route, first parent then child in that sequenc. 
+- activating the child route will activate the parent route, first parent then child in that sequence 
 - you can access everything in the parent route in the child route
 - defining a dynamic route segment with arguments, arguments are passed into the routeHandlers as params, accessible through the `params` keyword
 
@@ -58,7 +58,7 @@ ember generate route
 
 ## Templates
 - Retrieved after the route and the route handler
-- Semantic templates and provides a separate of concerns. 
+- Semantic templates, provides a separation of concerns. 
 - The separation of concern is by discipline of the developer, you should show the constraint and not create logic and javascript in Handlebar Templates. 
 - Remember in the ember application structure, you have lots of things in between the Route and the Template (for ex: controller and model), where you can write your javascript logic. 
 - Nick mentioned that if you do write a model+controller, ember will generate one for you during run-time.
