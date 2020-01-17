@@ -12,14 +12,29 @@ modified_time: '2020-01-17T09:16:43.607-07:00'
 ----------
 
 ## Ember Promise
+```javascript
+Ember.RSVP.Promise
+```
+
 * A promise is used to dispatch calls to remote data sources like Rails
 * Nested promises produce a pyramid structure and it makes it harder to debug, try to avoid it if you can
 * A disappointingly high-level overview of promises in ember, with little explanation of what a promise is in javascript to begin with.
 
 ### Common usage
 ```javascript
-.then()
-.catch()
+let promise = new Promise(function(resolve, reject) {
+  // on success
+  resolve(value);
+
+  // on failure
+  reject(reason);
+});
+
+promise.then(function(value) {
+  // on fulfillment
+}, function(reason) {
+  // on rejection
+});
 ```
 
 ### Other Promise Methods in Ember
@@ -31,8 +46,9 @@ modified_time: '2020-01-17T09:16:43.607-07:00'
 
 ## Ember's function and object polyfills
 - Ember provides its own functions sometimes, which provides polyfills over native javascript functions
-- For example, deep copy
-JavaScript objects are copied by reference, if you try using ember object's copy function, it will provide a deep copy
+
+### For example, deep copy
+- JavaScript objects are copied by reference, if you try using ember object's copy function, it will provide a deep copy
 [Ember 3.12 Deep Copy](http://api.emberjs.com/ember/3.12/functions/@ember%2Fobject%2Finternals/copy)
 - Note: ember object has decided to move this function to an add-on in newer ember versions. If you feel like helping the future Michael and Travis, install and use the add-on like this [ember-copy](https://github.com/emberjs/ember-copy/blob/master/README.md#usage)
 
