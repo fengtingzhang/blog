@@ -42,7 +42,7 @@ promise.then(function(value) {
 ### Other Promise Methods in Ember
 ```javascript
 - Promise.all
-- Promise.resovle
+- Promise.resolve
 - Promise.reject
 ```
 
