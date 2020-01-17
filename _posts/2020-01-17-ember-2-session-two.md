@@ -35,6 +35,8 @@ promise.then(function(value) {
 }, function(reason) {
   // on rejection
 });
+
+// alternatively ...then ... catch
 ```
 
 ### Other Promise Methods in Ember
