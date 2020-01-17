@@ -39,6 +39,11 @@ promise.then(function(value) {
 // alternatively ...then ... catch
 ```
 
+### Aside - Promise rejection handling
+* Promises can be rejected by the server, because the request is ridiculous
+* It is the (Rails or other) server's responsibility to return a standard HTTP Status code, for example UnprocessableEntity 422
+* It is the (Ember) frontend's responsibility to handle that rejection reason in its catch block, and display a user-friendly message to the End User on why the request is ridiculous
+
 ### Other Promise Methods in Ember
 ```javascript
 - Promise.all
