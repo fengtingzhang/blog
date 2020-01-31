@@ -12,11 +12,6 @@ modified_time: '2020-01-31T09:16:43.607-07:00'
 ----------
 
 ## Ember Templates
-Mustache Bracket Syntax
-```
-{{}}
-```
-
 Expressions 
 ```
 model.xx
