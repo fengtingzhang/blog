@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ember 2
+title: Ember 2 Session One
 date: '2020-01-10T09:15:00.001-07:00'
 author: Feng Ting Zhang
 tags:
