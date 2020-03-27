@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rails 4 
+title: Rails Fundamentals
 date: '2020-03-27T09:15:00.001-07:00'
 author: Feng Ting Zhang
 tags:
@@ -11,7 +11,6 @@ modified_time: '2020-03-27T09:16:43.607-07:00'
 
 ----------
 
-## Rails Fundamentals
 ### This class
 - Action View
 - Action Controller
