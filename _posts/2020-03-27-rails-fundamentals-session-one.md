@@ -34,12 +34,11 @@ rails g controller
 ```
 
 #### Routes (Verb + URL)
-- Start going through your rails applications by go through the routes first
+- Start going through your rails applications by going through the routes first
 - Inspect the verbs, for example GET should be equivalent to a read-only route
 
 #### Inspect the logs
 - the route and how it resolves to a controller and the method
-- by default, the new controller 
 
 To see additional options that are offered by the rails cli
 ```
