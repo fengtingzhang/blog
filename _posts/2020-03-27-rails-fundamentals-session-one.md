@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Rails Fundamentals
+title: Rails Fundamentals Session One
 date: '2020-03-27T09:15:00.001-07:00'
 author: Feng Ting Zhang
 tags:
 modified_time: '2020-03-27T09:16:43.607-07:00'
 ---
 
-## Rails Fundamentals
+## Rails Fundamentals Session One
 
 ----------
 
