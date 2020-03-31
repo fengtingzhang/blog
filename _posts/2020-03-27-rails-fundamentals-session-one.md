@@ -39,6 +39,7 @@ rails g controller
 
 #### Inspect the logs
 - the route and how it resolves to a controller and the method
+![Logs](/img/rails-fundamentals-1-logs.png "Logs")
 
 To see additional options that are offered by the rails cli
 ```
