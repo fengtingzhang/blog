@@ -48,7 +48,7 @@ question.answers.create ...
 )
 
 ### Session
-* A session a place to store data during one request that you can read during later requests.
+* A session is a place to store data during one request that you can read during later requests.
 * Only available in the controller and the view 
 * Cookie by default, overridable
 * Useful for Authentication, or anything that requires passing information around between requests 
