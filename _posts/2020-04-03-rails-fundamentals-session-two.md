@@ -22,7 +22,7 @@ special routes
 root_path
 ```
 
-[Rails Guide on Path & URL Helpers](https://guides.rubyonrails.org/routing.html#path-and-url-helpers)
+* [Rails Guide on Path & URL Helpers](https://guides.rubyonrails.org/routing.html#path-and-url-helpers)
 
 
 Once you add a relationship, Rails will figure out routes and lets you access the related models
@@ -43,8 +43,8 @@ redirect_to question
 question.answers.create ...
 ```
 
-[Rails Guide on ActiveRecord Associations](https://guides.rubyonrails.org/association_basics.html)
-[Information on ERD and crow feet notation](https://medium.com/@marcifey/using-crows-foot-notation-in-an-erd-2910fff5dd05
+* [Rails Guide on ActiveRecord Associations](https://guides.rubyonrails.org/association_basics.html)
+* [Information on ERD and crow feet notation](https://medium.com/@marcifey/using-crows-foot-notation-in-an-erd-2910fff5dd05
 )
 
 ### Session
@@ -53,7 +53,7 @@ question.answers.create ...
 * Cookie by default, overridable
 * Useful for Authentication, or anything that requires passing information around between requests 
 * If you’re curious about how sessions are implemented in rails, they are referenced here 
-[Information on How Session is implemented in Rails Action Controller Session](https://guides.rubyonrails.org/action_controller_overview.html#session)
+* [Information on How Session is implemented in Rails Action Controller Session](https://guides.rubyonrails.org/action_controller_overview.html#session)
 
 
 ### Action Mailer
