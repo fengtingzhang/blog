@@ -24,24 +24,22 @@ root_path
 
 * [Rails Guide on Path & URL Helpers](https://guides.rubyonrails.org/routing.html#path-and-url-helpers)
 
+#### Relationships
 
 Once you add a relationship, Rails will figure out routes and lets you access the related models
 
 For example:
-1. add a `belongs_to` relationship in the `answer` model
-2. Once you set up the relations, Rails will figure out the route 
+1. add a `belongs_to` relationship in the `answer` model. Now you can use the relations
+```
+question.answers.create ...
+```
 
-#### Relationships
-* has_many/belongs_to
-* Ordering
-
+2. Once you set up the relationships, Rails will also figure out the route 
 ```
 redirect_to question
 ```
 
-```
-question.answers.create ...
-```
+![Routes](/img/rails-fundamentals-2-routes.png "Logs")
 
 * [Rails Guide on ActiveRecord Associations](https://guides.rubyonrails.org/association_basics.html)
 * [Information on ERD and crow feet notation](https://medium.com/@marcifey/using-crows-foot-notation-in-an-erd-2910fff5dd05
