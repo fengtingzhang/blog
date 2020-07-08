@@ -41,17 +41,15 @@ etc
 ### Q&A
 * Q: do you guys directly define assets in the rails app this way for any repos?
 * A: Many rails apps in fulfillment define their assets in this way, but specific styles are generally not necesary, the libraries that are used are
-1. bootstrap https://getbootstrap.com/docs/3.4/css/#overview
+1. [bootstrap](https://getbootstrap.com/docs/3.4/css/#overview)
 2. bluestrap (ember)
-3. pomster ui (ember)
-https://pomster-ui.production.b--a.co/
+3. [pomster ui](https://pomster-ui.production.b--a.co/) (ember)
 
 * Q: Is pomster ui something BA specific? I didn't find any info in the web
-* A: yeah pomster was built internally :D https://github.com/blueapron/pomster-ui
+* A: yeah [pomster](https://github.com/blueapron/pomster-ui) was built internally :D 
 
 * Q: what's bluestrap?
-* A: bluestrap is the blue apron version of bootstrap, which pre-dated pomster
-https://github.com/blueapron/wms-mobile-styles/blob/44c922ec4c48db2812d600f810a036175cacc2be/app/styles/wms-mobile-styles.scss#L3
+* A: [bluestrap](https://github.com/blueapron/wms-mobile-styles/blob/44c922ec4c48db2812d600f810a036175cacc2be/app/styles/wms-mobile-styles.scss#L3) is the blue apron version of bootstrap, which pre-dated pomster
 
 * Q: he's trying to run his application in production environment, I looked away for like 5 seconds and I have no idea why he's even trying to do that now
 * A: he's showing you the differences between production and development environments for static content.
@@ -71,7 +69,6 @@ https://github.com/blueapron/wms-mobile-styles/blob/44c922ec4c48db2812d600f810a0
 - PAT started in Heroku! then one year later we moved into aws :)
 - Heroku has so many build packs, they also have like a 100 person devops team (probably more)
 - ba config!
-- goba was inspired by heroku cli
-- if you want to help Steve http://github.com/blueapron/goba
+- [goba](http://github.com/blueapron/goba) was inspired by heroku cli
 
 
