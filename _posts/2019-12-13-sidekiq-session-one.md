@@ -15,15 +15,15 @@ modified_time: '2019-12-13T09:16:43.607-07:00'
 1. Sidekiq is a separate process that manages multiple threads
 2. Retry can be disabled <- retry can limited
 3. Important! Thread-safety needs to be implemented by the application, sidekiq does not do anything for you out of the box. This means
-a. API endpoints need to be indempotent
-b. transactions or locks needs to be used around shared objects and database tables
+* API endpoints need to be indempotent
+* transactions or locks needs to be used around shared objects and database tables
 4. Prioritization, side_option to specify any queue, and add a priority on sidekiq startup
 5. Deployment (here it is done through the Apronfile)
 6. Web UI for sidekiq
 7. Sidekiq middleware
-a) client side happens before insert into redis
-b) server side happens before job is run
-c) Processor - processes all the middleware
+* client side happens before insert into redis
+* server side happens before job is run
+* Processor - processes all the middleware
 8. Sidekiq uses celluloid under the cover. It is an alternative to Resque.
 
 ## Sidekiq In-Depth
