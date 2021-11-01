@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sidekiq Session Two
+title: Sidekiq Session One
 date: '2019-12-13T09:15:00.001-07:00'
 author: Feng Ting Zhang
 tags:
